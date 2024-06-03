@@ -1,0 +1,59 @@
+<h1>Statistique de votre courses</h1>
+
+<h2><%= @course.name %></h2>
+
+
+
+<p>
+  <strong>Distance:</strong>
+  <%= @course.distance %>
+</p>
+
+<p>
+  <strong>Latitude:</strong>
+  <%= @course.latitude %>
+</p>
+
+<p>
+  <strong>Longitude:</strong>
+  <%= @course.longitude %>
+</p>
+
+<p>
+  <strong>Eau:</strong>
+  <%= @course.water ? 'Oui' : 'Non' %>
+</p>
+
+<p>
+
+<% if @course.trashs %>
+  <i class="fa fa-trash"></i>
+  <% else %>
+      Non
+  <% end %>
+</p>
+
+<p>
+  <strong>Sac à crottes:</strong>
+  <%= @course.poopbag ? 'Oui' : 'Non' %>
+</p>
+
+<p>
+  <strong>Adapté aux familles:</strong>
+  <%= @course.familyfriendly ? 'Oui' : 'Non' %>
+</p>
+
+<p>
+  <strong>Difficulté:</strong>
+  <%= @course.difficulty %>
+</p>
+
+<p>
+  <strong>Timing:</strong>
+  <%= @course.timing %>
+</p>
+
+<p>
+  <strong>Utilisateur:</strong>
+  <%= @course.user_id %>
+</p>

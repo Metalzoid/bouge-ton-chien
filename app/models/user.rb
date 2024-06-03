@@ -12,7 +12,6 @@ class User < ApplicationRecord
   validates :nickname, presence: true
   validates :firstname, presence: true
   validates :lastname, presence: true
-  validates :money, presence: true, numericality: { only_integer: true }
 
   enum role: {
     user: 0,
