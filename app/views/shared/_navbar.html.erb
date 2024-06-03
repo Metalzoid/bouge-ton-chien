@@ -2,18 +2,36 @@
   <div class="container-fluid">
     <ul class="navbar-nav flex-row w-100 justify-content-around align-items-center text-center">
       <li class="nav-item">
-        <%= link_to root_path, class: "nav-link" do %>
-          <i class="fa-solid fa-house"></i>
+        <% if params[:controller] == "courses" && params[:action] == "index" %>
+          <%= link_to root_path, class: "nav-link active" do %>
+            <i class="fa-solid fa-house"></i>
+          <% end %>
+        <% else %>
+          <%= link_to root_path, class: "nav-link" do %>
+            <i class="fa-solid fa-house"></i>
+          <% end %>
         <% end %>
       </li>
       <li class="nav-item">
-        <%= link_to root_path, class: "nav-link active" do %>
-          <i class="fa-solid fa-map-location-dot"></i>
+        <% if params[:controller] == "rides" && params[:action] == "edit" %>
+          <%= link_to map_path, class: "nav-link active" do %>
+            <i class="fa-solid fa-map-location-dot"></i>
+          <% end %>
+        <% else %>
+          <%= link_to map_path, class: "nav-link" do %>
+            <i class="fa-solid fa-map-location-dot"></i>
+          <% end %>
         <% end %>
       </li>
       <li class="nav-item">
-        <%= link_to root_path, class: "nav-link" do %>
-          <i class="fa-solid fa-user"></i>
+         <% if (params[:controller] == "pages" && params[:action] == "profil") || params[:controller] == "devise/sessions"%>
+          <%= link_to profil_path, class: "nav-link active" do %>
+            <i class="fa-solid fa-user"></i>
+          <% end %>
+        <% else %>
+          <%= link_to profil_path, class: "nav-link" do %>
+            <i class="fa-solid fa-user"></i>
+          <% end %>
         <% end %>
       </li>
     </ul>
