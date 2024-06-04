@@ -1,36 +1,37 @@
+
 <div class="p-3 d-flex justify-content-start">
-    <h1 class="font-weight-bold">Suggestions</h1>
-  </div>
+  <h1 class="font-weight-bold">Suggestions</h1>
+</div>
 
 <div class="container w-100">
   <% @courses.each do |course| %>
-  <div class="card-image mb-3">
-    <img src="https://vivrebordeaux.fr/wp-content/uploads/2022/04/Jardin-public-de-Bordeaux.jpg" class="card-img-top" alt="Parc Bordelais"
-    style="border-radius: 5%">
-  </div>
-    <div class="card-body">
-
-      <div class="d-flex justify-content-between">
-        <h5 class="card-title"><%= course.name %></h5>
-        <div class="d-flex ml-auto">
-            <p class="p-1"><i class="fa fa-trash"></i></p>
-            <p class="p-1"><i class="fa-solid fa-droplet"></i></p>
-            <p class="p-1"><i class="fa-solid fa-poo"></i></p>
-            <p class="p-1"><i class="fa-solid fa-people-group"></i></p>
-        </div>
+    <div class="card mb-3">
+      <div class="card-image mb-3">
+        <div style="border-radius: 12px 12px 0 0;height: 400px; width: 100%; background-repeat: no-repeat; background-size: cover; background-image: url('<%= cl_image_path course.photos.first.key, transformation: { dpr: "auto", responsive: true, width: "auto", crop: "scale", gravity: :face} %>')"></div>
+        <%# <img src="https://vivrebordeaux.fr/wp-content/uploads/2022/04/Jardin-public-de-Bordeaux.jpg" class="card-img-top" alt="Parc Bordelais" %>
       </div>
-      <div class="d-flex justify-content-between">
-        <div>
-          <% course.average.to_i.times do %>
-            <i class="fa-solid fa-star"></i>
-          <% end %>
-          <% (5 - course.average.to_i).times do %>
-            <i class="fa-regular fa-star"></i>
-          <% end %>
+      <div class="card-body">
+        <div class="d-flex justify-content-between">
+          <h5 class="card-title"><%= course.name %></h5>
+          <div class="d-flex ml-auto">
+              <p class="p-1"><i class="fa fa-trash"></i></p>
+              <p class="p-1"><i class="fa-solid fa-droplet"></i></p>
+              <p class="p-1"><i class="fa-solid fa-poo"></i></p>
+              <p class="p-1"><i class="fa-solid fa-people-group"></i></p>
+          </div>
         </div>
-        <div class="card-timing-distance"><%= course.timing %> - <%= course.distance %> km</div>
+        <div class="d-flex justify-content-between">
+          <div>
+            <% course.average.to_i.times do %>
+              <i class="fa-solid fa-star"></i>
+            <% end %>
+            <% (5 - course.average.to_i).times do %>
+              <i class="fa-regular fa-star"></i>
+            <% end %>
+          </div>
+          <div class="card-timing-distance"><%= course.timing %> min - <%= course.distance %> km</div>
+        </div>
       </div>
     </div>
-  </div>
   <% end %>
 </div>
