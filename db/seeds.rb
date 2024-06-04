@@ -28,7 +28,7 @@ user1.save!
   reward = Reward.new(price: 5, name: Faker::Name.name, promocode: Faker::Barcode.ean, link: Faker::Internet.url)
   reward.save!
   Dog.create!(name: Faker::Creature::Dog.name, race: "border", age: Faker::Number.number(digits: 2), user: user1)
-  course = Course.new(distance: rand(0..5), latitude: rand(0..5), longitude: rand(0..5), water: true, trashs: true, poopbag: true, familyfriendly: true, difficulty: rand(0..5), timing: 30, name: Faker::Locations::Australia.location )
+  course = Course.new(distance: rand(0..5), latitude: rand(0..5), longitude: rand(0..5), water: true, trashs: true, poopbag: true, familyfriendly: true, difficulty: rand(0..5), timing: 30, name: Faker::Locations::Australia.location, description: Faker::Movies::HarryPotter.quote)
   file = URI.open("https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/For%C3%AAt_am%C3%A9rique_du_sud.jpg/640px-For%C3%AAt_am%C3%A9rique_du_sud.jpg")
   file2 = URI.open("https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/For%C3%AAt_am%C3%A9rique_du_sud.jpg/640px-For%C3%AAt_am%C3%A9rique_du_sud.jpg")
   file3 = URI.open("https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/For%C3%AAt_am%C3%A9rique_du_sud.jpg/640px-For%C3%AAt_am%C3%A9rique_du_sud.jpg")
@@ -48,7 +48,7 @@ user2.save!
   reward = Reward.new(price: 10, name: Faker::Name.name, promocode: Faker::Barcode.ean, link: Faker::Internet.url)
   reward.save!
   Dog.create!(name: Faker::Creature::Dog.name, race: "chien", age: Faker::Number.number(digits: 2), user: user2)
-  course = Course.new(distance: rand(0..5), latitude: rand(0..5), longitude: rand(0..5), water: true, trashs: true, poopbag: true, familyfriendly: true, difficulty: rand(0..5), timing: 30, name: Faker::Locations::Australia.location )
+  course = Course.new(distance: rand(0..5), latitude: rand(0..5), longitude: rand(0..5), water: true, trashs: true, poopbag: true, familyfriendly: true, difficulty: rand(0..5), timing: 30, name: Faker::Locations::Australia.location, description: Faker::Movies::HarryPotter.quote)
   file = URI.open("https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/For%C3%AAt_am%C3%A9rique_du_sud.jpg/640px-For%C3%AAt_am%C3%A9rique_du_sud.jpg")
   file2 = URI.open("https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/For%C3%AAt_am%C3%A9rique_du_sud.jpg/640px-For%C3%AAt_am%C3%A9rique_du_sud.jpg")
   file3 = URI.open("https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/For%C3%AAt_am%C3%A9rique_du_sud.jpg/640px-For%C3%AAt_am%C3%A9rique_du_sud.jpg")
@@ -68,7 +68,7 @@ user3.save!
   reward = Reward.new(price: 10, name: Faker::Name.name, promocode: Faker::Barcode.ean, link: Faker::Internet.url)
   reward.save!
   Dog.create!(name: Faker::Creature::Dog.name, race: "chien", age: Faker::Number.number(digits: 2), user: user3)
-  course = Course.new(distance: rand(0..5), latitude: rand(0..5), longitude: rand(0..5), water: true, trashs: true, poopbag: true, familyfriendly: true, difficulty: rand(0..5), timing: 30, name: Faker::Locations::Australia.location )
+  course = Course.new(distance: rand(0..5), latitude: rand(0..5), longitude: rand(0..5), water: true, trashs: true, poopbag: true, familyfriendly: true, difficulty: rand(0..5), timing: 30, name: Faker::Locations::Australia.location, description: Faker::Movies::HarryPotter.quote)
   file = URI.open("https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/For%C3%AAt_am%C3%A9rique_du_sud.jpg/640px-For%C3%AAt_am%C3%A9rique_du_sud.jpg")
   file2 = URI.open("https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/For%C3%AAt_am%C3%A9rique_du_sud.jpg/640px-For%C3%AAt_am%C3%A9rique_du_sud.jpg")
   file3 = URI.open("https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/For%C3%AAt_am%C3%A9rique_du_sud.jpg/640px-For%C3%AAt_am%C3%A9rique_du_sud.jpg")
@@ -89,7 +89,7 @@ user4.save!
   reward = Reward.new(price: 10, name: Faker::Name.name, promocode: Faker::Barcode.ean, link: Faker::Internet.url)
   reward.save!
   Dog.create!(name: Faker::Creature::Dog.name, race: "chien", age: Faker::Number.number(digits: 2), user: user4)
-  course = Course.new(distance: rand(0..5), latitude: rand(0..5), longitude: rand(0..5), water: true, trashs: true, poopbag: true, familyfriendly: true, difficulty: rand(0..5), timing: 30, name: Faker::Locations::Australia.location )
+  course = Course.new(distance: rand(0..5), latitude: rand(0..5), longitude: rand(0..5), water: true, trashs: true, poopbag: true, familyfriendly: true, difficulty: rand(0..5), timing: 30, name: Faker::Locations::Australia.location, description: Faker::Movies::HarryPotter.quote)
   file = URI.open("https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/For%C3%AAt_am%C3%A9rique_du_sud.jpg/640px-For%C3%AAt_am%C3%A9rique_du_sud.jpg")
   file2 = URI.open("https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/For%C3%AAt_am%C3%A9rique_du_sud.jpg/640px-For%C3%AAt_am%C3%A9rique_du_sud.jpg")
   file3 = URI.open("https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/For%C3%AAt_am%C3%A9rique_du_sud.jpg/640px-For%C3%AAt_am%C3%A9rique_du_sud.jpg")
