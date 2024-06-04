@@ -1,0 +1,17 @@
+<div class="container mt-3" id="home-dogs">
+  <div class="cards align-items-center d-flex flex-column">
+    BOUTON MODAL AJOUTER UN CHIEN
+
+    <% @dogs.each do |dog| %>
+      <div class="card mx-4" style="width: 16rem;">
+        <%= cl_image_tag dog.photo.key, height: 150, width: 150, crop: "fill", radius: "max", class: "dog-image" %>
+        <div class="card-body d-flex flex-column align-items-center">
+          <h5 class="card-title"><%= dog.name %></h5>
+          <p class="card-text">Age: <%= dog.age %></p>
+          <p class="card-text">Race: <%= dog.race %></p>
+          <%= link_to "Retirer", dog_path(dog), data: { turbo_method: "delete", turbo_confirm: "Êtes-vous sûrs ?"}, class: "btn btn-primary" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
