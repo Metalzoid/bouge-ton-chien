@@ -1,1 +1,16 @@
-test from index courses
+<div class="p-3 d-flex justify-content-start">
+    <h1>Suggestions</h1>
+  </div>
+
+<div class="container w-100">
+  <% @courses.each do |course| %>
+  <div class="card mb-3">
+    <img src="https://vivrebordeaux.fr/wp-content/uploads/2022/04/Jardin-public-de-Bordeaux.jpg" class="card-img-top" alt="Parc Bordelais">
+    <div class="card-body">
+      <h5 class="card-title"><%= course.name%></h5>
+      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+    </div>
+  </div>
+  <% end %>
+</div>
