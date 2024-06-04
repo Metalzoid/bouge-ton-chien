@@ -25,5 +25,5 @@ Rails.application.routes.draw do
 
   resources :rewards, only: %i[index]
 
-  resources :dogs, only: %i[show delete]
+  resources :dogs, only: %i[destroy]
 end
