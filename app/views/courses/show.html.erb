@@ -1,65 +1,49 @@
-<div class="container p-3 class="modal-dialog modal-dialog-centered">
-<h1>Statistique de votre courses</h1>
-<h2><%= @course.name %></h2>
+<div class="container p-3">
+  <h1>Statistique de votre courses</h1>
+    <h2><%= @course.name %></h2>
 
-<div class="d-flex mb-3">
-  <div class="me-auto p-2">
-    <i class="fa-regular fa-star"></i>
-    <i class="fa-regular fa-star"></i>
-    <i class="fa-regular fa-star"></i>
-    <i class="fa-regular fa-star"></i>
-    <i class="fa-regular fa-star"></i>
-  </div>
-    <div class="p-1">
-      <p>
+  <div class="d-flex mb-3">
+    <div class="me-auto p-2">
+      <i class="fa-regular fa-star"></i>
+      <i class="fa-regular fa-star"></i>
+      <i class="fa-regular fa-star"></i>
+      <i class="fa-regular fa-star"></i>
+      <i class="fa-regular fa-star"></i>
+    </div>
+
+<button type="button" class="border-0 bg-none" data-bs-toggle="modal" data-bs-target="#myModal">
+
+
         <% if @course.trashs %>
           <i class="fa fa-trash"></i>
         <% end %>
-      <p>
-    </div>
-    <div class="p-1">
-      <p>
         <% if @course.water %>
           <i class="fa-solid fa-droplet"></i>
         <% end %>
-      <p>
-    </div>
-    <div class="p-1">
-      <p>
-        <% if @course.poopbag %>
+
+   <% if @course.poopbag %>
           <i class="fa-solid fa-poo"></i>
         <% end %>
-      <p>
-    </div>
-    <div class="p-1">
-      <p>
-        <% if @course.familyfriendly %>
+          <% if @course.familyfriendly %>
           <i class="fa-solid fa-people-group"></i>
         <% end %>
-      <p>
+
+
+
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <!-- Contenu modal -->
+      </div>
+      <div class="modal-footer">
+      </div>
     </div>
-
-</div>
-
-
-
-
-
-<p>
-  <strong>Distance:</strong>
-  <%= @course.distance %>
-</p>
-
-
-<p>
-  <strong>Difficulté:</strong>
-  <%= @course.difficulty %>
-</p>
-
-<p>
-  <strong>Timing:</strong>
-  <%= @course.timing %>
-</p>
-
-
+  </div>
 </div>
