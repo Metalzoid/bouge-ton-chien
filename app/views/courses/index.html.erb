@@ -5,10 +5,11 @@
 
 <div class="container w-100">
   <% @courses.each do |course| %>
+  <%= link_to course_path(course), class: "text-decoration-none text-white" do %>
     <div class="card mb-3">
       <div class="card-image mb-3">
-        <div style="border-radius: 12px 12px 0 0;height: 400px; width: 100%; background-repeat: no-repeat; background-size: cover; background-image: url('<%= cl_image_path course.photos.first.key, transformation: { dpr: "auto", responsive: true, width: "auto", crop: "scale", gravity: :face} %>')"></div>
-        <%# <img src="https://vivrebordeaux.fr/wp-content/uploads/2022/04/Jardin-public-de-Bordeaux.jpg" class="card-img-top" alt="Parc Bordelais" %>
+        <div class="fa-solid fa-medal p-3"style="border-radius: 12px 12px 0 0;height: 230px; width: 100%; background-repeat: no-repeat; background-size: cover; background-image: url('<%= cl_image_path course.photos.first.key, transformation: { dpr: "auto", responsive: true, width: "auto", crop: "scale", gravity: :face} %>')">
+        </div>
       </div>
       <div class="card-body">
         <div class="d-flex justify-content-between">
@@ -33,5 +34,6 @@
         </div>
       </div>
     </div>
+    <% end %>
   <% end %>
 </div>
