@@ -15,10 +15,10 @@ Rails.application.routes.draw do
   resources :rides, only: %i[edit update show] do
     resources :reviews, only: %i[create]
   end
-  resources :users do
-    resources :dogs
-    resources :rewards, only: %i[index] do
-      resources :user_rewards, only: %i[create index update]
-    end
+  resources :rewards, only: %i[index] do
+    resources :user_rewards, only: %i[create index update]
   end
+  resources :dogs
+  get "/profil", to: "pages#profil", as: :profil
+  get "/map", to: "pages#map", as: :map
 end
