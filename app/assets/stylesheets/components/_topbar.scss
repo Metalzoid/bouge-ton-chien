@@ -1,0 +1,35 @@
+#topbar {
+  height: 7.5rem;
+  position: relative;
+
+  .logo{
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 10px;
+  }
+
+  .doogs-container {
+    display: flex;
+    position: absolute;
+    right: 10px;
+    bottom: 20px;
+    justify-content: center;
+    align-items: center;
+    .doogs {
+      border-radius: 50%;
+      height: 1.5rem;
+      width: 1.5rem;
+      box-shadow: 2px 2px 13px rgba(0, 0, 0, 0.5);
+      justify-content: center;
+      align-items: center;
+      display: flex;
+      margin-left: 0.5rem;
+    }
+  }
+}
