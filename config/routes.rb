@@ -9,16 +9,21 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "posts#index"
   root to: "courses#index"
+
   resources :courses, only: %i[show] do
     resources :rides, only: %i[create]
   end
+
   resources :rides, only: %i[edit update show] do
     resources :reviews, only: %i[create]
   end
-  resources :rewards, only: %i[index] do
+
+  resources :users, only: [:show] do
+    resources :dogs, only: %i[create index]
     resources :user_rewards, only: %i[create index update]
   end
-  resources :dogs
-  get "/profil", to: "pages#profil", as: :profil
-  get "/map", to: "pages#map", as: :map
+
+  resources :rewards, only: %i[index]
+
+  resources :dogs, only: %i[show delete]
 end
