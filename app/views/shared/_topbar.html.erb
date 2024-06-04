@@ -7,7 +7,7 @@
       <% if params[:controller] == "courses" && params[:action] == "index" %>
         <h1 class="m-0">Bienvenue <%= current_user.firstname %></h1>
       <% elsif params[:controller] == "courses" && params[:action] == "show" %>
-        <h1 class="m-0"><%= @course.name %></h1>
+        <h1 class="m-0">Détails de <%= @course.name %></h1>
       <% elsif params[:controller] == "rides" && params[:action] == "edit" %>
         <h1 class="m-0">En route !</h1>
       <% elsif params[:controller] == "rides" && params[:action] == "show" %>
