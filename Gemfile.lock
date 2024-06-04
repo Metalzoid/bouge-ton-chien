@@ -141,10 +141,7 @@ GEM
       multipart-post (~> 2)
     faraday-net_http (3.1.0)
       net-http
-    ffi (1.17.0-aarch64-linux-gnu)
-    ffi (1.17.0-aarch64-linux-musl)
-    ffi (1.17.0-arm-linux-gnu)
-    ffi (1.17.0-arm-linux-musl)
+    ffi (1.17.0)
     ffi (1.17.0-arm64-darwin)
     ffi (1.17.0-x86_64-darwin)
     font-awesome-sass (6.5.2)
@@ -196,8 +193,6 @@ GEM
     nokogiri (1.16.5-arm-linux)
       racc (~> 1.4)
     nokogiri (1.16.5-arm64-darwin)
-      racc (~> 1.4)
-    nokogiri (1.16.5-x86-linux)
       racc (~> 1.4)
     nokogiri (1.16.5-x86_64-darwin)
       racc (~> 1.4)
@@ -319,13 +314,9 @@ PLATFORMS
   arm-linux
   arm-linux-musl
   arm64-darwin
-  x86-linux
-  x86-linux
-  x86-linux-musl
   x86_64-darwin
   x86_64-linux
   x86_64-linux
-  x86_64-linux-musl
 
 DEPENDENCIES
   autoprefixer-rails
