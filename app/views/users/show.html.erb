@@ -3,7 +3,9 @@
     <h1>Bienvenue <%= current_user.firstname %></h1>
     <%= cl_image_tag current_user.photo.key, class: "user-photo", gravity: "face", height: 100, width: 100, crop: "fill", radius: "max", fetch_format: "auto" %>
   </div>
-  <%= link_to "Editer mon profil", edit_user_registration_path(current_user), class: "btn btn-primary w-100 my-1" %>
-  <%= link_to "Ma Meute", user_dogs_path(current_user), class: "btn btn-primary w-100 my-1" %>
-  <%= link_to 'Déconnexion', destroy_user_session_path, data: { turbo_method: "delete" }, class: "btn btn-primary w-100 my-1" %>
+  <div class="links">
+    <%= link_to "Editer mon profil", edit_user_registration_path(current_user), class: "btn btn-primary" %>
+    <%= link_to "Ma Meute", user_dogs_path(current_user), class: "btn btn-primary" %>
+    <%= link_to 'Déconnexion', destroy_user_session_path, data: { turbo_method: "delete" }, class: "btn btn-primary" %>
+  </div>
 </div>
