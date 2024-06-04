@@ -26,6 +26,8 @@
     <% else %>
       <h1 class="m-0">Bouge ton chien !</h1>
     <% end %>
-    <small class="doogs-container"><%= current_user.money %><%= link_to "D", rewards_path, class: "doogs nav-link" %></small>
+    <% if user_signed_in? %>
+      <small class="doogs-container"><%= current_user.money %><%= link_to "D", rewards_path, class: "doogs nav-link" %></small>
+    <% end %>
   </div>
 </div>
