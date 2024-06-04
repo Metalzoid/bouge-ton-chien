@@ -1,5 +1,7 @@
 class Course < ApplicationRecord
-  belongs_to :user
+  belongs_to :user, optional: true
+  has_many_attached :photos
+
   has_many :reviews, dependent: :destroy
 
   validates :distance, presence: true, numericality: { only_float: true }
