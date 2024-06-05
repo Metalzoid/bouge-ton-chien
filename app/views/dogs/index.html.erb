@@ -1,7 +1,8 @@
 <div class="container mt-3" id="home-dogs">
-  <div class="cards align-items-center d-flex flex-column">
-    BOUTON MODAL AJOUTER UN CHIEN
-
+  <div class="cards align-items-center d-flex flex-column" data-controller="modal-dog">
+    <%= turbo_frame_tag "modal" do %>
+      <%= render "form", dog: @dog %>
+    <% end %>
     <% @dogs.each do |dog| %>
       <div class="card mx-4" style="width: 16rem;">
         <%= cl_image_tag dog.photo.key, height: 150, width: 150, crop: "fill", radius: "max", class: "dog-image" %>

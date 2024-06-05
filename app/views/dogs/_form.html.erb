@@ -1,0 +1,34 @@
+<%= link_to "New dog", user_dogs_path, data: { turbo_frame: 'modal', action: "click->modal-dog#open" } %>
+
+<turbo-frame id="modal">
+  <div class="modal fade" tabindex="-1" role="dialog" aria-hidden="true" data-modal-dog-target="modal">
+    <div class="modal-dialog modal-dialog-centered modal-xl mt-5">
+      <div class="modal-content">
+        <div class="modal-header position-relative d-flex justify-content-between">
+          <h5 class="modal-title font-18">Ajouter un chien</h5>
+          <button type="button" class="btn" data-action="click->modal-dog#close" aria-label="Close">
+            X
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="container-fluid">
+            <%= simple_form_for [current_user, dog] do |f| %>
+              <%= f.error_notification %>
+
+              <div class="form-inputs">
+                <%= f.input :name, required: true, label: "Nom" %>
+                <%= f.input :race, required: true %>
+                <%= f.input :age, required: true %>
+                <%= f.input :photo, as: :file, required: true %>
+              </div>
+
+              <div class="form-actions d-flex justify-content-center">
+                <%= f.button :submit, "Ajouter à la meute", class: "btn btn-primary" %>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</turbo-frame>
