@@ -3,6 +3,7 @@ class Course < ApplicationRecord
   has_many_attached :photos
 
   has_many :reviews, dependent: :destroy
+  has_many :rides
 
   validates :distance, presence: true, numericality: { only_float: true }
   validates :latitude, presence: true, numericality: { only_float: true }
