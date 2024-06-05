@@ -1,13 +1,17 @@
 <div class="container p-3">
-
+<div style=“position: relative; border-radius: 12px 12px 0 0;height: 230px; width: 100%; background-repeat: no-repeat; background-size: cover; background-image: url(‘<%= cl_image_path @course.photos.first.key, transformation: { dpr: "auto", responsive: true, width: "auto", crop: "scale", gravity: :face} %>’)“>
+          <% if Ride.exists?(user: current_user, course: @course) %>
+            <i class=“fa-solid fa-medal” style=“font-size: 2rem; position: absolute; right: 15px; top: 15px;“></i>
+          <% end %>
+        </div>
     <div class="container">
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
+    <div class="d-flex justify-content-end">
+  <%= link_to :back, class: 'btn btn-lg', style: 'border: none;' do %>
+
+    <i class="fa-solid fa-arrow-left"></i>
+  <% end %>
+</div>
+  
     </div>
 
       <h2><%= @course.name %></h2>
@@ -28,7 +32,6 @@
             <% if @course.water %>
               <i class="fa-solid fa-droplet"></i>
             <% end %>
-
           <% if @course.poopbag %>
               <i class="fa-solid fa-poo"></i>
             <% end %>
@@ -52,10 +55,10 @@
           </div>
       </div>
     </div>
-    <div >
-    <p>Distance:</p>
-    <p>Difficulté:</p>
-    <p>Timing:</p>
-    <p>Description:</p>
-    </div>
+  <div class="row">
+  <div class="col-sm-4 mb-3">Distance: <%= @course.distance %></div>
+  <div class="col-sm-4 mb-3">Difficulté: <%= @course.difficulty %></div>
+  <div class="col-sm-4 mb-3">Timing: <%= @course.timing %></div>
+  <div class="col-sm-4 mb-3">Description: <%= @course.description %></div>
+</div>
   </div>
