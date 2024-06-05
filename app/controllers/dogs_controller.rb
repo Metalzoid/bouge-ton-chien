@@ -6,11 +6,16 @@ class DogsController < ApplicationController
 
   def create
     @dog = Dog.new(dog_params)
-    @dog.user =User.find(params[:user_id])
+    @dog.user = User.find(params[:user_id])
     if @dog.save
-      redirect_to user_dogs_path(@dog)
+      respond_to do |format|
+        format.html { redirect_to user_dogs_path(current_user) }
+        format.text { render partial: "dogs/dog", locals: { dog: @dog }, formats: [:html] }
+      end
     else
-      render :index, status: :unprocessable_entity
+      respond_to do |format|
+        format.html { render :index }
+      end
     end
   end
 
