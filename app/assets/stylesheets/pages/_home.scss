@@ -1,3 +1,28 @@
 .container {
   margin-bottom: 90px;
 }
+
+.btn-return {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  border-radius: 50%;
+  box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.4);
+  height: 40px;
+  width: 40px;
+
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+}
+
+.card {
+  background-color: #fff;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  flex-shrink: 0;
+}
