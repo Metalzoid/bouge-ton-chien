@@ -4,6 +4,6 @@
     <h5 class="card-title"><%= dog.name %></h5>
     <p class="card-text">Age: <%= dog.age %></p>
     <p class="card-text">Race: <%= dog.race %></p>
-    <%= link_to "Retirer", dog_path(dog), data: { turbo_method: "delete", turbo_confirm: "Êtes-vous sûrs ?"}, class: "btn btn-primary" %>
+    <%= link_to "Retirer", dog_path(dog), data: { turbo_method: "delete" }, class: "btn btn-primary" %>
   </div>
 </div>

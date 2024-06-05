@@ -10,11 +10,12 @@ class DogsController < ApplicationController
     if @dog.save
       respond_to do |format|
         format.html { redirect_to user_dogs_path(current_user) }
-        format.text { render partial: "dogs/dog", locals: { dog: @dog }, formats: [:html] }
+        format.json { render json: { success: true, partial: render_to_string(partial: "dogs/dog", locals: { dog: @dog }, formats: [:html]) } }
       end
     else
       respond_to do |format|
-        format.html { render :index }
+        format.html { redirect_to user_dogs_path(current_user) }
+        format.json { render json: { success: false, form: render_to_string(partial: "dogs/form", locals: { dog: @dog }, formats: [:html]) } }
       end
     end
   end
