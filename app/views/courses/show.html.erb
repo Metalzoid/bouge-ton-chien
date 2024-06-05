@@ -1,0 +1,94 @@
+<div class="container p-3 mb-1">
+
+  <div class="container mb-4">
+    <div style="position: relative; height: 230px; width: 100%; background-repeat: no-repeat; background-size: cover; background-image: url('<%= cl_image_path @course.photos.first.key, transformation: { dpr: "auto", responsive: true, width: "auto", crop: "scale", gravity: :face} %>')">
+      <% if Ride.exists?(user: current_user, course: @course) %>
+        <i class="fa-solid fa-medal" style="font-size: 2rem; position: absolute; right: 15px; top: 15px; z-index: 1;"></i>
+      <% end %>
+      <%= link_to :back, class: 'btn btn-lg', style: 'border: none; position: absolute; right: 15px; top: 15px;' do %>
+        <div class= "btn-return"><i class="fa-solid fa-arrow-left" style="font-size: 2rem;"></i></div>
+      <% end %>
+      <i class="fa-solid fa-medal" style="font-size: 2rem; position: absolute; left: 15px; top: 15px; z-index: 1;"></i>
+    </div>
+  </div>
+
+  <h2><%= @course.name %></h2>
+
+  <div class="d-flex mb-3">
+    <div class="me-auto p-2">
+      <% @course.average.to_i.times do %>
+        <i class="fa-solid fa-star"></i>
+      <% end %>
+      <% (5 - @course.average.to_i).times do %>
+        <i class="fa-regular fa-star"></i>
+      <% end %>
+    </div>
+    <button type="button" class="border-0 bg-body" data-bs-toggle="modal" data-bs-target="#myModal">
+      <% if @course.trashs %>
+        <i class="fa fa-trash"></i>
+      <% end %>
+      <% if @course.water %>
+        <i class="fa-solid fa-droplet"></i>
+      <% end %>
+      <% if @course.poopbag %>
+        <i class="fa-solid fa-poo"></i>
+      <% end %>
+      <% if @course.familyfriendly %>
+        <i class="fa-solid fa-people-group"></i>
+      <% end %>
+    </button>
+    <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body border-0 row">
+            <p class= "col-6">Poubelles: <i class="fa fa-trash"></i></p>
+            <p class= "col-6">Points d'eau: <i class="fa-solid fa-droplet"></i> </p>
+            <p class= "col-6">Sacs canin: <i class="fa-solid fa-poo"></i></p>
+            <p class= "col-6">Family friendly: <i class="fa-solid fa-people-group"></i></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-4 mb-1">Distance: <%= @course.distance %></div>
+    <div class="col-sm-4 mb-1">Difficulté: <%= @course.difficulty %></div>
+    <div class="col-sm-4 mb-1">Timing: <%= @course.timing %></div>
+    <div class="col-sm-4 mb-1">Description: <%= @course.description %></div>
+  </div>
+
+
+
+
+
+
+
+
+
+<div class="d-flex justify-content-end">
+  <button type="button" class="border-0 bg-body" data-bs-toggle="modal" data-bs-target="#myModalAvis">Avis</button>
+</div>
+
+  <div class="modal fade" id="myModalAvis" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-body border-0 d-flex justify-content-center">
+        <div class="card" style="width: 18rem;">
+          <img src="..." class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="d-flex justify-content-center">
+  <%= link_to 'En route !', ride_path, method: :post, class: 'btn btn-primary' %>
+</div>
