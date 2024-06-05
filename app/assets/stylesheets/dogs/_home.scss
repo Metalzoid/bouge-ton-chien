@@ -1,0 +1,16 @@
+#home-dogs {
+  padding-bottom: 6rem;
+  .cards {
+    gap: 1rem;
+    .card {
+      align-items: center;
+      border: none;
+      box-shadow: 2px 2px 13px rgba(0, 0, 0, 0.4);
+      border-radius: 5%;
+      .dog-image {
+        margin-top: 0.3rem;
+        border-radius: 50%;
+      }
+    }
+  }
+}
