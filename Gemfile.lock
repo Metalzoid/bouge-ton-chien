@@ -314,19 +314,9 @@ PLATFORMS
   arm-linux
   arm-linux-musl
   arm64-darwin
-<<<<<<< HEAD
   x86_64-darwin
   x86_64-linux
   x86_64-linux
-=======
-  x86-linux
-  x86-linux
-  x86-linux-musl
-  x86_64-darwin
-  x86_64-linux
-  x86_64-linux
-  x86_64-linux-musl
->>>>>>> master
 
 DEPENDENCIES
   autoprefixer-rails
