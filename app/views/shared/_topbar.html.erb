@@ -1,7 +1,7 @@
-<div class="navbar navbar-expand-lg bg-white w-100 fixed-top" id="topbar">
+<div class="navbar navbar-expand-lg bg-white w-100" id="topbar">
   <div class="container-fluid w-100 justify-content-center align-items-center">
     <%= link_to root_path, class: "logo" do %>
-      <%= image_tag "logo", height: "50px" %>
+      <%= image_tag "logo.png", height: "50px" %>
     <% end %>
     <% if user_signed_in? %>
       <% if params[:controller] == "courses" && params[:action] == "index" %>
