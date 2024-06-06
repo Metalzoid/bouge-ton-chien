@@ -12,5 +12,9 @@ class CoursesController < ApplicationController
 
   def show
     @course = Course.find(params[:id])
+    @markers = [{
+      lat: @course.latitude,
+      lng: @course.longitude
+    }]
   end
 end

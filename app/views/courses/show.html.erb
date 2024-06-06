@@ -1,14 +1,13 @@
 <div class="container">
-  <div class="card p-3 d-flex justify-content-center my-3">
-    <div class="container mb-4">
-      <div style="position: relative; height: 230px; width: 100%; background-repeat: no-repeat; background-size: cover; background-image: url('<%= cl_image_path @course.photos.first.key, transformation: { dpr: "auto", responsive: true, width: "auto", crop: "scale", gravity: :face} %>')">
-        <% if Ride.exists?(user: current_user, course: @course) %>
-          <i class="fa-solid fa-medal" style="font-size: 2rem; position: absolute; right: 15px; top: 15px; z-index: 1;"></i>
-        <% end %>
-        <%= link_to :back, class: 'btn btn-lg', style: 'border: none; position: absolute; right: 5px; top: 5px;' do %>
-          <div class= "btn-return"><i class="fa-solid fa-arrow-left" style="font-size: 2rem;"></i></div>
-        <% end %>
-      </div>
+  <div class="card d-flex p-1 justify-content-center my-3">
+    <div style="height: 230px; width: 100%;;">
+      <%= render 'map', height: 200 %>
+      <% if Ride.exists?(user: current_user, course: @course) %>
+        <i class="fa-solid fa-medal" style="font-size: 2rem; position: absolute; right: 15px; top: 15px; z-index: 1;"></i>
+      <% end %>
+      <%= link_to :back, class: 'btn btn-lg', style: 'border: none; position: absolute; right: 5px; top: 5px;' do %>
+        <div class= "btn-return"><i class="fa-solid fa-arrow-left" style="font-size: 2rem;"></i></div>
+      <% end %>
     </div>
     <h2><%= @course.name %></h2>
     <div class="d-flex mb-3">
