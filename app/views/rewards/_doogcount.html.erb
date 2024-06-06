@@ -1,0 +1,15 @@
+<h2 class="font-weight-bold"><i class="fa-solid fa-paw"></i>  Mes Doogies</h2>
+<div class="d-flex align-items-center" style="gap: 30px">
+
+<% raise  %>
+  <% 5.times do |position| %>
+    <div class="d-flex flex-column align-items-center">
+      <div class="mb-2"><%= 5*position %></div>
+      <div class="<%= logodoggies_class(position) %> d-flex justify-content-center align-items-center">
+        <i class="fa-solid fa-paw" style="color: #ffffff;"></i>
+      </div>
+    </div>
+  <% end %>
+
+
+</div>

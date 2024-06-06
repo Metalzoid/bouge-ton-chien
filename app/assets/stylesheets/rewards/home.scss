@@ -1,0 +1,48 @@
+.logodoggies {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: blue;
+  position: relative;
+}
+
+.logodoggies::after {
+  content: "";
+  width: 32px;
+  height: 5px;
+  background-color: blue;
+  top: 23px;
+  left: 49px;
+  position: absolute;
+}
+
+.logodoggies-final {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: blue;
+  position: relative;
+}
+
+.logodoggies-final::after {
+  content: "";
+  width: 32px;
+  height: 5px;
+  top: 23px;
+  left: 49px;
+  position: absolute;
+}
+
+.reached {
+  background-color: rgb(138, 29, 140);
+}
+
+.middle::before {
+  content: "";
+  width: 32px;
+  height: 5px;
+  background-color: rgb(138, 29, 140);
+  top: 23px;
+  right: 49px;
+  position: absolute;
+}
