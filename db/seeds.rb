@@ -36,8 +36,8 @@ puts "user : #{user1.firstname} done"
   puts "dog : #{dog.name} done !"
   course = Course.new(distance: rand(0..5), latitude: rand(0..5), longitude: rand(0..5), water: true, trashs: true, poopbag: true, familyfriendly: true, difficulty: rand(0..5), timing: 30, name: Faker::Locations::Australia.location, description: Faker::Movies::HarryPotter.quote)
   file = URI.open("https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/For%C3%AAt_am%C3%A9rique_du_sud.jpg/640px-For%C3%AAt_am%C3%A9rique_du_sud.jpg")
-  file2 = URI.open("https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/For%C3%AAt_am%C3%A9rique_du_sud.jpg/640px-For%C3%AAt_am%C3%A9rique_du_sud.jpg")
-  file3 = URI.open("https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/For%C3%AAt_am%C3%A9rique_du_sud.jpg/640px-For%C3%AAt_am%C3%A9rique_du_sud.jpg")
+  file2 = URI.open("https://www.photo-paysage.com/albums/automne/thumb_automne-chemin-foret-dourdan-01.jpg")
+  file3 = URI.open("https://www.photo-paysage.com/albums/userpics/10001/59/thumb_Foret_de_coniferes_-_Mont-Aigoual_-7.jpg")
   course.photos.attach(io: file, filename: "photo.jpg", content_type: "image/jpg")
   course.photos.attach(io: file2, filename: "photo2.jpg", content_type: "image/jpg")
   course.photos.attach(io: file3, filename: "photo3.jpg", content_type: "image/jpg")
@@ -65,8 +65,8 @@ puts "user : #{user2.firstname} done"
   puts "dog : #{dog.name} done !"
   course = Course.new(distance: rand(0..5), latitude: rand(0..5), longitude: rand(0..5), water: true, trashs: true, poopbag: true, familyfriendly: true, difficulty: rand(0..5), timing: 30, name: Faker::Locations::Australia.location, description: Faker::Movies::HarryPotter.quote)
   file = URI.open("https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/For%C3%AAt_am%C3%A9rique_du_sud.jpg/640px-For%C3%AAt_am%C3%A9rique_du_sud.jpg")
-  file2 = URI.open("https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/For%C3%AAt_am%C3%A9rique_du_sud.jpg/640px-For%C3%AAt_am%C3%A9rique_du_sud.jpg")
-  file3 = URI.open("https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/For%C3%AAt_am%C3%A9rique_du_sud.jpg/640px-For%C3%AAt_am%C3%A9rique_du_sud.jpg")
+  file2 = URI.open("https://www.photo-paysage.com/albums/automne/thumb_automne-chemin-foret-dourdan-01.jpg")
+  file3 = URI.open("https://www.photo-paysage.com/albums/userpics/10001/59/thumb_Foret_de_coniferes_-_Mont-Aigoual_-7.jpg")
   course.photos.attach(io: file, filename: "photo.jpg", content_type: "image/jpg")
   course.photos.attach(io: file2, filename: "photo2.jpg", content_type: "image/jpg")
   course.photos.attach(io: file3, filename: "photo3.jpg", content_type: "image/jpg")
@@ -94,8 +94,8 @@ puts "user : #{user3.firstname} done"
   puts "dog : #{dog.name} done !"
   course = Course.new(distance: rand(0..5), latitude: rand(0..5), longitude: rand(0..5), water: true, trashs: true, poopbag: true, familyfriendly: true, difficulty: rand(0..5), timing: 30, name: Faker::Locations::Australia.location, description: Faker::Movies::HarryPotter.quote)
   file = URI.open("https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/For%C3%AAt_am%C3%A9rique_du_sud.jpg/640px-For%C3%AAt_am%C3%A9rique_du_sud.jpg")
-  file2 = URI.open("https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/For%C3%AAt_am%C3%A9rique_du_sud.jpg/640px-For%C3%AAt_am%C3%A9rique_du_sud.jpg")
-  file3 = URI.open("https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/For%C3%AAt_am%C3%A9rique_du_sud.jpg/640px-For%C3%AAt_am%C3%A9rique_du_sud.jpg")
+  file2 = URI.open("https://www.photo-paysage.com/albums/automne/thumb_automne-chemin-foret-dourdan-01.jpg")
+  file3 = URI.open("https://www.photo-paysage.com/albums/userpics/10001/59/thumb_Foret_de_coniferes_-_Mont-Aigoual_-7.jpg")
   course.photos.attach(io: file, filename: "photo.jpg", content_type: "image/jpg")
   course.photos.attach(io: file2, filename: "photo2.jpg", content_type: "image/jpg")
   course.photos.attach(io: file3, filename: "photo3.jpg", content_type: "image/jpg")
@@ -123,8 +123,8 @@ puts "user : #{user4.firstname} done"
   puts "dog : #{dog.name} done !"
   course = Course.new(distance: rand(0..5), latitude: rand(0..5), longitude: rand(0..5), water: true, trashs: true, poopbag: true, familyfriendly: true, difficulty: rand(0..5), timing: 30, name: Faker::Locations::Australia.location, description: Faker::Movies::HarryPotter.quote)
   file = URI.open("https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/For%C3%AAt_am%C3%A9rique_du_sud.jpg/640px-For%C3%AAt_am%C3%A9rique_du_sud.jpg")
-  file2 = URI.open("https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/For%C3%AAt_am%C3%A9rique_du_sud.jpg/640px-For%C3%AAt_am%C3%A9rique_du_sud.jpg")
-  file3 = URI.open("https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/For%C3%AAt_am%C3%A9rique_du_sud.jpg/640px-For%C3%AAt_am%C3%A9rique_du_sud.jpg")
+  file2 = URI.open("https://www.photo-paysage.com/albums/automne/thumb_automne-chemin-foret-dourdan-01.jpg")
+  file3 = URI.open("https://www.photo-paysage.com/albums/userpics/10001/59/thumb_Foret_de_coniferes_-_Mont-Aigoual_-7.jpg")
   course.photos.attach(io: file, filename: "photo.jpg", content_type: "image/jpg")
   course.photos.attach(io: file2, filename: "photo2.jpg", content_type: "image/jpg")
   course.photos.attach(io: file3, filename: "photo3.jpg", content_type: "image/jpg")
