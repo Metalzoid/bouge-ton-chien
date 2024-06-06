@@ -22,7 +22,7 @@ export default class extends Controller {
   #fitMapToLocation() {
     const bounds = new mapboxgl.LngLatBounds();
     this.markersValue.forEach(marker => bounds.extend([ marker.lng, marker.lat ]));
-    this.map.fitBounds(bounds, { padding: 70, maxZoom: 15, duration: 0 });
+    this.map.fitBounds(bounds, { padding: 70, maxZoom: 18, duration: 0 });
   }
 
   #addLocationToMap() {
@@ -50,7 +50,7 @@ export default class extends Controller {
       const updateSource = setInterval(async () => {
         const geojson = await this.#getLocation(updateSource);
         this.map.getSource('user').setData(geojson);
-      }, 2000);
+      }, 10000);
 
     });
   }
@@ -63,7 +63,7 @@ export default class extends Controller {
         // Fly the map to the location.
         this.map.flyTo({
           center: [userLocation.longitude, userLocation.latitude],
-          speed: 0.5
+          speed: 1
         });
 
         // Return the location of the user as GeoJSON.
