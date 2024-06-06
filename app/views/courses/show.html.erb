@@ -8,11 +8,9 @@
         <%= link_to :back, class: 'btn btn-lg', style: 'border: none; position: absolute; right: 5px; top: 5px;' do %>
           <div class= "btn-return"><i class="fa-solid fa-arrow-left" style="font-size: 2rem;"></i></div>
         <% end %>
-        <i class="fa-solid fa-medal" style="font-size: 2rem; position: absolute; left: 15px; top: 15px; z-index: 1;"></i>
       </div>
     </div>
     <h2><%= @course.name %></h2>
-
     <div class="d-flex mb-3">
       <div class="me-auto p-2">
         <% @course.average.to_i.times do %>
@@ -22,7 +20,7 @@
           <i class="fa-regular fa-star"></i>
         <% end %>
       </div>
-      <button type="button" class="border-0 bg-body" data-bs-toggle="modal" data-bs-target="#myModal">
+      <button type="button" class="border-0 bg-white" data-bs-toggle="modal" data-bs-target="#myModal">
         <% if @course.trashs %>
           <i class="fa fa-trash"></i>
         <% end %>
@@ -62,10 +60,8 @@
       <button type="button" class="border-0 btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModalAvis">Avis</button>
     </div>
     <div class="d-flex justify-content-center">
-      <%= link_to 'En route !', ride_path, method: :post, class: 'btn btn-primary' %>
+      <%= link_to 'En route !', course_rides_path(@course), data: { 'turbo-method' => :post }, class: 'btn btn-primary' %>
     </div>
-
-
     <div class="modal fade" id="myModalAvis" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
