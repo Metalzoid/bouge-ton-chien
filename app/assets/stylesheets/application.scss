@@ -12,3 +12,6 @@
 @import "pages/index";
 @import "users/index";
 @import "dogs/index";
+
+//Import Mapbox libraries
+@import url("https://api.mapbox.com/mapbox-gl-js/v3.1.2/mapbox-gl.css");
