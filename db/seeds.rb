@@ -35,12 +35,36 @@ puts "user : #{user1.firstname} done"
   dog.save!
   puts "dog : #{dog.name} done !"
   course = Course.new(distance: rand(0..5), latitude: rand(0..5), longitude: rand(0..5), water: true, trashs: true, poopbag: true, familyfriendly: true, difficulty: rand(0..5), timing: 30, name: Faker::Locations::Australia.location, description: Faker::Movies::HarryPotter.quote)
-  file = URI.open("https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/For%C3%AAt_am%C3%A9rique_du_sud.jpg/640px-For%C3%AAt_am%C3%A9rique_du_sud.jpg")
-  file2 = URI.open("https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/For%C3%AAt_am%C3%A9rique_du_sud.jpg/640px-For%C3%AAt_am%C3%A9rique_du_sud.jpg")
-  file3 = URI.open("https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/For%C3%AAt_am%C3%A9rique_du_sud.jpg/640px-For%C3%AAt_am%C3%A9rique_du_sud.jpg")
+  file = URI.open("https://www.photo-paysage.com/albums/userpics/10001/thumb_Les_rayons_du_soleil_a_travers_les_feuillages_dans_la_foret.JPG")
+  file2 = URI.open("https://www.photo-paysage.com/albums/userpics/10001/thumb_Balade_en_foret_dans_les_ALpes.jpg")
+  file3 = URI.open("https://www.photo-paysage.com/albums/automne/thumb_automne-chemin-foret-dourdan-01.jpg")
   course.photos.attach(io: file, filename: "photo.jpg", content_type: "image/jpg")
   course.photos.attach(io: file2, filename: "photo2.jpg", content_type: "image/jpg")
   course.photos.attach(io: file3, filename: "photo3.jpg", content_type: "image/jpg")
+  course.latitude = "44.84158730375328"
+  course.longitude = "-0.5805419812544561"
+  course.route = [[-0.5805419812544561, 44.84158730375328],
+                  [-0.580695142470969, 44.84157329080194],
+                  [-0.5808408926608765, 44.84153825840873],
+                  [-0.580956998744362, 44.84143491272459],
+                  [-0.5809668801131693, 44.84130704407919],
+                  [-0.5809372360067475, 44.84123172405935],
+                  [-0.580929824980142, 44.84116691373089],
+                  [-0.5808952401893166, 44.84107057391872],
+                  [-0.5808705367672983, 44.84096547575809],
+                  [-0.5808631257406929, 44.84095146265552],
+                  [-0.5808260706076656, 44.84083410278771],
+                  [-0.5807420789614005, 44.84064492517464],
+                  [-0.5807000831439695, 44.84058361748464],
+                  [-0.5803987013953473, 44.84060989221691],
+                  [-0.5801368451219542, 44.84063091199412],
+                  [-0.5801047306733306, 44.8407885600786],
+                  [-0.5801170823843397, 44.84095671755992],
+                  [-0.5801244934109451, 44.84134032497736],
+                  [-0.5801244934070356, 44.84145768382262],
+                  [-0.5801096713538247, 44.84162058449817],
+                  [-0.580339413178594, 44.84160657155495],
+                  [-0.5805444515813453, 44.84158380051491]]
   course.save!
   puts "course : #{course.name} done !"
   UserReward.create!(user: user1, reward: reward)
@@ -64,12 +88,36 @@ puts "user : #{user2.firstname} done"
   dog.save!
   puts "dog : #{dog.name} done !"
   course = Course.new(distance: rand(0..5), latitude: rand(0..5), longitude: rand(0..5), water: true, trashs: true, poopbag: true, familyfriendly: true, difficulty: rand(0..5), timing: 30, name: Faker::Locations::Australia.location, description: Faker::Movies::HarryPotter.quote)
-  file = URI.open("https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/For%C3%AAt_am%C3%A9rique_du_sud.jpg/640px-For%C3%AAt_am%C3%A9rique_du_sud.jpg")
-  file2 = URI.open("https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/For%C3%AAt_am%C3%A9rique_du_sud.jpg/640px-For%C3%AAt_am%C3%A9rique_du_sud.jpg")
-  file3 = URI.open("https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/For%C3%AAt_am%C3%A9rique_du_sud.jpg/640px-For%C3%AAt_am%C3%A9rique_du_sud.jpg")
+  file = URI.open("https://www.photo-paysage.com/albums/userpics/10001/thumb_Les_rayons_du_soleil_a_travers_les_feuillages_dans_la_foret.JPG")
+  file2 = URI.open("https://www.photo-paysage.com/albums/userpics/10001/thumb_Balade_en_foret_dans_les_ALpes.jpg")
+  file3 = URI.open("https://www.photo-paysage.com/albums/automne/thumb_automne-chemin-foret-dourdan-01.jpg")
   course.photos.attach(io: file, filename: "photo.jpg", content_type: "image/jpg")
   course.photos.attach(io: file2, filename: "photo2.jpg", content_type: "image/jpg")
   course.photos.attach(io: file3, filename: "photo3.jpg", content_type: "image/jpg")
+  course.latitude = "44.84158730375328"
+  course.longitude = "-0.5805419812544561"
+  course.route = [[-0.5805419812544561, 44.84158730375328],
+                  [-0.580695142470969, 44.84157329080194],
+                  [-0.5808408926608765, 44.84153825840873],
+                  [-0.580956998744362, 44.84143491272459],
+                  [-0.5809668801131693, 44.84130704407919],
+                  [-0.5809372360067475, 44.84123172405935],
+                  [-0.580929824980142, 44.84116691373089],
+                  [-0.5808952401893166, 44.84107057391872],
+                  [-0.5808705367672983, 44.84096547575809],
+                  [-0.5808631257406929, 44.84095146265552],
+                  [-0.5808260706076656, 44.84083410278771],
+                  [-0.5807420789614005, 44.84064492517464],
+                  [-0.5807000831439695, 44.84058361748464],
+                  [-0.5803987013953473, 44.84060989221691],
+                  [-0.5801368451219542, 44.84063091199412],
+                  [-0.5801047306733306, 44.8407885600786],
+                  [-0.5801170823843397, 44.84095671755992],
+                  [-0.5801244934109451, 44.84134032497736],
+                  [-0.5801244934070356, 44.84145768382262],
+                  [-0.5801096713538247, 44.84162058449817],
+                  [-0.580339413178594, 44.84160657155495],
+                  [-0.5805444515813453, 44.84158380051491]]
   course.save!
   puts "course : #{course.name} done !"
   UserReward.create!(user: user2, reward: reward)
@@ -93,12 +141,36 @@ puts "user : #{user3.firstname} done"
   dog.save!
   puts "dog : #{dog.name} done !"
   course = Course.new(distance: rand(0..5), latitude: rand(0..5), longitude: rand(0..5), water: true, trashs: true, poopbag: true, familyfriendly: true, difficulty: rand(0..5), timing: 30, name: Faker::Locations::Australia.location, description: Faker::Movies::HarryPotter.quote)
-  file = URI.open("https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/For%C3%AAt_am%C3%A9rique_du_sud.jpg/640px-For%C3%AAt_am%C3%A9rique_du_sud.jpg")
-  file2 = URI.open("https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/For%C3%AAt_am%C3%A9rique_du_sud.jpg/640px-For%C3%AAt_am%C3%A9rique_du_sud.jpg")
-  file3 = URI.open("https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/For%C3%AAt_am%C3%A9rique_du_sud.jpg/640px-For%C3%AAt_am%C3%A9rique_du_sud.jpg")
+  file = URI.open("https://www.photo-paysage.com/albums/userpics/10001/thumb_Les_rayons_du_soleil_a_travers_les_feuillages_dans_la_foret.JPG")
+  file2 = URI.open("https://www.photo-paysage.com/albums/userpics/10001/thumb_Balade_en_foret_dans_les_ALpes.jpg")
+  file3 = URI.open("https://www.photo-paysage.com/albums/automne/thumb_automne-chemin-foret-dourdan-01.jpg")
   course.photos.attach(io: file, filename: "photo.jpg", content_type: "image/jpg")
   course.photos.attach(io: file2, filename: "photo2.jpg", content_type: "image/jpg")
   course.photos.attach(io: file3, filename: "photo3.jpg", content_type: "image/jpg")
+  course.latitude = "44.84158730375328"
+  course.longitude = "-0.5805419812544561"
+  course.route = [[-0.5805419812544561, 44.84158730375328],
+                  [-0.580695142470969, 44.84157329080194],
+                  [-0.5808408926608765, 44.84153825840873],
+                  [-0.580956998744362, 44.84143491272459],
+                  [-0.5809668801131693, 44.84130704407919],
+                  [-0.5809372360067475, 44.84123172405935],
+                  [-0.580929824980142, 44.84116691373089],
+                  [-0.5808952401893166, 44.84107057391872],
+                  [-0.5808705367672983, 44.84096547575809],
+                  [-0.5808631257406929, 44.84095146265552],
+                  [-0.5808260706076656, 44.84083410278771],
+                  [-0.5807420789614005, 44.84064492517464],
+                  [-0.5807000831439695, 44.84058361748464],
+                  [-0.5803987013953473, 44.84060989221691],
+                  [-0.5801368451219542, 44.84063091199412],
+                  [-0.5801047306733306, 44.8407885600786],
+                  [-0.5801170823843397, 44.84095671755992],
+                  [-0.5801244934109451, 44.84134032497736],
+                  [-0.5801244934070356, 44.84145768382262],
+                  [-0.5801096713538247, 44.84162058449817],
+                  [-0.580339413178594, 44.84160657155495],
+                  [-0.5805444515813453, 44.84158380051491]]
   course.save!
   puts "course : #{course.name} done !"
   UserReward.create!(user: user3, reward: reward)
@@ -122,12 +194,36 @@ puts "user : #{user4.firstname} done"
   dog.save!
   puts "dog : #{dog.name} done !"
   course = Course.new(distance: rand(0..5), latitude: rand(0..5), longitude: rand(0..5), water: true, trashs: true, poopbag: true, familyfriendly: true, difficulty: rand(0..5), timing: 30, name: Faker::Locations::Australia.location, description: Faker::Movies::HarryPotter.quote)
-  file = URI.open("https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/For%C3%AAt_am%C3%A9rique_du_sud.jpg/640px-For%C3%AAt_am%C3%A9rique_du_sud.jpg")
-  file2 = URI.open("https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/For%C3%AAt_am%C3%A9rique_du_sud.jpg/640px-For%C3%AAt_am%C3%A9rique_du_sud.jpg")
-  file3 = URI.open("https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/For%C3%AAt_am%C3%A9rique_du_sud.jpg/640px-For%C3%AAt_am%C3%A9rique_du_sud.jpg")
+  file = URI.open("https://www.photo-paysage.com/albums/userpics/10001/thumb_Les_rayons_du_soleil_a_travers_les_feuillages_dans_la_foret.JPG")
+  file2 = URI.open("https://www.photo-paysage.com/albums/userpics/10001/thumb_Balade_en_foret_dans_les_ALpes.jpg")
+  file3 = URI.open("https://www.photo-paysage.com/albums/automne/thumb_automne-chemin-foret-dourdan-01.jpg")
   course.photos.attach(io: file, filename: "photo.jpg", content_type: "image/jpg")
   course.photos.attach(io: file2, filename: "photo2.jpg", content_type: "image/jpg")
   course.photos.attach(io: file3, filename: "photo3.jpg", content_type: "image/jpg")
+  course.latitude = "44.84158730375328"
+  course.longitude = "-0.5805419812544561"
+  course.route = [[-0.5805419812544561, 44.84158730375328],
+                  [-0.580695142470969, 44.84157329080194],
+                  [-0.5808408926608765, 44.84153825840873],
+                  [-0.580956998744362, 44.84143491272459],
+                  [-0.5809668801131693, 44.84130704407919],
+                  [-0.5809372360067475, 44.84123172405935],
+                  [-0.580929824980142, 44.84116691373089],
+                  [-0.5808952401893166, 44.84107057391872],
+                  [-0.5808705367672983, 44.84096547575809],
+                  [-0.5808631257406929, 44.84095146265552],
+                  [-0.5808260706076656, 44.84083410278771],
+                  [-0.5807420789614005, 44.84064492517464],
+                  [-0.5807000831439695, 44.84058361748464],
+                  [-0.5803987013953473, 44.84060989221691],
+                  [-0.5801368451219542, 44.84063091199412],
+                  [-0.5801047306733306, 44.8407885600786],
+                  [-0.5801170823843397, 44.84095671755992],
+                  [-0.5801244934109451, 44.84134032497736],
+                  [-0.5801244934070356, 44.84145768382262],
+                  [-0.5801096713538247, 44.84162058449817],
+                  [-0.580339413178594, 44.84160657155495],
+                  [-0.5805444515813453, 44.84158380051491]]
   course.save!
   puts "course : #{course.name} done !"
   UserReward.create!(user: user4, reward: reward)
