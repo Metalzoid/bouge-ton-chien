@@ -1,13 +1,13 @@
-<div class="navbar navbar-expand-lg bg-white w-100 fixed-top" id="topbar">
+<div class="navbar navbar-expand-lg bg-white w-100" id="topbar">
   <div class="container-fluid w-100 justify-content-center align-items-center">
     <%= link_to root_path, class: "logo" do %>
-      <%= image_tag "logo", height: "50px" %>
+      <%= image_tag "logo.png", height: "50px" %>
     <% end %>
     <% if user_signed_in? %>
       <% if params[:controller] == "courses" && params[:action] == "index" %>
         <h1 class="m-0">Bienvenue <%= current_user.firstname %></h1>
       <% elsif params[:controller] == "courses" && params[:action] == "show" %>
-        <h1 class="m-0"><%= @course.name %></h1>
+        <h1 class="m-0">Détails de <%= @course.name %></h1>
       <% elsif params[:controller] == "rides" && params[:action] == "edit" %>
         <h1 class="m-0">En route !</h1>
       <% elsif params[:controller] == "rides" && params[:action] == "show" %>

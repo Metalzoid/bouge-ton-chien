@@ -1,4 +1,6 @@
 class Course < ApplicationRecord
+  CATEGORIES = %i[water trashs poopbag familyfriendly]
+
   belongs_to :user, optional: true
   has_many_attached :photos
 

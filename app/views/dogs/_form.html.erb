@@ -1,0 +1,12 @@
+<%= simple_form_for [current_user, dog], data: { modal_dog_target: "form", action: "submit->modal-dog#submit"} do |f| %>
+  <%= f.error_notification %>
+  <div class="form-inputs">
+    <%= f.input :name, required: true, label: "Nom" %>
+    <%= f.input :race, required: true %>
+    <%= f.input :age, required: true %>
+    <%= f.input :photo, as: :file, required: true %>
+  </div>
+  <div class="form-actions d-flex justify-content-center">
+    <%= f.button :submit, "Ajouter à la meute", class: "btn btn-primary" %>
+  </div>
+<% end %>
