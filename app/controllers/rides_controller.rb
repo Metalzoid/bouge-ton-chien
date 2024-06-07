@@ -1,6 +1,6 @@
 class RidesController < ApplicationController
   def create
-    if params[:near] == "true"
+    if params[:near] == true
       @ride = Ride.new(user: current_user, course: Course.find(params[:course_id]), money: 0)
       @ride.save
       redirect_to edit_ride_path(@ride)
