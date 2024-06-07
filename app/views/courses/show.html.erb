@@ -58,9 +58,9 @@
             <div id="carouselPhotos" class="carousel slide carousel-fade">
               <div class="carousel-inner">
                 <div class="carousel-item active">
-                  <%= cl_image_tag @course.photos.first.key, crop: "fill", height: 300, width: 380  %>
+                  <%= cl_image_tag @course.photos.last.key, crop: "fill", height: 300, width: 380  %>
                 </div>
-                <% @course.photos[1..-1].each do |photo| %>
+                <% @course.photos[3..4].each do |photo| %>
                   <div class="carousel-item">
                     <%= cl_image_tag photo.key, crop: "fill", height: 300, width: 380 %>
                   </div>
