@@ -1,0 +1,21 @@
+<% if params[:controller] == "rides" && params[:action] == "edit" %>
+  <div style= '<%= style_list %>'
+    data-controller="ride-map"
+    data-ride-map-markers-value="<%= [{ lat: course.latitude, lng: course.longitude }].to_json %>"
+    data-ride-map-route-value="<%= course.route %>"
+    data-ride-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+  </div>
+<% elsif params[:controller] == "rides" && params[:action] == "map" %>
+  <div style= '<%= style_list %>'
+    data-controller="ride-map"
+    data-course-map-markers-value="<%= markers.to_json%>"
+    data-course-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+  </div>
+<% elsif params[:controller] == "courses" && params[:action] == "show"%>
+  <div style= '<%= style_list %>'
+    data-controller="course-map"
+    data-course-map-markers-value="<%= [{ lat: course.latitude, lng: course.longitude }].to_json %>"
+    data-course-map-route-value="<%= course.route %>"
+    data-course-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+  </div>
+<% end %>

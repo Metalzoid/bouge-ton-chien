@@ -2,9 +2,9 @@
 <div class="container">
   <div class="card d-flex p-1 justify-content-center my-3">
     <div style="height: 230px; width: 100%;;">
-      <%= render 'map', height: 200 %>
+      <%= render 'shared/map', course: @course, style_list: "width: 100%; height: 215px; border-radius: 20px; box-shadow: 2px 4px 12px rgba(0, 0, 0, 0.4)" %>
       <% if Ride.exists?(user: current_user, course: @course) %>
-        <i class="fa-solid fa-medal" style="font-size: 2rem; position: absolute; right: 15px; top: 15px; z-index: 1;"></i>
+        <i class="fa-solid fa-medal" style="font-size: 2rem; position: absolute; left: 15px; top: 15px; z-index: 1;"></i>
       <% end %>
       <%= link_to :back, class: 'btn btn-lg', style: 'border: none; position: absolute; right: 5px; top: 5px;' do %>
         <div class= "btn-return"><i class="fa-solid fa-arrow-left" style="font-size: 2rem;"></i></div>
