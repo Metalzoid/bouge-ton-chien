@@ -11,6 +11,12 @@
     data-index-map-markers-value="<%= markers.to_json%>"
     data-index-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
+<% elsif params[:controller] == "rides" && params[:action] == "navigate" %>
+  <div style= '<%= style_list %>'
+    data-controller="navigate"
+    data-navigate-markers-value="<%= [{ lat: course.latitude, lng: course.longitude }].to_json %>"
+    data-navigate-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+  </div>
 <% elsif params[:controller] == "courses" && params[:action] == "show"%>
   <div style= '<%= style_list %>'
     data-controller="course-map"

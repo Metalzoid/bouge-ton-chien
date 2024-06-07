@@ -19,9 +19,4 @@ export default class extends Controller {
       document.querySelector(".btn-launch-ride").href = `${link}?near=${near}`
     });
   }
-
-  selectRoute() {
-
-
-  }
 }

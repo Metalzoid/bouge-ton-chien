@@ -5,7 +5,7 @@ class RidesController < ApplicationController
       @ride.save
       redirect_to edit_ride_path(@ride)
     else
-      redirect_to navigate_path
+      redirect_to navigate_path(course_id: params[:course_id])
     end
   end
 
@@ -30,6 +30,6 @@ class RidesController < ApplicationController
   end
 
   def navigate
-    
+    @course = Course.find(params[:course_id])
   end
 end
