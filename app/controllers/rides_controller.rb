@@ -15,4 +15,11 @@ class RidesController < ApplicationController
 
   def show
   end
+
+  def map
+    @markers = []
+    Course.all.each do |course|
+      @markers << { lat: course.latitude, lng: course.longitude }
+    end
+  end
 end
