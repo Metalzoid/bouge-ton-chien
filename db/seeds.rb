@@ -70,6 +70,8 @@ puts "user : #{user1.firstname} done"
   UserReward.create!(user: user1, reward: reward)
   puts "user reward done !"
   Review.create!(rating: rand(0..5), comment: "c'est génial ! Merci beaucoup", user: user1, course: course)
+  Review.create!(rating: rand(0..5), comment: "c'est génial ! Merci beaucoup", user: user1, course: course)
+  Review.create!(rating: rand(0..5), comment: "c'est génial ! Merci beaucoup", user: user1, course: course)
   puts "review done !"
 end
 
@@ -122,6 +124,8 @@ puts "user : #{user2.firstname} done"
   puts "course : #{course.name} done !"
   UserReward.create!(user: user2, reward: reward)
   puts "user reward done !"
+  Review.create!(rating: rand(0..5), comment: "c'est génial ! Merci beaucoup", user: user2, course: course)
+  Review.create!(rating: rand(0..5), comment: "c'est génial ! Merci beaucoup", user: user2, course: course)
   Review.create!(rating: rand(0..5), comment: "c'est génial ! Merci beaucoup", user: user2, course: course)
   puts "review done !"
 end
@@ -176,6 +180,8 @@ puts "user : #{user3.firstname} done"
   UserReward.create!(user: user3, reward: reward)
   puts "user reward done !"
   Review.create!(rating: rand(0..5), comment: "c'est génial ! Merci beaucoup", user: user3, course: course)
+  Review.create!(rating: rand(0..5), comment: "c'est génial ! Merci beaucoup", user: user3, course: course)
+  Review.create!(rating: rand(0..5), comment: "c'est génial ! Merci beaucoup", user: user3, course: course)
   puts "review done !"
 end
 
@@ -228,6 +234,8 @@ puts "user : #{user4.firstname} done"
   puts "course : #{course.name} done !"
   UserReward.create!(user: user4, reward: reward)
   puts "user reward done !"
+  Review.create!(rating: rand(0..5), comment: "c'est génial ! Merci beaucoup", user: user4, course: course)
+  Review.create!(rating: rand(0..5), comment: "c'est génial ! Merci beaucoup", user: user4, course: course)
   Review.create!(rating: rand(0..5), comment: "c'est génial ! Merci beaucoup", user: user4, course: course)
   puts "review done !"
 end
