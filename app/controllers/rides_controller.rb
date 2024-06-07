@@ -1,8 +1,12 @@
 class RidesController < ApplicationController
   def create
-    @ride = Ride.new(user: current_user, course: Course.find(params[:course_id]), money: 0)
-    @ride.save
-    redirect_to edit_ride_path(@ride)
+    if params[:near] == "true"
+      @ride = Ride.new(user: current_user, course: Course.find(params[:course_id]), money: 0)
+      @ride.save
+      redirect_to edit_ride_path(@ride)
+    else
+      redirect_to navigate_path
+    end
   end
 
   def edit
@@ -17,9 +21,15 @@ class RidesController < ApplicationController
   end
 
   def map
-    @markers = []
-    Course.all.each do |course|
-      @markers << { lat: course.latitude, lng: course.longitude }
+    @markers = Course.all.map do |course|
+      {
+        lat: course.latitude,
+        lng: course.longitude
+      }
     end
+  end
+
+  def navigate
+    
   end
 end

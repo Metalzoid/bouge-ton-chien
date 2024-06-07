@@ -7,9 +7,9 @@
   </div>
 <% elsif params[:controller] == "rides" && params[:action] == "map" %>
   <div style= '<%= style_list %>'
-    data-controller="ride-map"
-    data-course-map-markers-value="<%= markers.to_json%>"
-    data-course-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+    data-controller="index-map"
+    data-index-map-markers-value="<%= markers.to_json%>"
+    data-index-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
 <% elsif params[:controller] == "courses" && params[:action] == "show"%>
   <div style= '<%= style_list %>'
