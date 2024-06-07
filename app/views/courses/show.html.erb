@@ -1,3 +1,41 @@
+<div class="modal fade" id="modalAvis" tabindex="-1" aria-labelledby="modal avis" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-body border-0 p-0">
+            <!-- Carrousel -->
+            <div id="carouselExampleFade" class="carousel slide carousel-fade">
+              <div class="carousel-inner">
+                <% @reviews.each do |review| %>
+                <div class="carousel-item bg-body <%= 'active' if review == @reviews.first %>">
+                  <div class="card shadow p-3 m-3 bg-body-tertiary rounded">
+                    <p class="card-text">Utilisateur: <%= review.user.firstname %></p>
+                    <div class="card-body">
+                      <p class="card-text"><%= review.comment %></p>
+                      <p class="card-text">Note: <%= review.rating %>/5</p>
+                    </div>
+                  </div>
+                </div>
+                <% end %>
+              </div>
+        </div>
+      </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Précédent</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Suivant</span>
+              </button>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
 <div class="container">
   <div class="card d-flex p-1 justify-content-center my-3">
     <div style="height: 230px; width: 100%;;">
@@ -17,7 +55,7 @@
         <div class="modal-content">
           <div class="modal-body border-0 p-0">
             <!-- Carrousel -->
-            <div id="carouselExampleFade" class="carousel slide carousel-fade">
+            <div id="carouselPhotos" class="carousel slide carousel-fade">
               <div class="carousel-inner">
                 <div class="carousel-item active">
                   <%= cl_image_tag @course.photos.first.key, crop: "fill", height: 300, width: 380  %>
@@ -29,11 +67,11 @@
                 <% end %>
               <!-- Ajoutez d'autres éléments de carrousel si nécessaire -->
               </div>
-              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+              <button class="carousel-control-prev" type="button" data-bs-target="#carouselPhotos" data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Précédent</span>
               </button>
-              <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+              <button class="carousel-control-next" type="button" data-bs-target="#carouselPhotos" data-bs-slide="next">
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Suivant</span>
               </button>
@@ -91,26 +129,14 @@
       </div>
       <div class="col-12">Description : <%= @course.description %></div>
     </div>
-    <div class="d-flex justify-content-end">
-      <button type="button" class="border-0 btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModalAvis">Avis</button>
-    </div>
-    <div class="d-flex justify-content-center">
+
+
+    <div class="d-flex flex-column justify-content-center">
+      <button type="button" class="border-0 my-3 btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalAvis">Avis</button>
       <%= link_to 'En route !', course_rides_path(@course), data: { 'turbo-method' => :post }, class: 'btn btn-primary' %>
     </div>
-    <div class="modal fade" id="myModalAvis" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-          <div class="modal-body border-0 d-flex justify-content-center">
-            <div class="card" style="width: 18rem;">
-              <img src="..." class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              </div>
+
+
             </div>
           </div>
         </div>
-      </div>
-    </div>
-  </div>
-</div>

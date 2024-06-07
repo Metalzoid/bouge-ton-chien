@@ -1,0 +1,96 @@
+<div class="modal fade" id="myModalAvis" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+          <div class="modal-body border-0">
+              <!-- Carrousel -->
+              <div id="carouselExampleFade" class="carousel slide carousel-fade">
+                  <div class="carousel-inner">
+                      <div class="carousel-item active">
+                          <div style="position: relative; height: 230px; width: 100%; background-repeat: no-repeat; background-size: cover; background-image: url('<%= cl_image_path @course.photos.last.key, transformation: { dpr: "auto", responsive: true, width: "auto", crop: "scale", gravity: :face} %>')"
+                      </div>
+                      <div class="carousel-item">
+                          <img src="image2.jpg" class="d-block w-100" alt="...">
+                      </div>
+                      <div class="carousel-item">
+                          <img src="image3.jpg" class="d-block w-100" alt="...">
+                      </div>
+                      <!-- Ajoutez d'autres éléments de carrousel si nécessaire -->
+                  </div>
+                  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Précédent</span>
+                  </button>
+                  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Suivant</span>
+                  </button>
+              </div>
+              <!-- Fin du carrousel -->
+          </div>
+      </div>
+  </div>
+</div>
+
+
+
+<div id="carouselExampleFade" class="carousel slide carousel-fade">
+  <div class="carousel-inner">
+      <div class="carousel-item active">
+        <%= cl_image_tag @course.photos.first.key %>
+      </div>
+      <div class="carousel-item">
+        <%= cl_image_tag @course.photos.second.key %>
+      </div>
+      <div class="carousel-item">
+          <%= cl_image_tag @course.photos.last.key %>
+      </div>
+      <!-- Ajoutez d'autres éléments de carrousel si nécessaire -->
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Précédent</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Suivant</span>
+  </button>
+</div>
+
+
+
+
+
+  <button type="button" class="border-0 btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalAvis">Avis</button>
+<div class="modal fade" id="modalAvis" tabindex="-1" aria-labelledby="modal avis" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-body border-0 p-0">
+            <!-- Carrousel -->
+            <div id="carouselExampleFade" class="carousel slide carousel-fade">
+              <div class="carousel-inner">
+                <% @reviews.each do |review| %>
+                <div class="carousel-item <%= 'active' if review == @reviews.first %>">
+                  <div class="card">
+                    <p class="card-text">- <%= review.user.firstname %> <%= review.user.lastname %></p>
+                    <div class="card-body">
+                      <h5 class="card-title">Special title treatment</h5>
+                      <p class="card-text"><%= review.comment %></p>
+                      <p class="card-text">Note: <%= review.rating %>/5</p>
+                    </div>
+                  </div>
+                </div>
+                <% end %>
+              </div>
+        </div>
+      </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Précédent</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Suivant</span>
+              </button>
+    </div>
+  </div>
+</div>
