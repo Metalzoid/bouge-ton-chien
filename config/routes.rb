@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   resources :courses, only: %i[show] do
     resources :rides, only: %i[create]
   end
-
+  get "/map", to: "rides#map", as: "map"
   resources :rides, only: %i[edit update show] do
     resources :reviews, only: %i[create]
   end
