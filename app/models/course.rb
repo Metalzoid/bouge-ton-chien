@@ -15,6 +15,7 @@ class Course < ApplicationRecord
   validates :poopbag, inclusion: { in: [true, false] }
   validates :familyfriendly, inclusion: { in: [true, false] }
   validates :difficulty, presence: true, numericality: { only_integer: true, in: 0..5 }
+  validates :money, presence: true, numericality: { only_integer: true }
   validates :description, presence: true
   validates :timing, presence: true
 

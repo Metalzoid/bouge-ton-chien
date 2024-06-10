@@ -20,4 +20,10 @@ class User < ApplicationRecord
     user: 0,
     admin: 1
   }
+
+  def money
+    money = 0
+    rides.each { |ride| money += ride.money }
+    return money
+  end
 end
