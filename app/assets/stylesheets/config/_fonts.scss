@@ -1,9 +1,17 @@
 // Import Google fonts
-@import url('https://fonts.googleapis.com/css?family=Nunito:400,700|Work+Sans:400,700&display=swap');
+// @import url('https://fonts.googleapis.com/css?family=Nunito:400,700|Work+Sans:400,700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Teachers:ital,wght@0,400..800;1,400..800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
 
 // Define fonts for body and headers
-$body-font: "Work Sans", "Helvetica", "sans-serif";
-$headers-font: "Nunito", "Helvetica", "sans-serif";
+// $body-font: "Work Sans", "Helvetica", "sans-serif";
+// $headers-font: "Nunito", "Helvetica", "sans-serif";
+$body-font: "Teachers", sans-serif;
+$headers-font: "Teachers", sans-serif;
+
+h1 {
+  font-family: "Pacifico", cursive !important;
+}
 
 // To use a font file (.woff) uncomment following lines
 // @font-face {

@@ -1,31 +1,37 @@
 <div class="navbar navbar-expand-lg bg-white w-100" id="topbar">
   <div class="container-fluid w-100 justify-content-center align-items-center">
-    <%= link_to root_path, class: "logo" do %>
-      <%= image_tag "logo.png", height: "50px" %>
+    <% count = rand(1..4) %>
+    <% if user_signed_in? %>
+      <%= link_to root_path, class: "logo" do %>
+        <%= image_tag "#{count}.png", height: "90px" %>
+      <% end %>
     <% end %>
     <% if user_signed_in? %>
       <% if params[:controller] == "courses" && params[:action] == "index" %>
-        <h1 class="m-0">Bienvenue <%= current_user.firstname %></h1>
+        <h1 class="m-0" style="color: #895F33;">Bienvenue <%= current_user.firstname %></h1>
       <% elsif params[:controller] == "courses" && params[:action] == "show" %>
-        <h1 class="m-0" style="max-width: 250px; text-align: center;">Détails de <%= @course.name %></h1>
+        <h1 class="m-0" style="color: #d19b62;"><%= @course.name %></h1>
       <% elsif params[:controller] == "rides" && params[:action] == "edit" %>
-        <h1 class="m-0">En route !</h1>
+        <h1 class="m-0" style="color: #d19b62;">En route !</h1>
       <% elsif params[:controller] == "rides" && params[:action] == "show" %>
-        <h1 class="m-0">Votre ride</h1>
+        <h1 class="m-0" style="color: #d19b62;">Votre ride</h1>
       <% elsif params[:controller] == "users" && params[:action] == "show" %>
-        <h1 class="m-0">Votre profil</h1>
+        <h1 class="m-0" style="color: #d19b62;">Votre profil</h1>
       <% elsif params[:controller] == "dogs" && params[:action] == "index" %>
-        <h1 class="m-0">Votre meute</h1>
+        <h1 class="m-0" style="color: #d19b62;">Votre meute</h1>
       <% elsif params[:controller] == "rewards" && params[:action] == "index" %>
-        <h1 class="m-0">Récompenses</h1>
+        <h1 class="m-0" style="color: #d19b62;">Récompenses</h1>
       <% elsif params[:controller] == "user_rewards" && params[:action] == "index" %>
-        <h1 class="m-0">Vos Récompenses</h1>
+        <h1 class="m-0" style="color: #d19b62;">Vos Récompenses</h1>
       <% end %>
     <% else %>
-      <h1 class="m-0">Bouge ton chien !</h1>
+      <%# <h1 class="m-0" style="color:#895F33; font: size 17px; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">DOOGS !</h1> %>
+      <%= link_to root_path do %>
+        <%= image_tag "#{count}.png", height: "200px" %>
+      <% end %>
     <% end %>
     <% if user_signed_in? %>
-      <small class="doogs-container"><%= current_user.money %><%= link_to "D", rewards_path, class: "doogs nav-link" %></small>
+      <small class="doogs-container" style="color: #895f33; font-weight: 600; font: size 17px;"><%= current_user.money %><%= link_to "D", rewards_path, class: "doogs nav-link" %></small>
     <% end %>
   </div>
 </div>

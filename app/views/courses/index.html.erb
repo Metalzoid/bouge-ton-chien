@@ -1,6 +1,6 @@
 <div class="dropdown">
-  <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownFilters" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
-    Caractéristiques
+  <button class="btn btn dropdown-toggle" type="button" id="dropdownFilters" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
+    Point confort
   </button>
   <%# <div class="dropdown-menu" aria-labelledby="dropdownMenuButton"> %>
     <%= simple_form_for(:filter, url: root_path, method: "GET", html: { class: 'dropdown-menu' }) do |f| %>
@@ -34,7 +34,7 @@
 </div>
 
 <div class="p-3 d-flex justify-content-start">
-  <h1 class="font-weight-bold">Suggestions</h1>
+  <h1 class="font-weight-bold" style="color: #D19B62;">Suggestions</h1>
 </div>
 
 <div class="container w-100">
@@ -50,8 +50,8 @@
       </div>
       <div class="card-body">
         <div class="d-flex justify-content-between">
-          <h5 class="card-title"><%= course.name %></h5>
-          <div class="d-flex ml-auto gap-1">
+          <h5 class="card-title" style="color: #895f33;"><%= course.name %></h5>
+          <div class="d-flex ml-auto gap-1" style="color: #895f33;">
             <% if course.trashs %>
               <i class="fa fa-trash gap-1"></i>
             <% end %>
@@ -64,13 +64,9 @@
             <% if course.familyfriendly %>
               <i class="fa-solid fa-people-group gap-1"></i>
             <% end %>
-              <%# <p class="p-1"><i class="fa fa-trash"></i></p>
-              <p class="p-1"><i class="fa-solid fa-droplet"></i></p>
-              <p class="p-1"><i class="fa-solid fa-poo"></i></p>
-              <p class="p-1"><i class="fa-solid fa-people-group"></i></p> %>
           </div>
         </div>
-        <div class="d-flex justify-content-between">
+        <div class="d-flex justify-content-between" style="color: #895f33;">
           <div>
             <% course.average.to_i.times do %>
               <i class="fa-solid fa-star"></i>
@@ -79,7 +75,7 @@
               <i class="fa-regular fa-star"></i>
             <% end %>
           </div>
-          <div class="card-timing-distance"><%= course.timing %> min - <%= course.distance %> km</div>
+          <div class="card-timing-distance" style="color: #895f33;"><%= course.timing %> min - <%= course.distance %> km</div>
         </div>
       </div>
     </div>
