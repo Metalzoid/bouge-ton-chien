@@ -7,11 +7,20 @@
       <% (5 - @ride.course.average.to_i).times do %>
       <i class="fa-regular fa-star"></i>
         <% end %>
+
+        <div class="container">
+  <div class="card d-flex p-1 justify-content-center my-3">
+    <div style="height: 230px; width: 100%;;">
+
+</div>
+</div>
+</div>
         <div class="d-flex justify-content-around">
           <div class="col-sm-4"><%= @ride.course.timing %>min</div>
           <div class="col-sm-4"><%= @ride.course.distance %>m</div>
           <div class="col-sm-4"><%= @ride.course.distance %>m</div>
         </div>
+        
           <div class="d-flex justify-content-around">
             <i class="fa-regular fa-clock"></i>
             <i class="fa-solid fa-location-dot"></i>
@@ -29,20 +38,46 @@
                                   <h2 class="card-title">Laisse un avis pour ta course !</h2>
                                   <hr>
                                   <p class="card-text">
-                                  <h2>Laisser un avis :</h2>
-<%= form_with(model: [@ride, Review.new], local: true) do |form| %>
+
+<h2>Laisser un avis :</h2>
+<%= form_with(model: [@ride, @review], local: true) do |form| %>
   <div class="field">
     <%= form.label :rating, 'Note' %><br>
     <div class="rating-stars">
       <% (1..5).each do |i| %>
         <input type="checkbox" id="rating_<%= i %>" name="review[rating]" value="<%= i %>" style="display: none;">
         <label for="rating_<%= i %>" class="rating-star">
-          <i class="far fa-star"></i>
+          <i class="fas fa-star"></i>
         </label>
+
       <% end %>
+      <%= form.text_field :comment %>
+      <%= form.submit :Submit, class:"btn btn-primary" %>
     </div>
-  </div></p>
-  <% end %>
+  </div>
+
+<% end %>
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const stars = document.querySelectorAll('.rating-star');
+
+    stars.forEach(function(star) {
+      star.addEventListener('click', function() {
+        const rating = parseInt(star.previousElementSibling.value);
+        stars.forEach(function(s) {
+          s.classList.remove('checked');
+        });
+        for (let i = 0; i < rating; i++) {
+          stars[i].classList.add('checked');
+        }
+      });
+    });
+  });
+</script>
+
+
                                   <a href="#" class="btn btn-primary">Go somewhere</a>
                                 </div>
                               </div>
