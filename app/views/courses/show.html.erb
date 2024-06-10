@@ -30,12 +30,6 @@
     </div>
   </div>
 </div>
-
-
-
-
-
-
 <div class="container">
   <div class="card d-flex p-1 justify-content-center my-3">
     <div style="height: 230px; width: 100%;;">
@@ -125,18 +119,15 @@
       <div class="row row-cols-2">
         <div class="col-sm-4">Distance : <%= @course.distance %>m</div>
         <div class="col-sm-4">Difficulté : <%= @course.difficulty %>/5</div>
-      <div class="col-sm-4">Timing : <%= @course.timing %>min</div>
+        <div class="col-sm-4">Timing : <%= @course.timing %>min</div>
       </div>
       <div class="col-12">Description : <%= @course.description %></div>
     </div>
-
-
-    <div class="d-flex flex-column justify-content-center">
-      <button type="button" class="border-0 my-3 btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalAvis">Avis</button>
-      <%= link_to 'En route !', course_rides_path(@course), data: { 'turbo-method' => :post }, class: 'btn btn-primary' %>
+    <div class="d-flex justify-content-end">
+      <button type="button" class="border-0 btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModalAvis">Avis</button>
     </div>
-
-
-            </div>
-          </div>
-        </div>
+    <div class="d-flex justify-content-center" data-controller="redirect-ride" data-redirect-ride-course-value="<%= [{ lat: @course.latitude, lng: @course.longitude}].to_json %>">
+      <%= link_to 'En route !', course_rides_path(@course), data: { 'turbo-method' => :post }, class: 'btn btn-primary btn-launch-ride' %>
+    </div>
+  </div>
+</div>

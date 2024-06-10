@@ -4,55 +4,33 @@ import mapboxgl from 'mapbox-gl';
 export default class extends Controller {
   static values = {
     apiKey: String,
-    markers: Array,
-    route: Array
+    markers: Array
   }
 
   connect() {
     mapboxgl.accessToken = this.apiKeyValue;
     this.map = new mapboxgl.Map({
       container: this.element,
-      style: "mapbox://styles/metalzoid/clvxouh5502av01qpetk7a9eu",
+      style: "mapbox://styles/mapbox/streets-v12",
     });
     this.#addLocationToMap();
-    this.#addRouteToMap();
+    this.#addMarkersToMap()
     this.#fitMapToLocation();
   }
 
-  #fitMapToLocation() {
+  async #fitMapToLocation() {
     const bounds = new mapboxgl.LngLatBounds();
-    this.markersValue.forEach(marker => bounds.extend([ marker.lng, marker.lat ]));
-    this.map.fitBounds(bounds, { padding: 70, maxZoom: 18, duration: 0 });
+    const geojson = await this.#getLocation();
+    bounds.extend(geojson.features[0].geometry.coordinates);
+    this.map.fitBounds(bounds, { padding: 70, maxZoom: 12, duration: 0});
   }
 
-  #addRouteToMap() {
-    this.map.on('load', () => {
-      this.map.addSource('route', {
-          'type': 'geojson',
-          'data': {
-              'type': 'Feature',
-              'properties': {},
-              'geometry': {
-                  'type': 'LineString',
-                  'coordinates': this.routeValue
-              }
-          }
-      });
-      this.map.addLayer({
-          'id': 'route',
-          'type': 'line',
-          'source': 'route',
-          'layout': {
-              'line-join': 'round',
-              'line-cap': 'round'
-          },
-          'paint': {
-              'line-color': 'red',
-              'line-width': 8
-          }
-      });
-    });
-
+  #addMarkersToMap() {
+    this.markersValue.forEach((marker) => {
+      new mapboxgl.Marker()
+        .setLngLat([ marker.lng, marker.lat ])
+        .addTo(this.map)
+    })
   }
 
   #addLocationToMap() {
@@ -67,20 +45,26 @@ export default class extends Controller {
       });
 
       // Add the user symbol layer to the map.
+      this.map.loadImage(
+        'https://docs.mapbox.com/mapbox-gl-js/assets/custom_marker.png',
+        (error, image) => {
+            if (error) throw error;
+            this.map.addImage('custom-marker', image);
+        })
       this.map.addLayer({
         id: 'user',
         type: 'symbol',
         source: 'user',
         layout: {
-          'icon-image': 'mapbox-triangle'
+          'icon-image': 'custom-marker'
         }
       });
 
-      // Update the source from the API every 2 seconds.
+      // Update the source from the API every 10 seconds.
       const updateSource = setInterval(async () => {
         const geojson = await this.#getLocation(updateSource);
         this.map.getSource('user').setData(geojson);
-      }, 10000);
+      }, 100000);
 
     });
   }
@@ -91,10 +75,6 @@ export default class extends Controller {
         const userLocation = position.coords;
 
         // Fly the map to the location.
-        this.map.flyTo({
-          center: [userLocation.longitude, userLocation.latitude],
-          speed: 1
-        });
 
         // Return the location of the user as GeoJSON.
         resolve({

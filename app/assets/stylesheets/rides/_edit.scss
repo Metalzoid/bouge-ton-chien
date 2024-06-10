@@ -1,0 +1,29 @@
+#timer-container {
+  justify-content: center;
+  width: 100%;
+  z-index: 1;
+  display: flex;
+  opacity: 1;
+  position: relative;
+  transition: all 1s ease-in-out;
+
+
+
+  #timer-cards {
+    position: absolute;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    top: 450px;
+    width: 90%;
+    margin: 0 20px;
+    .card {
+    background-color: rgba(255, 255, 255, 0.5);
+    }
+  }
+}
+
+#instructions {
+  opacity: 1;
+  transition: all 1s ease-in-out;
+}
