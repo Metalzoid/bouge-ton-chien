@@ -70,7 +70,6 @@ export default class extends Controller {
   }
 
   async #addLocationToMap(userLocation) {
-
     this.map.addSource('user', {
       type: 'geojson',
       data: {
@@ -122,12 +121,9 @@ export default class extends Controller {
   }
 
   async #callApi(course, route) {
-    const getRoute = async (coord) => {
+    const getRoute = async (firstCoord, endCoord) => {
       try {
-        const userLocation = await this.#getCoordinates();
-        const userLatitude = userLocation[1].toFixed(4);
-        const userLongitude = userLocation[0].toFixed(4);
-        const url = `https://api.mapbox.com/directions/v5/mapbox/walking/${coord[0]},${coord[1]};${userLongitude},${userLatitude}?steps=true&geometries=geojson&access_token=${mapboxgl.accessToken}`;
+        const url = `https://api.mapbox.com/directions/v5/mapbox/walking/${firstCoord[0]},${firstCoord[1]};${endCoord[0]},${endCoord[1]}?steps=true&geometries=geojson&access_token=${mapboxgl.accessToken}`;
         const response = await fetch(url, { method: 'GET' });
         if (!response.ok) throw new Error('Network response was not ok');
         const json = await response.json();
@@ -223,11 +219,13 @@ export default class extends Controller {
             speed: 0.7,
             zoom: 17
           });
+          currentIndex++;
           if (route.slice(currentIndex, -1).length > 0) {
-            const instructionRoute = await getRoute(route[currentIndex]);
+            const instructionRoute = await getRoute(route[currentIndex], route.slice(-1));
+            console.log(instructionRoute);
             this.#showInstruction(instructionRoute);
           }
-          currentIndex++;
+
         } else {
           clearInterval(intervalId);
           this.instructionTarget.classList.add("opacity-0");
