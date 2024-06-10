@@ -1,1 +1,9 @@
-<%= render "shared/map", course: @course, style_list: "width: 100%; height: 475px;" %>
+<div id="ready-to-run" class="opacity-0">
+  <div id="ready-to-run-cards">
+    <div class="card align-items-center">
+      <h1 class="text-center">Vous êtes arrivés ! Prêt ?</h1>
+      <%= link_to 'GO !', course_rides_path(@course), data: { 'turbo-method' => :post, constroller: "redirect-ride" }, class: 'btn btn-primary btn-launch-ride w-50' %>
+    </div>
+  </div>
+</div>
+<%= render "shared/map", course: @course, markers: [{lat: @course.latitude, lng: @course.longitude}], style_list: "width: 100%; height: 650px;" %>

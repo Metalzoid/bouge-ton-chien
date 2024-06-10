@@ -11,10 +11,10 @@ Rails.application.routes.draw do
   root to: "courses#index"
 
   resources :courses, only: %i[show] do
+    get "/navigate", to: "rides#navigate", as: "navigate"
     resources :rides, only: %i[create]
   end
   get "/map", to: "rides#map", as: "map"
-  get "/navigate", to: "rides#navigate", as: "navigate"
   resources :rides, only: %i[edit update show] do
     resources :reviews, only: %i[create]
   end
