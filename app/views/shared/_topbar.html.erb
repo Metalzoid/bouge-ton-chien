@@ -3,7 +3,7 @@
     <% count = rand(1..4) %>
     <% if user_signed_in? %>
       <%= link_to root_path, class: "logo" do %>
-        <%= image_tag "#{count}.png", height: "90px" %>
+        <%= image_tag "#{count}.png", class: "image-logo" %>
       <% end %>
     <% end %>
     <% if user_signed_in? %>
@@ -27,11 +27,11 @@
     <% else %>
       <%# <h1 class="m-0" style="color:#895F33; font: size 17px; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">DOOGS !</h1> %>
       <%= link_to root_path do %>
-        <%= image_tag "#{count}.png", height: "200px" %>
+        <%= image_tag "#{count}.png", height: "100px" %>
       <% end %>
     <% end %>
     <% if user_signed_in? %>
-      <small class="doogs-container" style="color: #895f33; font-weight: 600; font: size 17px;"><%= current_user.money %><%= link_to "D", rewards_path, class: "doogs nav-link" %></small>
+      <small class="doogs-container" style="color: #895f33; font-weight: 600; font-size: 17px;"><%= current_user.money %><%= link_to "D", rewards_path, class: "doogs nav-link" %></small>
     <% end %>
   </div>
 </div>
