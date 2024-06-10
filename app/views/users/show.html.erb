@@ -1,11 +1,11 @@
 <div class="container">
-  <div class="card my-3" id="profil-head">
+  <div class="card my-3" id="profil-head" style="color: #895f33;">
     <h1>Bienvenue <%= current_user.firstname %></h1>
     <%= cl_image_tag current_user.photo.key, class: "user-photo", gravity: "face", height: 100, width: 100, crop: "fill", radius: "max", fetch_format: "auto" %>
   </div>
   <div class="links">
-    <%= link_to "Editer mon profil", edit_user_registration_path(current_user), class: "btn btn-primary" %>
-    <%= link_to "Ma Meute", user_dogs_path(current_user), class: "btn btn-primary" %>
-    <%= link_to 'Déconnexion', destroy_user_session_path, data: { turbo_method: "delete" }, class: "btn btn-primary" %>
+    <%= link_to "Editer mon profil", edit_user_registration_path(current_user), class: "btn btn-primary", id: "simpleButton" %>
+    <%= link_to "Ma Meute", user_dogs_path(current_user), class: "btn btn-primary", id: "simpleButton" %>
+    <%= link_to 'Déconnexion', destroy_user_session_path, data: { turbo_method: "delete" }, class: "btn btn-primary", id: "simpleButton" %>
   </div>
 </div>
