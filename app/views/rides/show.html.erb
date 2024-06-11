@@ -1,0 +1,66 @@
+
+<div class= "container">
+  <h2><%= @ride.course.name %></h2>
+    <% @ride.course.average.to_i.times do %>
+      <i class="fa-solid fa-star"></i>
+    <% end %>
+    <% (5 - @ride.course.average.to_i).times do %>
+      <i class="fa-regular fa-star"></i>
+    <% end %>
+
+
+        <div class="d-flex justify-content-around">
+          <div class="col-sm-4"><%= @ride.course.timing %>min</div>
+          <div class="col-sm-4"><%= @ride.course.distance %>m</div>
+          <div class="col-sm-4"><%= @ride.course.distance %>m</div>
+        </div>
+          <div class="d-flex justify-content-around">
+            <i class="fa-regular fa-clock"></i>
+            <i class="fa-solid fa-location-dot"></i>
+            <%= link_to "D", rewards_path, class: "doogs nav-link" %>
+          </div>
+          <div class="d-flex p-4 justify-content-center align-items-center">
+          <% unless Review.where(user: current_user, course: @ride.course).any? %>
+            <button type="button" class="border-0 btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalDonneAvis">Donne ton avis !</button>
+            <% end %>
+            <div class="modal fade" id="modalDonneAvis" tabindex="-1" aria-labelledby="modal donne avis" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                  <div class="modal-body border-0 p-0">
+                    <div class="col-sm-6">
+                      <div class="card" data-controller="rating-stars">
+                        <div class="card-body">
+                          <h2 class="card-title">Laisse un avis pour ta course !</h2>
+                            <hr>
+                            <p class="card-text p-5">
+                          <h2>Laisser un avis :</h2>
+                            <%= form_with(model: [@ride, @review], local: true) do |form| %>
+                          <div class="field">
+                            <%= form.label :rating, 'Note' %><br>
+                            <div class="rating-stars">
+                              <% (1..5).each do |i| %>
+                              <input type="radio" id="rating_<%= i %>" name="review[rating]" value="<%= i %>" style="display: none;">
+                              <label for="rating_<%= i %>" class="rating-star">
+                                <i class="fas fa-star"></i>
+                              </label>
+                                <% end %>
+                            </div>
+                              <%= form.label :comment, 'Commentaire' %><br>
+                              <%= form.text_area :comment %>
+                                <br>
+                              <%= form.submit 'Soumettre', class: "btn btn-primary" %>
+                          </div>
+                              <% end %>
+                      </div>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="text-right">
+          <%= link_to "Dépense tes Doogs", rewards_path, class: "btn btn-primary float-right" %>
+          </div>
+</div>

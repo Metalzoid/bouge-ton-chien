@@ -1,4 +1,4 @@
-<% if params[:controller] == "rides" && params[:action] == "edit" && @ride.course_id = 60 %>
+<% if params[:controller] == "rides" && params[:action] == "edit" && @ride.course_id = 45 %>
   <div style= '<%= style_list %>'
     data-controller="ride-map-demo"
     data-ride-map-demo-route-value="<%= course.route %>"
@@ -8,10 +8,10 @@
   </div>
 <% elsif params[:controller] == "rides" && params[:action] == "edit" %>
   <div style= '<%= style_list %>'
-    data-controller="ride-map"
-    data-ride-map-markers-value="<%= [{ lat: course.latitude, lng: course.longitude }].to_json %>"
-    data-ride-map-route-value="<%= course.route %>"
-    data-ride-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+    data-controller="ride-map-demo"
+    data-ride-map-demo-markers-value="<%= [{ lat: course.latitude, lng: course.longitude }].to_json %>"
+    data-ride-map-demo-route-value="<%= course.route %>"
+    data-ride-map-demo-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
 <% elsif params[:controller] == "rides" && params[:action] == "map" %>
   <div style= '<%= style_list %>'
@@ -19,7 +19,7 @@
     data-index-map-markers-value="<%= markers.to_json%>"
     data-index-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
-<% elsif params[:course_id] == "60" %>
+<% elsif params[:course_id] == "45" %>
   <div style= '<%= style_list %>'
     data-controller="navigate-demo"
     data-navigate-demo-course-value="<%= [{ lat: course.latitude, lng: course.longitude }].to_json %>"
@@ -29,11 +29,11 @@
   </div>
 <% elsif params[:controller] == "rides" && params[:action] == "navigate" %>
   <div style= '<%= style_list %>'
-    data-controller="navigate-live"
-    data-navigate-live-course-value="<%= [{ lat: course.latitude, lng: course.longitude }].to_json %>"
-    data-navigate-live-markers-value="<%= markers.to_json%>"
-    data-navigate-live-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
-    <div id="instructions" data-navigate-live-target="instruction"></div>
+    data-controller="navigate-demo"
+    data-navigate-demo-course-value="<%= [{ lat: course.latitude, lng: course.longitude }].to_json %>"
+    data-navigate-demo-markers-value="<%= markers.to_json%>"
+    data-navigate-demo-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+    <div id="instructions" data-navigate-demo-target="instruction"></div>
   </div>
 <% elsif params[:controller] == "courses" && params[:action] == "show"%>
   <div style= '<%= style_list %>'
