@@ -6,7 +6,7 @@
           <div class="carousel-inner">
             <% @reviews.each do |review| %>
               <div class="carousel-item bg-body <%= 'active' if review == @reviews.first %>">
-                <div class="card shadow p-3 m-3 bg-body-tertiary rounded">
+                <div class="card shadow p-3 m-3 bg-body-tertiary rounded" style="width: 91%;">
                   <p class="card-text">Utilisateur: <%= review.user.firstname %></p>
                   <div class="card-body">
                     <p class="card-text"><%= review.comment %></p>
@@ -124,7 +124,7 @@
       </div>
       <div class="col-12">Description : <%= @course.description %></div>
     </div>
-    <div class="d-flex justify-content-end">
+    <div class="d-flex justify-content-center">
       <button type="button" id="buttonAvis" class="border-0 btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModalAvis">Avis</button>
     </div>
     <div class="d-flex justify-content-center" data-controller="redirect-ride" data-redirect-ride-course-value="<%= [{ lat: @course.latitude, lng: @course.longitude}].to_json %>">
