@@ -1,0 +1,59 @@
+<% if current_user.money >= filter %>
+  <h4><i class="fa-solid fa-unlock" style="color: #23ca02;"></i> <i class="fa-solid fa-paw mb-3 ms-3"><%= filter %></i></h4>
+<% else %>
+  <h4><i class="fa-solid fa-lock" style="color: #ff0000;"></i> <i class="fa-solid fa-paw mb-3 ms-3"><%= filter %></i></h4>
+<% end %>
+
+<% if rewards.count.positive? %>
+  <div id="carouselRewards<%= filter %>" class="carousel slide row carouselRewards" data-controller="rewards-carousel">
+    <div class="carousel-inner">
+      <% rewards.each_slice(2).with_index do |two_rewards, index| %>
+        <div class="carousel-item gap-1 <%= "active" if index == 0 %>">
+          <a class="col-6" type="button" data-bs-toggle="<%= 'modal' if current_user.money >= filter %>" data-bs-target="#modalDetails<%= two_rewards[0].id %>">
+            <%= render "presentdetails", reward: two_rewards[0], reduction: reduction %>
+            <div class="card <%= 'cardActive' if current_user.money >= filter %>">
+              <%= cl_image_tag(two_rewards[0].photo.key) if two_rewards[0].photo.present? %>
+              <div class="card-body px-0 py-1">
+                <p class="card-title text-center"><%= two_rewards[0].name %></p>
+              </div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item1"><%= two_rewards[0].price %></li>
+                <li class="list-group-item"><%= ((two_rewards[0].price * 100 - reduction) / 100.0).round(2) %></li>
+              </ul>
+            </div>
+          </a>
+          <% if two_rewards.length > 1 %>
+            <a class="col-6" type="button" data-bs-toggle="modal" data-bs-target="#modalDetails<%= two_rewards[1].id %>">
+              <%= render "presentdetails", reward: two_rewards[1], reduction: reduction %>
+              <div class="card <%= 'cardActive' if current_user.money >= filter %>">
+                <%= cl_image_tag(two_rewards[1].photo.key) if two_rewards[1].photo.present? %>
+                <div class="card-body px-0 py-1">
+                  <p class="card-title text-center"><%= two_rewards[1].name %></p>
+                </div>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item1"><%= two_rewards[1].price %></li>
+                  <li class="list-group-item"><%= ((two_rewards[1].price * 100 - reduction) / 100.0).round(2) %></li>
+                </ul>
+              </div>
+            </a>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselRewards<%= filter %>" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselRewards<%= filter %>" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
+<% else %>
+  <div class="card col-12" style="border-radius: 20px;">
+    <div class="card-body">
+      <h1 class="text-center">Pas d'items disponibles ...</h1>
+    </div>
+  </div>
+<% end %>

@@ -8,30 +8,18 @@
   </div>
 
   <div class="container">
-    <div class="plaisir1">
-      <h4> <i class="fa-solid fa-unlock" style="color: #23ca02;"></i></i> <i class="fa-solid fa-paw mb-3 ms-3"> 50 </i></h4>
-      <%= render "doogpresent50" %>
-    </div>
+    <%= render "doogpresents", rewards: Reward.where('money <= ?', 50), reduction: 10, filter: 50 %>
   </div>
 
   <div class="container">
-    <div class="plaisir2">
-      <h4> <i class="fa-solid fa-unlock" style="color: #23ca02;"></i></i> <i class="fa-solid fa-paw mb-3 ms-3"> 100 </i></h4>
-            <%= render "doogpresent100" %>
-    </div>
+    <%= render "doogpresents", rewards: Reward.where('money BETWEEN ? AND ?', 50, 100), reduction: 15, filter: 100 %>
   </div>
 
   <div class="container">
-    <div class="plaisir3">
-      <h4> <i class="fa-solid fa-lock" style="color: #ff0000;"></i></i> <i class="fa-solid fa-paw mb-3 ms-3"> 150 </i></h4>
-            <%= render "doogpresent150" %>
-    </div>
+    <%= render "doogpresents", rewards: Reward.where('money BETWEEN ? AND ?', 100, 150), reduction: 20, filter: 150 %>
   </div>
 
   <div class="container">
-    <div class="plaisir4">
-      <h4> <i class="fa-solid fa-lock" style="color: #ff0000;"></i> <i class="fa-solid fa-paw mb-3 ms-3"> 200 </i></h4>
-            <%= render "doogpresent200" %>
-    </div>
+    <%= render "doogpresents", rewards: Reward.where('money >= ?', 200), reduction: 30, filter: 200 %>
   </div>
 </div>

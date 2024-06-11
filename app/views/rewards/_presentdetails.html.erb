@@ -1,0 +1,21 @@
+<div class="modal fade modalDetails" id="modalDetails<%= reward.id %>" tabindex="-1" aria-labelledby="modal avis" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-body border-0 p-0">
+        <div class="card cardActive" style="height: 600px;">
+          <%= cl_image_tag(reward.photo.key) if reward.photo.present? %>
+          <div class="card-body px-0 py-1">
+            <h4 class="card-title text-center"><%= reward.name %></h4>
+            <p class="card-text"><%= reward.description %></p>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item1"><%= reward.price %></li>
+            <li class="list-group-item"><%= ((reward.price * 100 - reduction) / 100.0).round(2) %></li>
+          </ul>
+          <%= link_to user_user_rewards_path(@user_reward, user_id: current_user.id), data: { 'turbo-method' => :post }, class: "btn btn-primary" %>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

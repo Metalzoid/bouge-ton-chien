@@ -1,63 +1,25 @@
-.doogpresent50 {
-  .list-group {
-    list-style: none;
-    text-align: center;
-    .list-group-item1 {
-      font-style: italic;
-      text-decoration-color: red;
-      text-decoration-line: line-through;
-      text-decoration-style: solid;
+.carouselRewards {
+  a {
+    text-decoration: none;
+    .card {
+      height: 300px;
+      filter : brightness(40%);
+      .list-group {
+        list-style: none;
+        text-align: center;
+        .list-group-item1 {
+          font-style: italic;
+          text-decoration-color: red;
+          text-decoration-line: line-through;
+          text-decoration-style: solid;
+        }
+        .list-group-item {
+          font-weight: bold;
+        }
+      }
     }
-    .list-group-item {
-      font-weight: bold;
-    }
-  }
-}
-
-.doogpresent100 {
-  .list-group {
-    list-style: none;
-    text-align: center;
-    .list-group-item1 {
-      font-style: italic;
-      text-decoration-color: red;
-      text-decoration-line: line-through;
-      text-decoration-style: solid;
-    }
-    .list-group-item {
-      font-weight: bold;
-    }
-  }
-}
-
-.doogpresent150 {
-  .list-group {
-    list-style: none;
-    text-align: center;
-    .list-group-item1 {
-      font-style: italic;
-      text-decoration-color: red;
-      text-decoration-line: line-through;
-      text-decoration-style: solid;
-    }
-    .list-group-item {
-      font-weight: bold;
-    }
-  }
-}
-
-.doogpresent200 {
-  .list-group {
-    list-style: none;
-    text-align: center;
-    .list-group-item1 {
-      font-style: italic;
-      text-decoration-color: red;
-      text-decoration-line: line-through;
-      text-decoration-style: solid;
-    }
-    .list-group-item {
-      font-weight: bold;
+    .cardActive {
+      filter : brightness(100%);
     }
   }
 }
