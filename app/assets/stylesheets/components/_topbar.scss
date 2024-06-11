@@ -3,17 +3,22 @@
   position: sticky;
   top: 0;
   z-index: 10000;
+  h1 {
+    max-width: 220px;
+    text-align: center;
+  }
 
-  .logo{
-    height: 50px;
-    width: 50px;
-    border-radius: 50%;
-    box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.2);
+  .logo {
+    // border-radius: 50%;
+    // box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.2);
     display: flex;
     justify-content: center;
     align-items: center;
     position: absolute;
     left: 10px;
+    .image-logo {
+      height: 40px !important;
+    }
   }
 
   .doogs-container {
