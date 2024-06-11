@@ -10,6 +10,7 @@
   margin-top: 15px;
   padding: 10px;
   font-size: 20px;
+  width: 110%;
   font-weight: bold;
   text-align: center;
   transition: all 0.3s;
@@ -42,30 +43,27 @@
   border: 1px solid white;
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   transition-duration: 0.4s;
-  background-color: #97c475;
-  color: black;
-  // background-color: $light-beige;
-  // color: $brown;
+  // background-color: #97c475;
+  // color: black;
+  background-color: $light-beige;
+  color: $brown;
   position: relative;
   border-radius: 10px;
-  margin-top: 10px;
+  margin-top: 20px;
   margin-bottom: 10px;
   padding: 10px;
   font-size: 20px;
   font-weight: bold;
   text-align: center;
-  width: 50%;
+  width: 80%;
 }
 
 #buttonAvis {
   display: inline-block;
   border: 1px solid white;
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  transition-duration: 0.4s;
-  background-color: white;
-  color: grey;
-  // background-color: $light-beige;
-  // color: $brown;
+  background-color: $light-gray;
+  color: black;
   position: relative;
   border-radius: 10px;
   margin-top: 10px;
