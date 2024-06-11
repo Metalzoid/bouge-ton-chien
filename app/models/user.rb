@@ -11,6 +11,7 @@ class User < ApplicationRecord
   has_many :rides, dependent: :destroy
   has_many :user_rewards, dependent: :destroy
   has_many :reviews
+  has_many :favourites, dependent: :destroy
 
   validates :nickname, presence: true
   validates :firstname, presence: true

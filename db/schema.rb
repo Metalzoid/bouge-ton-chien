@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_06_11_091736) do
+ActiveRecord::Schema[7.1].define(version: 2024_06_11_172045) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -70,6 +70,15 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_11_091736) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_dogs_on_user_id"
+  end
+
+  create_table "favourites", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "course_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["course_id"], name: "index_favourites_on_course_id"
+    t.index ["user_id"], name: "index_favourites_on_user_id"
   end
 
   create_table "reviews", force: :cascade do |t|
@@ -138,6 +147,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_11_091736) do
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "courses", "users"
   add_foreign_key "dogs", "users"
+  add_foreign_key "favourites", "courses"
+  add_foreign_key "favourites", "users"
   add_foreign_key "reviews", "courses"
   add_foreign_key "reviews", "users"
   add_foreign_key "rides", "courses"
