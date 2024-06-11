@@ -1,76 +1,48 @@
-<div class="container">
+<div class="container" data-controller="filter">
   <div class="row justify-content-evenly">
     <div class="dropdown col-4">
-      <button class="btn btn dropdown-toggle" type="button" id="dropdownFilters" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
+      <%= simple_form_for(:filter, url: root_path, method: "POST", data: { filter_target: "formfilter", action: "change->filter#filter" }) do |f| %>
+      <button class="btn btn dropdown-toggle dropdown-filters" type="button" id="dropdownFilters" data-bs-toggle="dropdown" data-bs-auto-close="inside" aria-expanded="false">
         Filtres
       </button>
-        <%= simple_form_for(:filter, url: root_path, method: "GET", html: { class: 'dropdown-menu'}) do |f| %>
-          <%= f.input :water,
-                      as: :boolean,
-                      label: 'Eau',
-                      wrapper_html: { class: 'dropdown-item' },
-                      input_html: { checked: params[:filter] && params[:filter][:water] == "1" }
-                      %>
-          <%= f.input :trashs,
-                      as: :boolean,
-                      label: 'Déchets',
-                      wrapper_html: { class: 'dropdown-item' },
-                      input_html: { checked: params[:filter] && params[:filter][:trashs] == "1" }
-                      %>
-          <%= f.input :poopbag,
-                      as: :boolean,
-                      label: 'Sac à crottes',
-                      wrapper_html: { class: 'dropdown-item' },
-                      input_html: { checked: params[:filter] && params[:filter][:poopbag] == "1" }
-                      %>
-          <%= f.input :familyfriendly,
-                      as: :boolean,
-                      label: 'Convient aux familles',
-                      wrapper_html: { class: 'dropdown-item' },
-                      input_html: { checked: params[:filter] && params[:filter][:familyfriendly] == "1" }
-                      %>
-          <%= f.button :submit, "Filtrer", class: 'btn btn-primary dropdown-item' %>
-        <% end %>
-    </div>
+      <div class="dropdown-menu">
+              <%= f.input :water,
+                          as: :boolean,
+                          label: 'Eau',
+                          wrapper_html: { class: 'dropdown-item' }
+                          %>
+              <%= f.input :trashs,
+                          as: :boolean,
+                          label: 'Déchets',
+                          wrapper_html: { class: 'dropdown-item' }
+                          %>
+              <%= f.input :poopbag,
+                          as: :boolean,
+                          label: 'Sac à crottes',
+                          wrapper_html: { class: 'dropdown-item' }
+                          %>
+              <%= f.input :familyfriendly,
+                          as: :boolean,
+                          label: 'Convient aux familles',
+                          wrapper_html: { class: 'dropdown-item' }
+                          %>
 
+      </div>
+    </div>
     <div class="dropdown col-4">
-      <button class="btn btn dropdown-toggle" type="button" id="dropdownDistance" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
-        Lieux
+      <button class="btn btn dropdown-toggle dropdown-filters" type="button" id="dropdownDistance" data-bs-toggle="dropdown" data-bs-auto-close="inside" aria-expanded="false">
+        Distance
       </button>
-        <%= simple_form_for(:filter, url: root_path, method: "GET", html: { class: 'dropdown-menu' }) do |f| %>
-          <%= f.input :water,
-                      as: :boolean,
-                      label: 'Eau',
-                      wrapper_html: { class: 'dropdown-item' },
-                      input_html: { checked: params[:filter] && params[:filter][:water] == "1" }
-                      %>
-          <%= f.input :trashs,
-                      as: :boolean,
-                      label: 'Déchets',
-                      wrapper_html: { class: 'dropdown-item' },
-                      input_html: { checked: params[:filter] && params[:filter][:trashs] == "1" }
-                      %>
-          <%= f.input :poopbag,
-                      as: :boolean,
-                      label: 'Sac à crottes',
-                      wrapper_html: { class: 'dropdown-item' },
-                      input_html: { checked: params[:filter] && params[:filter][:poopbag] == "1" }
-                      %>
-          <%= f.input :familyfriendly,
-                      as: :boolean,
-                      label: 'Convient aux familles',
-                      wrapper_html: { class: 'dropdown-item' },
-                      input_html: { checked: params[:filter] && params[:filter][:familyfriendly] == "1" }
-                      %>
-          <%= f.button :submit, "Filtrer", class: 'btn btn-primary dropdown-item' %>
-        <% end %>
+      <div class="dropdown-menu">
+        <%= f.input :distance, collection: [5, 10, 15], legend_tag: false, as: :radio_buttons, wrapper_html: { class: 'dropdown-item' } %>
+      </div>
     </div>
+      <% end %>
   </div>
-</div>
-
-<div class="container w-100">
-  <div class="p-3 d-flex justify-content-start">
-    <h1 class="font-weight-bold" style="color: #D19B62;">Suggestions</h1>
+  <div class="container w-100">
+    <div class="p-3 d-flex justify-content-start">
+      <h1 class="font-weight-bold" style="color: #D19B62;">Suggestions</h1>
+    </div>
+    <%= render "list", courses: @courses %>
   </div>
-  <%= render "list", courses: @courses %>
 </div>
