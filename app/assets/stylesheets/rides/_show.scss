@@ -1,0 +1,9 @@
+.rating-star {
+  cursor: pointer;
+  color: gray; /* Couleur de base des étoiles */
+  font-size: 24px; /* Taille des étoiles */
+}
+
+.rating-star.checked {
+  color: black; /* Couleur des étoiles sélectionnées */
+}
