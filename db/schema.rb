@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_06_11_074444) do
+ActiveRecord::Schema[7.1].define(version: 2024_06_11_091736) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -84,7 +84,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_11_074444) do
   end
 
   create_table "rewards", force: :cascade do |t|
-    t.integer "price"
+    t.integer "reduction"
     t.string "name"
     t.string "promocode"
     t.string "link"
@@ -92,6 +92,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_11_074444) do
     t.datetime "updated_at", null: false
     t.integer "money"
     t.text "description"
+    t.float "price"
   end
 
   create_table "rides", force: :cascade do |t|

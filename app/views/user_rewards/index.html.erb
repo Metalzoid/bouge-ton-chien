@@ -1,0 +1,43 @@
+<div class="container pt-4">
+  <div class="row">
+    <% @user_rewards.each do |user_reward| %>
+      <div class="col-md-4">
+        <div class="card mb-4", id="card-user-reward" >
+          <div class="card-body">
+            <h5 class="card-title" style="font-weight-bold; color: #895f33;"><%= user_reward.reward.name %></h5>
+            <p class="card-text"><b>Réduction: </b><%= user_reward.reward.reduction %> %</p>
+    <div class="border-0 d-flex justify-content-between">
+      <p class="card-text">
+          <b>Prix: </b>
+          <del class="text-danger"><%= user_reward.reward.price %> €</del>
+      </p>
+      <p class="card-text">
+          <b>Prix réduit: </b>
+          <%= ((user_reward.reward.price * 100 - user_reward.reward.reduction) / 100.0).round(2) %> €</p>
+    </div>
+            <div class="progress">
+              <% if user_reward.progress == 'en cours' %>
+                <div class="progress-bar bg-warning" role="progressbar" style="width: 50%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+              <% elsif user_reward.progress == 'terminé' %>
+                <div class="progress-bar bg-success" role="progressbar" style="width: 100%;" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+              <% end %>
+            </div>
+            <p class="card-text">
+              <% if user_reward.progress == 'pending' %>
+                <i>En cours</i>
+              <% elsif user_reward.progress == 'used' %>
+                <i>Terminé</i>
+              <% end %>
+            </p>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+    <%# <div class="d-flex align-items-center">
+    <span id="discount-code" class="me-3">DISCOUNT2024</span>
+    <button data-controller="clipboard" data-action="click->clipboard#copy" class="btn btn-primary">
+      Copier le code
+    </button>
+  </div> %>
+</div>
