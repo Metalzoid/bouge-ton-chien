@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   root to: "courses#index"
   post "/", to: "courses#filter", as: "filter"
   resources :courses, only: %i[show] do
+    resources :favourites, only: %i[create destroy]
     get "/navigate", to: "rides#navigate", as: "navigate"
     resources :rides, only: %i[create]
   end
