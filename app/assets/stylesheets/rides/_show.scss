@@ -1,3 +1,14 @@
+.text-right {
+  font-family: "Teachers", sans-serif !important;
+  font-weight: bold !important;
+  color: #895f33 !important;
+}
+#buttonRide a {
+  color: #895f33 !important;
+  text-decoration: none !important;
+  text-align: center;
+}
+
 .rating-star {
   cursor: pointer;
   color: gray; /* Couleur de base des étoiles */
@@ -6,4 +17,15 @@
 
 .rating-star.checked {
   color: black; /* Couleur des étoiles sélectionnées */
+}
+
+.col-sm-4 {
+  font-size: 25px;
+}
+
+.col-sm-3 {
+  font-size: 35px;
+}
+#buttonAvis {
+  width: 85%;
 }
