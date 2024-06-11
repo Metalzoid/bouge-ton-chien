@@ -10,7 +10,7 @@
       <% rewards.each_slice(2).with_index do |two_rewards, index| %>
         <div class="carousel-item gap-1 <%= "active" if index == 0 %>">
           <button class="col-6 border-0" type="button" data-bs-toggle="<%= 'modal' if current_user.money >= filter %>" data-bs-target="#modalDetails<%= two_rewards[0].id %>">
-            <%= render "presentdetails", reward: two_rewards[0], reduction: reduction %>
+            <%= render "presentdetails", reward: two_rewards[0] %>
             <div class="card <%= 'cardActive' if current_user.money >= filter %>">
               <%= cl_image_tag(two_rewards[0].photo.key) if two_rewards[0].photo.present? %>
               <div class="card-body px-0 py-1">
@@ -18,13 +18,13 @@
               </div>
               <ul class="list-group list-group-flush">
                 <li class="list-group-item1"><%= two_rewards[0].price %></li>
-                <li class="list-group-item"><%= ((two_rewards[0].price * 100 - reduction) / 100.0).round(2) %></li>
+                <li class="list-group-item"><%= ((two_rewards[0].price * 100 - two_rewards[0].reduction) / 100.0).round(2) %></li>
               </ul>
             </div>
           </button>
           <% if two_rewards.length > 1 %>
             <button class="col-6 border-0" type="button" data-bs-toggle="modal" data-bs-target="#modalDetails<%= two_rewards[1].id %>">
-              <%= render "presentdetails", reward: two_rewards[1], reduction: reduction %>
+              <%= render "presentdetails", reward: two_rewards[1] %>
               <div class="card <%= 'cardActive' if current_user.money >= filter %>">
                 <%= cl_image_tag(two_rewards[1].photo.key) if two_rewards[1].photo.present? %>
                 <div class="card-body px-0 py-1">
@@ -32,7 +32,7 @@
                 </div>
                 <ul class="list-group list-group-flush">
                   <li class="list-group-item1"><%= two_rewards[1].price %></li>
-                  <li class="list-group-item"><%= ((two_rewards[1].price * 100 - reduction) / 100.0).round(2) %></li>
+                  <li class="list-group-item"><%= ((two_rewards[1].price * 100 - two_rewards[1].reduction) / 100.0).round(2) %></li>
                 </ul>
               </div>
             </button>

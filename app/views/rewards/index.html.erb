@@ -1,25 +1,31 @@
 <div class="container w-100">
   <div class="p-3 border-bottom mt-2 mb-2">
     <%= render "doogcount" %>
+    <%#= link_to 'Mes commandes', user_rewards_path, class: "btn btn-primary" %>
   </div>
 
-  <div class="p-3 d-flex justify-content-center">
+  <div class="p-3 d-flex flex-column align-items-center">
+      <h2 class="font-weight-bold">Mes achats<i class="fa-solid fa-cart-shopping" style="color: #895f33;"></i></h2>
+      <%= link_to "Voir mes Achats", user_user_rewards_path(current_user), class: "btn btn-primary mt-2", id: "buttonAchat" %>
+  </div>
+
+  <div class="p-3 d-flex flex-column align-items-center">
     <h2 class="font-weight-bold">Les bons plans  <i class="fa-solid fa-coins"></i></h2>
   </div>
 
   <div class="container">
-    <%= render "doogpresents", rewards: Reward.where('money <= ?', 50), reduction: 10, filter: 50 %>
+    <%= render "doogpresents", rewards: Reward.where('money <= ?', 50), filter: 50 %>
   </div>
 
   <div class="container">
-    <%= render "doogpresents", rewards: Reward.where('money BETWEEN ? AND ?', 50, 100), reduction: 15, filter: 100 %>
+    <%= render "doogpresents", rewards: Reward.where('money BETWEEN ? AND ?', 50, 100), filter: 100 %>
   </div>
 
   <div class="container">
-    <%= render "doogpresents", rewards: Reward.where('money BETWEEN ? AND ?', 100, 150), reduction: 20, filter: 150 %>
+    <%= render "doogpresents", rewards: Reward.where('money BETWEEN ? AND ?', 100, 150), filter: 150 %>
   </div>
 
   <div class="container">
-    <%= render "doogpresents", rewards: Reward.where('money >= ?', 200), reduction: 30, filter: 200 %>
+    <%= render "doogpresents", rewards: Reward.where('money >= ?', 200), filter: 200 %>
   </div>
 </div>
