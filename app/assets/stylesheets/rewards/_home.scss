@@ -49,6 +49,14 @@
   position: absolute;
 }
 
-.plaisir {
-  font-weight: bold;
+.carousel-inner .carousel-item.active,
+.carousel-inner .carousel-item-next,
+.carousel-inner .carousel-item-prev {
+  display: flex;
+}
+
+.modalDetails{
+  .modal-content{
+    border-radius: 20% !important;
+  }
 }

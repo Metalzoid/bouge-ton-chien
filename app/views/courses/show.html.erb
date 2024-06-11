@@ -2,31 +2,30 @@
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-body border-0 p-0">
-            <!-- Carrousel -->
-            <div id="carouselExampleFade" class="carousel slide carousel-fade">
-              <div class="carousel-inner">
-                <% @reviews.each do |review| %>
-                <div class="carousel-item bg-body <%= 'active' if review == @reviews.first %>">
-                  <div class="card shadow p-3 m-3 bg-body-tertiary rounded">
-                    <p class="card-text">Utilisateur: <%= review.user.firstname %></p>
-                    <div class="card-body">
-                      <p class="card-text"><%= review.comment %></p>
-                      <p class="card-text">Note: <%= review.rating %>/5</p>
-                    </div>
+        <div id="carouselExampleFade" class="carousel slide carousel-fade">
+          <div class="carousel-inner">
+            <% @reviews.each do |review| %>
+              <div class="carousel-item bg-body <%= 'active' if review == @reviews.first %>">
+                <div class="card shadow p-3 m-3 bg-body-tertiary rounded">
+                  <p class="card-text">Utilisateur: <%= review.user.firstname %></p>
+                  <div class="card-body">
+                    <p class="card-text"><%= review.comment %></p>
+                    <p class="card-text">Note: <%= review.rating %>/5</p>
                   </div>
                 </div>
-                <% end %>
               </div>
+            <% end %>
+          </div>
         </div>
       </div>
-              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Précédent</span>
-              </button>
-              <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Suivant</span>
-              </button>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Précédent</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Suivant</span>
+      </button>
     </div>
   </div>
 </div>
@@ -54,7 +53,7 @@
                 <div class="carousel-item active">
                   <%= cl_image_tag @course.photos.last.key, crop: "fill", height: 300, width: 380  %>
                 </div>
-                <% @course.photos[3..4].each do |photo| %>
+                <% @course.photos.each do |photo| %>
                   <div class="carousel-item">
                     <%= cl_image_tag photo.key, crop: "fill", height: 300, width: 380 %>
                   </div>

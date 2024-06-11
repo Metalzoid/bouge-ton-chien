@@ -22,6 +22,7 @@ class RidesController < ApplicationController
     @ride.timing = params[:ride][:timing]
     @ride.distance = @ride.course.distance
     @ride.save
+    current_user.update(money: current_user.money += @ride.money)
     redirect_to ride_path(@ride)
   end
 
