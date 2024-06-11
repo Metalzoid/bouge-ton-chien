@@ -3,13 +3,17 @@ class CoursesController < ApplicationController
 
   def index
     @courses = Course.all
+  end
+
+  def filter
+    @courses = Course.all
     if params[:filter]
       Course::CATEGORIES.each do |category|
         @courses = @courses.where(category => true) if params[:filter][category] && params[:filter][category] == "1"
       end
       respond_to do |format|
         format.html # Follow regular flow of Rails
-        format.text { render :index, layout: false, formats: [:html] }
+        format.text { render partial: "courses/list", locals: {courses: @courses}, formats: [:html] }
       end
     end
   end

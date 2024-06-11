@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "posts#index"
   root to: "courses#index"
-
+  post "/", to: "courses#filter", as: "filter"
   resources :courses, only: %i[show] do
     get "/navigate", to: "rides#navigate", as: "navigate"
     resources :rides, only: %i[create]
