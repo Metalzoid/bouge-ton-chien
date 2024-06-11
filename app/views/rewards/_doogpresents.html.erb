@@ -9,7 +9,7 @@
     <div class="carousel-inner">
       <% rewards.each_slice(2).with_index do |two_rewards, index| %>
         <div class="carousel-item gap-1 <%= "active" if index == 0 %>">
-          <a class="col-6" type="button" data-bs-toggle="<%= 'modal' if current_user.money >= filter %>" data-bs-target="#modalDetails<%= two_rewards[0].id %>">
+          <button class="col-6 border-0" type="button" data-bs-toggle="<%= 'modal' if current_user.money >= filter %>" data-bs-target="#modalDetails<%= two_rewards[0].id %>">
             <%= render "presentdetails", reward: two_rewards[0], reduction: reduction %>
             <div class="card <%= 'cardActive' if current_user.money >= filter %>">
               <%= cl_image_tag(two_rewards[0].photo.key) if two_rewards[0].photo.present? %>
@@ -21,9 +21,9 @@
                 <li class="list-group-item"><%= ((two_rewards[0].price * 100 - reduction) / 100.0).round(2) %></li>
               </ul>
             </div>
-          </a>
+          </button>
           <% if two_rewards.length > 1 %>
-            <a class="col-6" type="button" data-bs-toggle="modal" data-bs-target="#modalDetails<%= two_rewards[1].id %>">
+            <button class="col-6 border-0" type="button" data-bs-toggle="modal" data-bs-target="#modalDetails<%= two_rewards[1].id %>">
               <%= render "presentdetails", reward: two_rewards[1], reduction: reduction %>
               <div class="card <%= 'cardActive' if current_user.money >= filter %>">
                 <%= cl_image_tag(two_rewards[1].photo.key) if two_rewards[1].photo.present? %>
@@ -35,7 +35,7 @@
                   <li class="list-group-item"><%= ((two_rewards[1].price * 100 - reduction) / 100.0).round(2) %></li>
                 </ul>
               </div>
-            </a>
+            </button>
           <% end %>
         </div>
       <% end %>

@@ -12,9 +12,8 @@
             <li class="list-group-item1"><%= reward.price %></li>
             <li class="list-group-item"><%= ((reward.price * 100 - reduction) / 100.0).round(2) %></li>
           </ul>
-          <%= link_to user_user_rewards_path(@user_reward, user_id: current_user.id), data: { 'turbo-method' => :post }, class: "btn btn-primary" %>
+          <%= link_to "coucou", user_rewards_path(user_reward: { reward_id: reward.id, user_id: current_user.id }), data: { 'turbo-method' => :post }, class: "btn btn-primary" %>
         </div>
-
       </div>
     </div>
   </div>

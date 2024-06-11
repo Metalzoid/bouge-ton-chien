@@ -21,10 +21,10 @@ Rails.application.routes.draw do
 
   resources :users, only: [:show] do
     resources :dogs, only: %i[create index]
-    resources :user_rewards, only: %i[create index update]
+    resources :user_rewards, only: %i[index update]
   end
 
   resources :rewards, only: %i[index]
-
+  resources :user_rewards, only: %i[create]
   resources :dogs, only: %i[destroy]
 end
