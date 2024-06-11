@@ -1,0 +1,10 @@
+#card-user-reward {
+  border-radius: 5%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: white;
+}
+
+.progress-bar {
+  transition: width 0.6s ease;
+  background-color: $light-green;
+}
