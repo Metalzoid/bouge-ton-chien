@@ -47,7 +47,7 @@ class RidesController < ApplicationController
   end
 
   def index
-    @rides = current_user.rides
+    @rides = current_user.rides.sort_by(&:updated_at).reverse
   end
 
   private

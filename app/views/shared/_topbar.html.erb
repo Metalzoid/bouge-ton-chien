@@ -8,24 +8,27 @@
     <% end %>
     <% if user_signed_in? %>
       <% if params[:controller] == "courses" && params[:action] == "index" %>
-        <h1 class="m-0" style="color: #d19b62;">Bienvenue <%= current_user.firstname %></h1>
+        <h1 style="color: #d19b62; margin-top: 40px !important;">Bienvenue <%= current_user.firstname %></h1>
       <% elsif params[:controller] == "courses" && params[:action] == "show" %>
-        <h1 class="m-0" style="color: #d19b62;"><%= @course.name %></h1>
+        <h1 style="color: #d19b62;"><%= @course.name %></h1>
       <% elsif params[:controller] == "rides" && params[:action] == "edit" %>
-        <h1 class="m-0" style="color: #d19b62;">En route !</h1>
+        <h1 style="color: #d19b62;">En route !</h1>
+      <% elsif params[:controller] == "rides" && params[:action] == "navigate" %>
+        <h1 style="color: #d19b62; margin-top: 40px !important;">En route vers <%= @course.name %></h1>
       <% elsif params[:controller] == "rides" && params[:action] == "show" %>
-        <h1 class="m-0" style="color: #d19b62;">Votre ride</h1>
+        <h1 style="color: #d19b62;">Votre ride</h1>
       <% elsif params[:controller] == "users" && params[:action] == "show" %>
-        <h1 class="m-0" style="color: #d19b62;">Votre profil</h1>
+        <h1 style="color: #d19b62;">Votre profil</h1>
       <% elsif params[:controller] == "dogs" && params[:action] == "index" %>
-        <h1 class="m-0" style="color: #d19b62;">Votre meute</h1>
+        <h1 style="color: #d19b62;">Votre meute</h1>
       <% elsif params[:controller] == "rewards" && params[:action] == "index" %>
-        <h1 class="m-0" style="color: #d19b62;">Récompenses</h1>
+        <h1 style="color: #d19b62;">Récompenses</h1>
       <% elsif params[:controller] == "user_rewards" && params[:action] == "index" %>
-        <h1 class="m-0" style="color: #d19b62;">Vos Récompenses</h1>
+        <h1 style="color: #d19b62; margin-top: 40px !important;">Vos Récompenses</h1>
+      <% elsif params[:controller] == "rides" && params[:action] == "map" %>
+        <h1 style="color: #d19b62; margin-top: 40px !important;">Les courses autour de vous !</h1>
       <% end %>
     <% else %>
-      <%# <h1 class="m-0" style="color:#895F33; font: size 17px; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">DOOGS !</h1> %>
       <%= link_to root_path do %>
         <%= image_tag "#{count}.png", height: "100px" %>
       <% end %>
