@@ -4,12 +4,23 @@ import { Controller } from "@hotwired/stimulus";
 export default class extends Controller {
   static targets = ["formfilter", "distance", "list"];
   connect() {
+    document.getElementById("filter_distance_désactivé").checked = true;
+    document.querySelectorAll(".dropdown-filters").forEach((button) => {
+      button.addEventListener('show.bs.dropdown', event => {
+        event.currentTarget.style.backgroundColor = "#895f33";
+        event.currentTarget.style.color = "white";
+      });
+      button.addEventListener('hide.bs.dropdown', event => {
+        event.currentTarget.style.backgroundColor = "#f4f4f4";
+        event.currentTarget.style.color = "#895f33";
+      });
+    })
     document.querySelectorAll('[type="radio"]').forEach((input) => {
       input.addEventListener("change", (event) => {
-        this.filter(event)
+        this.filter(event);
       })
     })
-    document.getElementById("filter_distance_désactivé").checked = true;
+
   }
 
   filter(event) {
