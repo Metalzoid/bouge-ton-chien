@@ -1,0 +1,35 @@
+#instructions {
+  position: absolute;
+  margin: 20px;
+  width: 90%;
+  height: 35%;
+  top: -15px;
+  bottom: 20%;
+  padding: 20px;
+  background-color: #ffffffbe;
+  overflow-y: scroll;
+  font-family: sans-serif;
+  z-index: 1;
+  font-size: 1rem;
+}
+
+.mapboxgl-popup {
+  max-width: 200px;
+}
+
+.mapboxgl-popup-content {
+
+  font-size: small;
+  text-align: center;
+  font-family: "Open Sans", sans-serif;
+  text-decoration: none;
+
+  a {
+    text-decoration: none;
+    border: none;
+    .descriptions {
+      font-size: 14px;
+      color: #895f33;
+    }
+  }
+}
