@@ -37,7 +37,8 @@ class RidesController < ApplicationController
     @markers = Course.all.map do |course|
       {
         lat: course.latitude,
-        lng: course.longitude
+        lng: course.longitude,
+        info_window_html: render_to_string(partial: "info_window", locals: { course: course })
       }
     end
   end
