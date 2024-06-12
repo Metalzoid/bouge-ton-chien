@@ -4,7 +4,7 @@
     data-ride-map-demo-route-value="<%= course.route %>"
     data-ride-map-demo-courselocation-value="<%= [course.longitude, course.latitude] %>"
     data-ride-map-demo-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
-    <div id="instructions" data-ride-map-demo-target="instruction" style="height: 150px;" class="opacity-0"></div>
+    <%# <div id="instructions" data-ride-map-demo-target="instruction" style="height: 150px;" class="opacity-0"></div> %>
   </div>
 <% elsif params[:controller] == "rides" && params[:action] == "edit" %>
   <div style= '<%= style_list %>'
@@ -25,7 +25,7 @@
     data-navigate-demo-course-value="<%= [{ lat: course.latitude, lng: course.longitude }].to_json %>"
     data-navigate-demo-markers-value="<%= markers.to_json%>"
     data-navigate-demo-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
-    <div id="instructions" data-navigate-demo-target="instruction" style="height: 150px;"></div>
+    <%# <div id="instructions" data-navigate-demo-target="instruction" style="height: 150px;"></div> %>
   </div>
 <% elsif params[:controller] == "rides" && params[:action] == "navigate" %>
   <div style= '<%= style_list %>'
@@ -33,7 +33,7 @@
     data-navigate-demo-course-value="<%= [{ lat: course.latitude, lng: course.longitude }].to_json %>"
     data-navigate-demo-markers-value="<%= markers.to_json%>"
     data-navigate-demo-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
-    <div id="instructions" data-navigate-demo-target="instruction"></div>
+    <%# <div id="instructions" data-navigate-demo-target="instruction"></div> %>
   </div>
 <% elsif params[:controller] == "courses" && params[:action] == "show"%>
   <div style= '<%= style_list %>'
