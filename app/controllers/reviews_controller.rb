@@ -3,6 +3,7 @@ class ReviewsController < ApplicationController
     @review = Review.new(review_params)
     @review.user = current_user
     @review.course = Ride.find(params[:ride_id]).course
+    @review.rating = 0 if params[:review]['rating'].nil?
     @review.save
     redirect_to root_path
   end

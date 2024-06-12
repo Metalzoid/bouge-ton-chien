@@ -26,6 +26,11 @@
                           label: 'Convient aux familles',
                           wrapper_html: { class: 'dropdown-item' }
                           %>
+              <%= f.input :favourites,
+                          as: :boolean,
+                          label: 'Vos Favoris',
+                          wrapper_html: { class: 'dropdown-item' }
+                          %>
 
       </div>
     </div>
@@ -33,8 +38,10 @@
       <button class="btn btn dropdown-toggle dropdown-filters" type="button" id="dropdownDistance" data-bs-toggle="dropdown" data-bs-auto-close="inside" aria-expanded="false">
         Distance
       </button>
-      <div class="dropdown-menu">
-        <%= f.input :distance, collection: [5, 10, 15], legend_tag: false, as: :radio_buttons, wrapper_html: { class: 'dropdown-item' } %>
+      <div class="dropdown-menu" data-filter-target="distance">
+        <%= f.input :distance, collection: [5, 10, 15, "Désactivé"], legend_tag: false, as: :radio_buttons, wrapper_html: { class: 'dropdown-item' } %>
+        <%= f.input :user_latitude, :as => :hidden %>
+        <%= f.input :user_longitude, :as => :hidden %>
       </div>
     </div>
       <% end %>
