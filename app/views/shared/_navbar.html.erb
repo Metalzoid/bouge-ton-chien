@@ -2,7 +2,7 @@
   <div class="container-fluid">
     <ul class="navbar-nav flex-row w-100 justify-content-around align-items-center text-center">
       <li class="nav-item">
-        <% if params[:controller] == "courses" && params[:action] == "index" %>
+        <% if (params[:controller] == "courses") %>
           <%= link_to root_path, class: "nav-link active" do %>
             <i class="fa-solid fa-house"></i>
           <% end %>
@@ -13,7 +13,7 @@
         <% end %>
       </li>
       <li class="nav-item">
-        <% if (params[:controller] == "rides" && params[:action] != "show") %>
+        <% if (params[:controller] == "rides" && (params[:action] == "edit" || params[:action] == "index" || params[:action] == "navigate" || params[:action] == "map")) %>
           <%= link_to map_path, class: "nav-link active" do %>
             <i class="fa-solid fa-map-location-dot"></i>
           <% end %>
@@ -24,13 +24,13 @@
         <% end %>
       </li>
       <li class="nav-item">
-        <% if (params[:controller] == "users" && params[:action] == "show") || params[:controller] == "devise/sessions"%>
+        <% if (params[:controller] == "users") || (params[:controller] == "devise/sessions") || (params[:controller] == "user_rewards") || (params[:controller] == "dogs") || (params[:controller] == "rewards") ||(params[:controller] == "rides" && (params[:action]  == "index" || params[:action]  == "show"))  %>
           <% if user_signed_in? %>
-            <%= link_to user_path(current_user), class: "nav-link" do %>
+            <%= link_to user_path(current_user), class: "nav-link active" do %>
               <i class="fa-solid fa-user"></i>
             <% end %>
           <% else %>
-            <%= link_to new_user_session_path, class: "nav-link" do %>
+            <%= link_to new_user_session_path, class: "nav-link active" do %>
               <i class="fa-solid fa-user"></i>
             <% end %>
           <% end %>
