@@ -92,3 +92,20 @@
   font-weight: bold;
   text-align: center;
 }
+
+#buttonPromo {
+  display: inline-block;
+  border: 1px solid white;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  transition-duration: 0.4s;
+  background-color: $light-brown;
+  color: white;
+  position: relative;
+  border-radius: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+}
