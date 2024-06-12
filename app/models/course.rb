@@ -26,4 +26,23 @@ class Course < ApplicationRecord
     result = result.fdiv(reviews.count) if reviews.count.positive?
     return result
   end
+
+  def geojson
+    access_token = ENV['MAPBOX_API_KEY']
+    geojson = {
+      type: "FeatureCollection",
+      features: [
+        {
+          type: "Feature",
+          properties: {},
+          geometry: {
+            type: "LineString",
+            coordinates: route
+          }
+        }
+      ]
+    }.to_json
+    encoded_geojson = URI.encode_www_form_component(geojson)
+    return "https://api.mapbox.com/styles/v1/mapbox/streets-v12/static/geojson(#{encoded_geojson})/auto/150x300?access_token=#{access_token}"
+  end
 end
