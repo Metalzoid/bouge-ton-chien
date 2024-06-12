@@ -34,7 +34,9 @@
       <% end %>
     <% end %>
     <% if user_signed_in? %>
-      <small class="doogs-container" style="color: #895f33; font-weight: 600; font-size: 17px;"><%= current_user.money %><%= link_to "D", rewards_path, class: "doogs nav-link" %></small>
+      <%= link_to rewards_path do %>
+      <small class="doogs-container" style="color: #895f33; font-weight: 600; font-size: 17px;"><%= current_user.money %><span class="doogs nav-link">D</span></small>
+      <% end %>
     <% end %>
   </div>
 </div>
