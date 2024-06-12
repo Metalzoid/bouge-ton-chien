@@ -22,6 +22,7 @@ Rails.application.routes.draw do
 
   resources :users, only: [:show] do
     resources :dogs, only: %i[create index]
+    resources :rides, only: [:index]
     resources :user_rewards, only: %i[index update]
   end
 
