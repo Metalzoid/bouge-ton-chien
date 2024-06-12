@@ -32,14 +32,13 @@
                   <div class="modal-body border-0 p-0">
                     <div class="col-sm-6">
                       <div class="card" data-controller="rating-stars">
-                        <div class="card-body">
-                          <h2 class="card-title">Laisse un avis pour ta course !</h2>
+                        <div class="card-body text-center">
+                          <h2 class="card-title">Laisse un avis !</h2>
                             <hr>
-                            <p class="card-text p-5">
-                          <h2>Laisser un avis :</h2>
+                            <p class="card-text p-1">
                             <%= form_with(model: [@ride, @review], local: true) do |form| %>
                           <div class="field">
-                            <%= form.label :rating, 'Note' %><br>
+                            <%= form.label :rating, 'Met une note:', class: 'text-lg' %><br>
                             <div class="rating-stars">
                               <% (1..5).each do |i| %>
                               <input type="radio" id="rating_<%= i %>" name="review[rating]" value="<%= i %>" style="display: none;">
@@ -48,10 +47,9 @@
                               </label>
                                 <% end %>
                             </div>
-                              <%= form.label :comment, 'Commentaire' %><br>
-                              <%= form.text_area :comment %>
+                              <div class="mt-5"><%= form.text_area :comment, rows: 5, cols: 40, class: 'text-area-centered', placeholder: 'Écrivez votre commentaire ici...'  %></div>
                                 <br>
-                              <%= form.submit 'Valider', class: "btn btn-primary" %>
+                              <%= form.submit 'Valider', class: "btn-avis" %>
                           </div>
                               <% end %>
                       </div>

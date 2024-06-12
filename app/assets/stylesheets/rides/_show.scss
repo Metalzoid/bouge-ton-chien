@@ -11,16 +11,16 @@
 
 .rating-star {
   cursor: pointer;
-  color: gray; /* Couleur de base des étoiles */
+  color: #8a7a69; /* Couleur de base des étoiles */
   font-size: 24px; /* Taille des étoiles */
 }
 
 .rating-star.checked {
-  color: black; /* Couleur des étoiles sélectionnées */
+  color: rgb(210, 194, 11); /* Couleur des étoiles sélectionnées */
 }
 
 .col-sm-4 {
-  font-size: 25px;
+  font-size: 20px;
 }
 
 .col-sm-3 {
@@ -28,4 +28,47 @@
 }
 #buttonAvis {
   width: 85%;
+}
+
+
+.btn-avis {
+  display: inline-block;
+  border: 1px solid white;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  transition-duration: 0.4s;
+  // background-color: #97c475;
+  // color: black;
+  background-color: $light-beige;
+  color: $brown;
+  position: relative;
+  border-radius: 10px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  padding: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  width: 80%;
+  font-family: "Teachers", sans-serif !important;
+}
+
+.btn-carousel {
+  display: inline-block;
+  border: 1px solid white;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  transition-duration: 0.4s;
+  // background-color: #97c475;
+  // color: black;
+  background-color: $light-beige;
+  color: $brown;
+  position: relative;
+  border-radius: 10px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  padding: 5px;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  width: 80%;
+  font-family: "Teachers", sans-serif !important;
 }

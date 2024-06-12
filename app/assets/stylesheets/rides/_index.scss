@@ -1,2 +1,10 @@
 @import "navigate";
 @import "edit";
+
+.text-lg {
+  font-size: 25px;
+}
+
+.text-area-centered::placeholder {
+  text-align: center;
+}
