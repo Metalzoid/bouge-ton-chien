@@ -2,7 +2,7 @@ import { Controller } from "@hotwired/stimulus";
 
 // Connects to data-controller="promo-code"
 export default class extends Controller {
-  static targets = ["code"];
+  static targets = ["button", "code"];
 
   connect() {
     console.log("PromoCodeController connected");
@@ -11,20 +11,17 @@ export default class extends Controller {
   showCode(event) {
     this.codeTarget.style.display = "block";
     const button = event.target;
-    button.style.display = "none";
-  }
-
-  copyCode(event) {
-    const promoCodeId = event.currentTarget.dataset.promoCodeId;
-    const promoCodeElement = document.getElementById(
-      `promo-code-${promoCodeId}`
-    );
-    const promoCode = promoCodeElement.innerText;
+    const code = this.codeTarget.querySelector("span").textContent;
+    this.buttonTarget.textContent = code;
 
     navigator.clipboard
-      .writeText(promoCode)
+      .writeText(code)
       .then(() => {
-        alert("Code promotionnel copié !");
+        // alert("Code promotionnel copié !");
+        this.codeTarget.querySelector("#feedback-text").style.display = "block";
+        setTimeout(() => {
+          this.codeTarget.querySelector("#feedback-text").style.display = "none";
+        }, 2000);
       })
       .catch((err) => {
         console.error("Could not copy text: ", err);

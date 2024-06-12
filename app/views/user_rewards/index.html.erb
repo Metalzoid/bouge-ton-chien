@@ -30,10 +30,10 @@
               <% end %>
              </p>
 
-            <button data-action="click->promo-code#showCode" class="btn btn-primary mt-2">Code promo</button>
+            <button data-action="click->promo-code#showCode" data-promo-code-target="button" class="btn simpleButton mt-2">Code promo</button>
             <div data-promo-code-target="code" class="mt-2" style="display: none;">
-              <span id="promo-code-<%= user_reward.id %>"><%= user_reward.reward.promocode %></span>
-              <button data-action="click->promo-code#copyCode" data-promo-code-id="<%= user_reward.id %>" class="btn btn-secondary btn-sm">Copier le code</button>
+              <span id="promo-code-<%= user_reward.id %>" style="display: none;"><%= user_reward.reward.promocode %></span>
+              <span id="feedback-text" style="display: none; margin-left: 10px">Copié !</span>
             </div>
           </div>
         </div>
