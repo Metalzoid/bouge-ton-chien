@@ -13,6 +13,8 @@ class User < ApplicationRecord
   has_many :reviews
   has_many :favourites, dependent: :destroy
 
+  has_many :favouritescourses, through: :favourites, source: "course"
+
   validates :nickname, presence: true
   validates :firstname, presence: true
   validates :lastname, presence: true
