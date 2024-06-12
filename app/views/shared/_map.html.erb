@@ -1,4 +1,4 @@
-<% if params[:controller] == "rides" && params[:action] == "edit" && @ride.course_id = 45 %>
+<% if params[:controller] == "rides" && params[:action] == "edit" && @ride.course_id = 34 %>
   <div style= '<%= style_list %>'
     data-controller="ride-map-demo"
     data-ride-map-demo-route-value="<%= course.route %>"
@@ -19,7 +19,7 @@
     data-index-map-markers-value="<%= markers.to_json%>"
     data-index-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
-<% elsif params[:course_id] == "45" %>
+<% elsif params[:course_id] == "34" %>
   <div style= '<%= style_list %>'
     data-controller="navigate-demo"
     data-navigate-demo-course-value="<%= [{ lat: course.latitude, lng: course.longitude }].to_json %>"

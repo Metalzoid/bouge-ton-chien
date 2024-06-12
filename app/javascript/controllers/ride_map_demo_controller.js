@@ -57,7 +57,6 @@ export default class extends Controller {
       clearInterval(this.intervalId);
       this.intervalId = null;
       document.getElementById("finish").classList.remove("d-none");
-
     }
   }
 
@@ -222,7 +221,6 @@ export default class extends Controller {
           currentIndex++;
           if (route.slice(currentIndex, -1).length > 0) {
             const instructionRoute = await getRoute(route[currentIndex], route.slice(-1));
-            console.log(instructionRoute);
             this.#showInstruction(instructionRoute);
           }
 
