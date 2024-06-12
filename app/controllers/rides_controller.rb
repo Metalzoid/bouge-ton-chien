@@ -1,5 +1,7 @@
 class RidesController < ApplicationController
   before_action :set_ride, only: %i[edit update show]
+  before_action :set_user, only: [:index]
+
   def create
     if params[:near] == "true"
       @ride = Ride.new(user: current_user, course: Course.find(params[:course_id]), money: 0)
@@ -44,9 +46,17 @@ class RidesController < ApplicationController
     @course = Course.find(params[:course_id])
   end
 
+  def index
+    @rides = current_user.rides
+  end
+
   private
 
   def set_ride
     @ride = Ride.find(params[:id])
+  end
+
+  def set_user
+    @user = User.find(params[:user_id])
   end
 end

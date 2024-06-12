@@ -42,7 +42,7 @@
     data-course-map-route-value="<%= course.route %>"
     data-course-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
-<% elsif params[:controller] == "rides" && params[:action] == "show"%>
+<% elsif params[:controller] == "rides" %>
   <div style= '<%= style_list %>'
     data-controller="course-map"
     data-course-map-markers-value="<%= [{ lat: course.latitude, lng: course.longitude }].to_json %>"
