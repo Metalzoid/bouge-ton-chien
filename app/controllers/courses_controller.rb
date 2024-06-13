@@ -28,9 +28,9 @@ class CoursesController < FavouritesController
         @courses_filtered = @courses
       end
       @courses_filtered = @courses_filtered.sort_by(&:average).reverse
-      if params[:filter]['user_favourite'].to_i == 1
+      if params[:filter]['user_favourite'].to_i == 1 && params[:filter]['course_id'] != nil
         add_favourite(params[:filter]['course_id'].to_i)
-      elsif params[:filter]['user_favourite'].to_i.zero?
+      elsif params[:filter]['user_favourite'].to_i.zero? && params[:filter]['course_id'] != nil
         destroy_favourite(params[:filter]['course_id'].to_i)
       end
       respond_to do |format|
