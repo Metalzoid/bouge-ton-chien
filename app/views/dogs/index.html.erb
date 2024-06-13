@@ -1,6 +1,6 @@
 <div class="container mt-3" id="home-dogs">
   <div class="cards align-items-center d-flex flex-column" data-controller="modal-dog" data-modal-dog-target="dogs">
-    <button data-bs-toggle="modal" data-bs-target="#modalForm" class="btn btn-primary" id="simpleButton">Ajouter un chien à la meute</button>
+    <button data-bs-toggle="modal" data-bs-target="#modalForm" class="btn simpleButton d-flex justify-content-center " >Ajouter un chien à la meute</button>
     <%= render "modal", dog: @dog %>
     <% @dogs.each do |dog| %>
       <%= render 'dog', dog: dog %>

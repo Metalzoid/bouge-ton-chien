@@ -4,7 +4,7 @@
     <%= cl_image_tag current_user.photo.key, class: "user-photo", gravity: "face", height: 100, width: 100, crop: "fill", radius: "max", fetch_format: "auto" %>
   </div>
   <div class="links">
-    <%= link_to "Voir mes achats", user_user_rewards_path(current_user), class: "btn buttonWhite" %>
+    <%= link_to "Mes achats", user_user_rewards_path(current_user), class: "btn buttonWhite" %>
     <%= link_to "Ma meute", user_dogs_path(current_user), class: "btn buttonWhite simpleButton" %>
     <%= link_to "Mes rides", user_rides_path(current_user), class: "btn buttonWhite simpleButton" %>
     <%= link_to "Editer mon profil", edit_user_registration_path(current_user), class: "btn simpleButton" %>
