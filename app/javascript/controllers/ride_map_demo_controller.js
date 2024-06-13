@@ -12,11 +12,10 @@ export default class extends Controller {
   static targets = ["instruction"];
 
   connect() {
-    this.#startTimer();
     mapboxgl.accessToken = this.apiKeyValue;
     this.map = new mapboxgl.Map({
       container: this.element,
-      style: "mapbox://styles/mapbox/streets-v12",
+      style: "mapbox://styles/metalzoid/clvxouh5502av01qpetk7a9eu",
       zoom: 12,
       center: this.courselocationValue
     });
@@ -30,7 +29,8 @@ export default class extends Controller {
         speed: 0.7,
         zoom: 17
       });
-    }, 1000)
+      }, 1000)
+    this.#startTimer();
   }
 
   intervalId = null;
@@ -85,7 +85,7 @@ export default class extends Controller {
       }
     });
 
-    this.map.loadImage('https://docs.mapbox.com/mapbox-gl-js/assets/custom_marker.png', (error, image) => {
+    this.map.loadImage('https://i.postimg.cc/k5BGkSPy/marker.png', (error, image) => {
       if (error) throw error;
       this.map.addImage('custom-marker', image);
     });
@@ -98,25 +98,6 @@ export default class extends Controller {
         'icon-image': 'custom-marker'
       }
     });
-  }
-
-  async #showInstruction(route) {
-    try {
-      this.instructionTarget.classList.remove("opacity-0")
-      const instructions = this.instructionTarget;
-      const steps = route.legs[0].steps;
-
-      let tripInstructions = '';
-      for (const step of steps) {
-        tripInstructions += `<li>${step.maneuver.instruction}</li>`;
-      }
-      instructions.innerHTML = `<p><strong>Durée de l'itinéraire: ${Math.floor(
-        route.duration / 60
-      )} min 🏃 </strong></p><ol>${tripInstructions}</ol>
-      `;
-    } catch (err) {
-      console.error('Error when showing instruction:', err)
-    }
   }
 
   async #callApi(course, route) {
@@ -159,14 +140,14 @@ export default class extends Controller {
         paint: {
           'line-color': '#3887be',
           'line-width': 5,
-          'line-opacity': 0.75
+          'line-opacity': 0.85
         }
       });
 
       // Simulate movement along the route
       let currentIndex = 0;
       const intervalId = setInterval(async () => {
-        if (currentIndex < route.length) {
+        if (currentIndex <= route.length) {
 
           const currentCoord = route[currentIndex];
           const marker = this.map.getSource('user');
@@ -219,15 +200,9 @@ export default class extends Controller {
             zoom: 17
           });
           currentIndex++;
-          if (route.slice(currentIndex, -1).length > 0) {
-            const instructionRoute = await getRoute(route[currentIndex], route.slice(-1));
-            this.#showInstruction(instructionRoute);
-          }
-
         } else {
-          clearInterval(intervalId);
-          this.instructionTarget.classList.add("opacity-0");
           this.#stopTimer();
+          clearInterval(intervalId);
         }
       }, 500); // Move every 2 seconds
     };

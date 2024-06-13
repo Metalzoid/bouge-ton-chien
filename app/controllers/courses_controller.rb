@@ -37,6 +37,6 @@ class CoursesController < ApplicationController
 
   def show
     @course = Course.find(params[:id])
-    @reviews = @course.reviews.includes(:user)
+    @reviews = @course.reviews.includes(:user).sort_by(&:updated_at).reverse
   end
 end
