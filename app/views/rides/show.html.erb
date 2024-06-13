@@ -10,8 +10,6 @@
     <% end %>
 </div>
       <%= render 'shared/map', course: @ride.course, style_list: "width: 100%; height: 215px; border-radius: 20px; box-shadow: 2px 4px 12px rgba(0, 0, 0, 0.4)" %>
-
-
         <div class="d-flex justify-content-around p-2">
           <div class="col-sm-4"><%= @ride.course.timing %>min</div>
           <div class="col-sm-4"><%= @ride.course.distance %>m</div>
@@ -55,7 +53,6 @@
                           </div>
                               <% end %>
                       </div>
-
                       </div>
                     </div>
                   </div>
