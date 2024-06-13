@@ -1,7 +1,7 @@
 <% if current_user.money >= filter %>
-  <h4><i class="fa-solid fa-unlock" style="color: #23ca02;"></i> <i class="fa-solid fa-paw mb-3 ms-3"><%= filter %></i></h4>
+  <h4><i class="fa-solid fa-unlock" style="color: #23ca02;"></i> <i class="fa-solid fa-paw mb-3 ms-3" style="color: #895f33;"><%= filter %></i></h4>
 <% else %>
-  <h4><i class="fa-solid fa-lock" style="color: #ff0000;"></i> <i class="fa-solid fa-paw mb-3 ms-3"><%= filter %></i></h4>
+  <h4><i class="fa-solid fa-lock" style="color: #ff0000;"></i> <i class="fa-solid fa-paw mb-3 ms-3" style="color: #895f33;"><%= filter %></i></h4>
 <% end %>
 
 <% if rewards.count.positive? %>

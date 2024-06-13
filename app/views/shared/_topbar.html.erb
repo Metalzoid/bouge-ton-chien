@@ -14,17 +14,17 @@
       <% elsif params[:controller] == "rides" && params[:action] == "edit" %>
         <h1>En route !</h1>
       <% elsif params[:controller] == "rides" && params[:action] == "navigate" %>
-        <h1>En route vers <%= @course.name %></h1>
+        <h1><%= @course.name %></h1>
       <% elsif params[:controller] == "rides" && params[:action] == "show" %>
-        <h1>Votre ride</h1>
+        <h1>Ma ride</h1>
       <% elsif params[:controller] == "users" && params[:action] == "show" %>
-        <h1>Votre profil</h1>
+        <h1>Mon profil</h1>
       <% elsif params[:controller] == "dogs" && params[:action] == "index" %>
-        <h1>Votre meute</h1>
+        <h1>Ma meute</h1>
       <% elsif params[:controller] == "rewards" && params[:action] == "index" %>
         <h1>Récompenses</h1>
       <% elsif params[:controller] == "user_rewards" && params[:action] == "index" %>
-        <h1>Vos Récompenses</h1>
+        <h1>Mes récompenses</h1>
       <% elsif params[:controller] == "rides" && params[:action] == "map" %>
         <h1>Les courses autour de vous !</h1>
       <% end %>
