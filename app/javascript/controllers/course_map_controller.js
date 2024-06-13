@@ -46,8 +46,9 @@ export default class extends Controller {
               'line-cap': 'round'
           },
           'paint': {
-              'line-color': '#ca6702',
-              'line-width': 6
+            'line-color': '#3887be',
+            'line-width': 5,
+            'line-opacity': 0.75
           }
       });
     });

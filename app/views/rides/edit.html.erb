@@ -3,7 +3,6 @@
     <div id="ready-to-run-cards">
       <div class="card align-items-center">
         <h1 class="text-center">Vous êtes arrivés ! Prêt ?</h1>
-        <%# <%= link_to 'GO !', course_rides_path(@course), data: { 'turbo-method' => :post, constroller: "redirect-ride" }, class: 'btn btn-primary btn-launch-ride w-50' %> %>
       </div>
     </div>
   </div>
@@ -17,7 +16,7 @@
             <%= f.input :timing, required: true, :as => :hidden %>
           </div>
           <div class="form-actions">
-            <%= f.button :submit, "Stopper la balade !", class: "btn simpleButton" %>
+            <%= f.button :submit, "Stopper la balade !", class: "simpleButton" %>
           </div>
         <% end %>
       </div>

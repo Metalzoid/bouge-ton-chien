@@ -31,13 +31,13 @@
              </p>
             <div class="d-flex justify-content-between">
               <div class="d-flex flex-column">
-                <button data-action="click->promo-code#showCode" data-promo-code-target="button" class="btn simpleButton mt-2">Code promo</button>
+                <button data-action="click->promo-code#showCode" data-promo-code-target="button" class="simpleButton mt-2">Code promo</button>
                 <div data-promo-code-target="code" class="mt-2" style="display: none; position: relative;">
                   <span id="promo-code-<%= user_reward.id %>" style="display: none;"><%= user_reward.reward.promocode %></span>
                   <span id="feedback-text" style="display: none;">Copié !</span>
                 </div>
               </div>
-              <%= link_to "Acheter !", user_reward.reward.link, class: "btn simpleButton", style: "max-height: 52px;" %>
+              <%= link_to "Acheter !", user_reward.reward.link, class: "simpleButton", style: "max-height: 52px;" %>
             </div>
           </div>
         </div>
