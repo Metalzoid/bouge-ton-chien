@@ -3,6 +3,7 @@ import { Controller } from "@hotwired/stimulus";
 // Connects to data-controller="filter"
 export default class extends Controller {
   static targets = ["formfilter", "distance", "list"];
+
   connect() {
     document.getElementById("filter_distance_désactivé").checked = true;
     document.querySelectorAll(".dropdown-filters").forEach((button) => {
@@ -24,11 +25,18 @@ export default class extends Controller {
   }
 
   filter(event) {
-    event.preventDefault();
     navigator.geolocation.getCurrentPosition(position => {
       const userLocation = position.coords;
       this.distanceTarget.querySelector("#filter_user_latitude").value = userLocation.latitude;
       this.distanceTarget.querySelector("#filter_user_longitude").value = userLocation.longitude;
+      if (event.target.classList.value == "fa-solid fa-heart") {
+        this.distanceTarget.querySelector("#filter_user_favourite").value = 0;
+        this.distanceTarget.querySelector("#filter_course_id").value = event.target.id;
+      } else {
+        this.distanceTarget.querySelector("#filter_user_favourite").value = 1;
+        this.distanceTarget.querySelector("#filter_course_id").value = event.target.id;
+      }
+
       fetch(this.formfilterTarget.action, {
         method: "POST", // Could be dynamic with Stimulus values
         headers: {
@@ -41,16 +49,7 @@ export default class extends Controller {
           this.listTarget.outerHTML = data;
         })
     }, err => {
-      // If the updateSource interval is defined, clear the interval to stop updating the source.
-      if (updateSource) clearInterval(updateSource);
       reject(new Error(err.message));
     });
-
-
-
-
-
-
-
   }
 }
