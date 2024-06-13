@@ -1,7 +1,7 @@
   <div class="container w-100 position-relative" data-filter-target="list">
     <% courses.each do |course| %>
       <div class="card mb-3">
-        <div class="position-absolute" style="z-index: 1500; top: 35px; left: 35px;">
+        <div class="position-absolute" style="z-index: 1; top: 35px; left: 35px;">
           <% if user_signed_in? %>
             <% if course.favourites.exists?(user: current_user) %>
               <i class="fa-solid fa-heart" style="color: red; font-size: 30px; z-index: 1500; cursor: pointer;" data-action="click->filter#filter" id="<%= course.id %>"></i>

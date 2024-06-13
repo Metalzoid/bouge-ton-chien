@@ -3,7 +3,7 @@
     <div class="modal-content">
       <div class="modal-body border-0 p-0">
         <div class="card cardActive" style="height: 600px;">
-          <%= cl_image_tag(reward.photo.key) if reward.photo.present? %>
+          <%= cl_image_tag(reward.photo.key, height: 280, crop: "fill")if reward.photo.present? %>
           <div class="card-body px-0 py-1">
             <h4 class="card-title text-center"><%= reward.name %></h4>
             <p class="card-text"><%= reward.description %></p>

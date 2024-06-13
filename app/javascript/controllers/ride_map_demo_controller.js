@@ -15,7 +15,7 @@ export default class extends Controller {
     mapboxgl.accessToken = this.apiKeyValue;
     this.map = new mapboxgl.Map({
       container: this.element,
-      style: "mapbox://styles/metalzoid/clvxouh5502av01qpetk7a9eu",
+      style: "mapbox://styles/mapbox/streets-v10",
       zoom: 12,
       center: this.courselocationValue
     });
@@ -49,7 +49,7 @@ export default class extends Controller {
       }
       target.innerText = `${minutes}:${(seconds <= 9 ? `0${seconds}` : seconds)}`
       input.value = `${(minutes * 60) + seconds}`
-    }, 200);
+    }, 50);
   }
 
   #stopTimer() {
@@ -204,7 +204,7 @@ export default class extends Controller {
           this.#stopTimer();
           clearInterval(intervalId);
         }
-      }, 500); // Move every 2 seconds
+      }, 1500); // Move every 2 seconds
     };
 
     setTimeout(async () => {

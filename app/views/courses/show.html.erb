@@ -114,20 +114,20 @@
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body border-0 row">
-              <p class= "col-6">Poubelles: <i class="fa fa-trash"></i></p>
-              <p class= "col-6">Points d'eau: <i class="fa-solid fa-droplet"></i></p>
-              <p class= "col-6">Sacs canin: <i class="fa-solid fa-poo"></i></p>
-              <p class= "col-6">Convient au famille: <i class="fa-solid fa-people-group"></i></p>
+              <p class= "col-5">Poubelles: <i class="fa fa-trash"></i></p>
+              <p class= "col-7">Points d'eau: <i class="fa-solid fa-droplet"></i></p>
+              <p class= "col-5">Sacs canin: <i class="fa-solid fa-poo"></i></p>
+              <p class= "col-7">Convient au famille: <i class="fa-solid fa-people-group"></i></p>
             </div>
           </div>
         </div>
       </div>
     </div>
     <div class="container m-0">
-      <div class="row row-cols-2 mb-3" style="color: #895f33;">
-        <div class="col-sm-4">Distance : <%= @course.distance %>km</div>
-        <div class="col-sm-4">Difficulté : <%= @course.difficulty %>/5</div>
-        <div class="col-sm-4">Timing : <%= @course.timing %>min</div>
+      <div class="row row-cols-2 mb-3 justify-content-between" style="color: #895f33;">
+        <div class="col-6" style="font-size: 18px;">Distance : <%= @course.distance %>m</div>
+        <div class="col-6" style="font-size: 18px;">Difficulté : <%= @course.difficulty %>/5</div>
+        <div class="col-6" style="font-size: 18px;">Durée : <%= @course.timing %>min</div>
       </div>
       <div class="col-12">Description : <%= @course.description %></div>
     </div>
