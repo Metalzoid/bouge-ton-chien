@@ -289,7 +289,7 @@ course1.save!
 puts "course : #{course1.name} done !"
 
 course2 = Course.new(distance: 1300, money: 30, water: true, trashs: true, poopbag: true, familyfriendly: true, difficulty: 1, timing: 55, name: "Jardin Public", description: "Créé en 1746, le jardin public est un espace vert de 10,8 hectares situé en plein centre ville et abritant de multiples activités familiales.")
-course2photo1 = URI.open("https://ekladata.com/XBIqa2ygmoKIUkDx_QjbpoBUkx0.jpg")
+course2photo1 = URI.open("https://a.travel-assets.com/findyours-php/viewfinder/images/res70/132000/132861-Jardin-Public.jpg")
 course2photo2 = URI.open("https://www.bordeaux.fr/images/ebx/fr/lieu/858/format6/TS170367_1.jpg")
 course2photo3 = URI.open("https://www.bordeaux.fr/images/ebx/fr/lieu/858/format6/TS170348_6.jpg")
 course2photo4 = URI.open("https://www.gironde-tourisme.com/wp-content/uploads/wpetourisme/Jardin-Public-2.jpg")
