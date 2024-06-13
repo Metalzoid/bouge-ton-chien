@@ -12,7 +12,7 @@ export default class extends Controller {
     mapboxgl.accessToken = this.apiKeyValue;
     this.map = new mapboxgl.Map({
       container: this.element,
-      style: "mapbox://styles/metalzoid/clvxouh5502av01qpetk7a9eu",
+      style: "mapbox://styles/metalzoid/clvxouh5502av01qpetk7a9eu"
     });
     this.#fitMapToLocation();
     this.#addRouteToMap();
@@ -52,5 +52,9 @@ export default class extends Controller {
       });
     });
 
+  }
+
+  disconnect() {
+    this.map.remove();
   }
 }

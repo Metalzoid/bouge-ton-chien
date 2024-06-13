@@ -15,7 +15,7 @@ export default class extends Controller {
     mapboxgl.accessToken = this.apiKeyValue;
     this.map = new mapboxgl.Map({
       container: this.element,
-      style: "mapbox://styles/mapbox/streets-v12",
+      style: "mapbox://styles/metalzoid/clvxouh5502av01qpetk7a9eu",
       center: this.wagonCoordValue,
       zoom: 9
     });
@@ -80,7 +80,7 @@ export default class extends Controller {
       }
     })
 
-    this.map.loadImage('https://docs.mapbox.com/mapbox-gl-js/assets/custom_marker.png', (error, image) => {
+    this.map.loadImage('https://i.postimg.cc/k5BGkSPy/marker.png', (error, image) => {
       if (error) throw error;
       this.map.addImage('custom-marker', image);
     });
@@ -97,7 +97,6 @@ export default class extends Controller {
 
     const updateSource = setInterval(async () => {
       if (this.map.getSource('user')) {
-        this.#showInstruction(route)
         const userLocation = await this.#getCoordinates();
         const geojson = {
           type: 'FeatureCollection',
@@ -125,24 +124,6 @@ export default class extends Controller {
 
   async #verifyLocation(userLocation) {
     return (userLocation[0].toFixed(4) == this.courseValue[0].lng.toFixed(4)) && (userLocation[1].toFixed(4) == this.courseValue[0].lat.toFixed(4))
-  }
-
-  async #showInstruction(route) {
-    try {
-      const instructions = this.instructionTarget;
-      const steps = route.legs[0].steps;
-
-      let tripInstructions = '';
-      for (const step of steps) {
-        tripInstructions += `<li>${step.maneuver.instruction}</li>`;
-      }
-      instructions.innerHTML = `<p><strong>Durée de l'itinéraire: ${Math.floor(
-        route.duration / 60
-      )} min 🏃 </strong></p><ol>${tripInstructions}</ol>
-      `;
-    } catch (err) {
-      console.error('Error when showing instruction:', err)
-    }
   }
 
   async #callApi(coord) {
@@ -193,7 +174,6 @@ export default class extends Controller {
       };
 
       const route = await getRoute(coord);
-      this.#showInstruction(route)
       this.#addLocationToMap(coord, route);
       await updateRoute(route.geometry.coordinates);
   }

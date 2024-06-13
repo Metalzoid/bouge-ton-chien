@@ -2,7 +2,7 @@
   <div class="row justify-content-evenly">
     <div class="dropdown col-4">
       <%= simple_form_for(:filter, url: root_path, method: "POST", data: { filter_target: "formfilter", action: "change->filter#filter" }) do |f| %>
-      <button class="btn btn dropdown-toggle dropdown-filters" type="button" id="dropdownFilters" data-bs-toggle="dropdown" data-bs-auto-close="inside" aria-expanded="false">
+      <button class="btn btn dropdown-toggle dropdown-filters" type="button" id="dropdownFilters" data-bs-toggle="dropdown" data-bs-auto-close="true" aria-expanded="false">
         Filtres
       </button>
       <div class="dropdown-menu">
@@ -34,12 +34,12 @@
 
       </div>
     </div>
-    <div class="dropdown col-4">
-      <button class="btn btn dropdown-toggle dropdown-filters" type="button" id="dropdownDistance" data-bs-toggle="dropdown" data-bs-auto-close="inside" aria-expanded="false">
+    <div class="dropdown col-5">
+      <button class="btn btn dropdown-toggle dropdown-filters" type="button" id="dropdownDistance" data-bs-toggle="dropdown" data-bs-auto-close="true" aria-expanded="false">
         Distance
       </button>
-      <div class="dropdown-menu" data-filter-target="distance">
-        <%= f.input :distance, collection: [5, 10, 15, "Désactivé"], legend_tag: false, as: :radio_buttons, wrapper_html: { class: 'dropdown-item' } %>
+      <div class="dropdown-menu" id="dropdownDistance" data-filter-target="distance">
+        <%= f.input :distance, collection: ["5 Km", "10 Km", "15 Km", "Désactivé"], legend_tag: false, as: :radio_buttons, wrapper_html: { class: 'dropdown-item' } %>
         <%= f.input :user_latitude, :as => :hidden %>
         <%= f.input :user_longitude, :as => :hidden %>
       </div>
