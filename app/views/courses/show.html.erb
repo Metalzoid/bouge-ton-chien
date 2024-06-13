@@ -50,7 +50,7 @@
       <% end %>
     </div>
     <div class="d-flex justify-content-center p-1">
-      <button type="button" class="border-0 btn btn-primary simpleButton" data-bs-toggle="modal" data-bs-target="#modalPhoto">Photo de la course</button>
+      <button type="button" class="border-0 btn simpleButton" data-bs-toggle="modal" data-bs-target="#modalPhoto">Photo de la course</button>
     </div>
     <div class="modal fade" id="modalPhoto" tabindex="-1" aria-labelledby="modal photo" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered">
@@ -132,10 +132,10 @@
       <div class="col-12">Description : <%= @course.description %></div>
     </div>
     <div class="d-flex justify-content-center">
-      <button type="button" id="buttonAvis" class="border-0 btn btn-primary dropdown-filters" data-bs-toggle="modal" data-bs-target="#myModalAvis">Avis</button>
+      <button type="button" id="buttonAvis" class="border-0 btn dropdown-filters" data-bs-toggle="modal" data-bs-target="#myModalAvis">Avis</button>
     </div>
     <div class="d-flex justify-content-center" data-controller="redirect-ride" data-redirect-ride-course-value="<%= [{ lat: @course.latitude, lng: @course.longitude}].to_json %>">
-      <%= link_to 'En route !', course_rides_path(@course), data: { 'turbo-method' => :post }, class: 'btn btn-primary btn-launch-ride dropdown-filters', id: "buttonRide" %>
+      <%= link_to 'En route !', course_rides_path(@course), data: { 'turbo-method' => :post }, class: 'btn btn-launch-ride dropdown-filters', id: "buttonRide" %>
     </div>
   </div>
 </div>

@@ -17,6 +17,34 @@ export default class extends Controller {
     this.#addLocationToMap();
     this.#addRouteToMap();
     this.#fitMapToLocation();
+    this.#startTimer();
+  }
+
+  intervalId = null;
+
+  #startTimer() {
+    const target = document.getElementById("timer");
+    const input = document.getElementById("ride_timing");
+    let seconds = 0;
+    let minutes = 0;
+    this.intervalId = setInterval(() => {
+      if (seconds < 59) {
+        seconds++;
+      } else {
+        seconds = 0;
+        minutes++;
+      }
+      target.innerText = `${minutes}:${(seconds <= 9 ? `0${seconds}` : seconds)}`
+      input.value = `${(minutes * 60) + seconds}`
+    }, 200);
+  }
+
+  #stopTimer() {
+    if (this.intervalId) {
+      clearInterval(this.intervalId);
+      this.intervalId = null;
+      document.getElementById("finish").classList.remove("d-none");
+    }
   }
 
   #fitMapToLocation() {
@@ -66,6 +94,10 @@ export default class extends Controller {
         data: geojson
       });
 
+      this.map.loadImage('https://i.postimg.cc/k5BGkSPy/marker.png', (error, image) => {
+        if (error) throw error;
+        this.map.addImage('custom-marker', image);
+      });
       // Add the user symbol layer to the map.
       this.map.addLayer({
         id: 'user',
@@ -115,5 +147,9 @@ export default class extends Controller {
         reject(new Error(err.message));
       });
     });
+  }
+
+  disconnect() {
+    this.map.remove();
   }
 }
