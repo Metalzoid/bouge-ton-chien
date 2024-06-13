@@ -1,3 +1,18 @@
 @import "navigate";
 @import "edit";
 @import "show";
+<<<<<<< front-suite
+=======
+.text-lg {
+  font-size: 25px;
+}
+
+.text-area-centered::placeholder {
+  text-align: center;
+}
+
+.card-title {
+  font-size: 30px;
+  color: $brown;
+}
+>>>>>>> master
