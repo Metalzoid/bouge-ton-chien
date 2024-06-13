@@ -1,5 +1,4 @@
 require "open-uri"
-require 'faker'
 
 puts "Delete all tables"
 
@@ -358,37 +357,193 @@ course3.route = [[-0.5885728306130503, 44.855411406310346],
 course3.save!
 puts "course : #{course3.name} done !"
 
-course4 = Course.new(distance: 1500, water: true, trashs: true, poopbag: true, familyfriendly: true, difficulty: 1, timing: 25, name: "Parc de l'Hermitage", description: "Charmant petit parc urbain, parfait pour une promenade relaxante avec son chien.")
-  course4photo1 = URI.open("https://bordeaux-et-vous.com/preprod/wp-content/uploads/2015/07/Parc-Ermitage-Vue-Lormont-1024x580.jpg")
-  course4photo2 = URI.open("https://www.lormont.fr/fileadmin/images/04.decouvrir/Nature_et_patrimoines/musee/avl/parc-de-lermitage__3_.JPG")
-  course4photo3 = URI.open("https://media.sudouest.fr/4561977/1000x625/so-57e10cc466a4bde778cf5f63-ph0.jpg")
-  course4.photos.attach(io: course4photo1, filename: "photo.jpg", content_type: "image/jpg")
-  course4.photos.attach(io: course4photo2, filename: "photo2.jpg", content_type: "image/jpg")
-  course4.photos.attach(io: course4photo3, filename: "photo3.jpg", content_type: "image/jpg")
-  course4.latitude = "44.86399566698517"
-  course4.longitude = "-0.5956244975178163"
-  course4.route = [[-0.5956244975178163, 44.86399566698517],
-                    [-0.5956117608005242, 44.86506091062664],
-                    [-0.5950003983705027, 44.86506091062664],
-                    [-0.5948985046321658, 44.86518729415738],
-                    [-0.5952933428682212, 44.86598169856868],
-                    [-0.5939177774006726, 44.86598169856868],
-                    [-0.5940069344217175, 44.86738090695093],
-                    [-0.5933700985571116, 44.86742604213892],
-                    [-0.5931790477977299, 44.86789544599616],
-                    [-0.5941597750292229, 44.86794058078072],
-                    [-0.5950640819569631, 44.86797668858286],
-                    [-0.5950640819569631, 44.867868365108464],
-                    [-0.5954461834757268, 44.86785933814305],
-                    [-0.5954334467584347, 44.86720939291376],
-                    [-0.5960830193403325, 44.86702885126987],
-                    [-0.5952423959990529, 44.866144189029534],
-                    [-0.5970892200064097, 44.86584628950092],
-                    [-0.597216587179331, 44.86544006038651],
-                    [-0.596874279873727, 44.86531986769776],
-                    [-0.5971799610887378, 44.86479627818407],
-                    [-0.5969507001774796, 44.864660866327895],
-                    [-0.5967596494180979, 44.86439004165994],
-                    [-0.5957789221866049, 44.86406505037658]]
-  course4.save!
-  puts "course : #{course4.name} done !"
+course4 = Course.new(distance: 3600, money:20, water: true, trashs: true, poopbag: true, familyfriendly: true, difficulty: 1, timing: 25, name: "Parc de l'Hermitage", description: "Charmant petit parc urbain, parfait pour une promenade relaxante avec son chien.")
+course4photo1 = URI.open("https://bordeaux-et-vous.com/preprod/wp-content/uploads/2015/07/Parc-Ermitage-Vue-Lormont-1024x580.jpg")
+course4photo2 = URI.open("https://www.lormont.fr/fileadmin/images/04.decouvrir/Nature_et_patrimoines/musee/avl/parc-de-lermitage__3_.JPG")
+course4photo3 = URI.open("https://media.sudouest.fr/4561977/1000x625/so-57e10cc466a4bde778cf5f63-ph0.jpg")
+course4.photos.attach(io: course4photo1, filename: "photo.jpg", content_type: "image/jpg")
+course4.photos.attach(io: course4photo2, filename: "photo2.jpg", content_type: "image/jpg")
+course4.photos.attach(io: course4photo3, filename: "photo3.jpg", content_type: "image/jpg")
+course4.latitude = "44.86399566698517"
+course4.longitude = "-0.5956244975178163"
+course4.route = [[-0.5956244975178163, 44.86399566698517],
+                  [-0.5956117608005242, 44.86506091062664],
+                  [-0.5950003983705027, 44.86506091062664],
+                  [-0.5948985046321658, 44.86518729415738],
+                  [-0.5952933428682212, 44.86598169856868],
+                  [-0.5939177774006726, 44.86598169856868],
+                  [-0.5940069344217175, 44.86738090695093],
+                  [-0.5933700985571116, 44.86742604213892],
+                  [-0.5931790477977299, 44.86789544599616],
+                  [-0.5941597750292229, 44.86794058078072],
+                  [-0.5950640819569631, 44.86797668858286],
+                  [-0.5950640819569631, 44.867868365108464],
+                  [-0.5954461834757268, 44.86785933814305],
+                  [-0.5954334467584347, 44.86720939291376],
+                  [-0.5960830193403325, 44.86702885126987],
+                  [-0.5952423959990529, 44.866144189029534],
+                  [-0.5970892200064097, 44.86584628950092],
+                  [-0.597216587179331, 44.86544006038651],
+                  [-0.596874279873727, 44.86531986769776],
+                  [-0.5971799610887378, 44.86479627818407],
+                  [-0.5969507001774796, 44.864660866327895],
+                  [-0.5967596494180979, 44.86439004165994],
+                  [-0.5957789221866049, 44.86406505037658]]
+course4.save!
+puts "course : #{course4.name} done !"
+
+course5 = Course.new(distance: 2800, money: 33, water: true, trashs: true, poopbag: true, familyfriendly: true, difficulty: 1, timing: 25, name: "Balade à Bordeaux", description: "Charmant petit parc urbain, parfait pour une promenade relaxante avec son chien.")
+course5photo2 = URI.open("https://www.merignac.com/sites/default/files/2022-01/parc-bourran.jpg")
+course5photo1 = URI.open("https://www.aixenprovencetourism.com/wp-content/uploads/2013/12/Parc-Rambot-credit-P.-Biolatto-ville-dAix-en-Pce-5-1920x1080.jpg")
+course5photo3 = URI.open("https://www.bordeaux.fr/images/ebx/fr/lieu/851/format6/parc_bordelais_1.jpg")
+course5.photos.attach(io: course5photo1, filename: "photo.jpg", content_type: "image/jpg")
+course5.photos.attach(io: course5photo2, filename: "photo2.jpg", content_type: "image/jpg")
+course5.photos.attach(io: course5photo3, filename: "photo3.jpg", content_type: "image/jpg")
+course5.latitude = "44.86399566698517"
+course5.longitude = "-0.5956244975178163"
+course5.route = [[-0.5956244975178163, 44.86399566698517],
+                  [-0.5956117608005242, 44.86506091062664],
+                  [-0.5950003983705027, 44.86506091062664],
+                  [-0.5948985046321658, 44.86518729415738],
+                  [-0.5952933428682212, 44.86598169856868],
+                  [-0.5939177774006726, 44.86598169856868],
+                  [-0.5940069344217175, 44.86738090695093],
+                  [-0.5933700985571116, 44.86742604213892],
+                  [-0.5931790477977299, 44.86789544599616],
+                  [-0.5941597750292229, 44.86794058078072],
+                  [-0.5950640819569631, 44.86797668858286],
+                  [-0.5950640819569631, 44.867868365108464],
+                  [-0.5954461834757268, 44.86785933814305],
+                  [-0.5954334467584347, 44.86720939291376],
+                  [-0.5960830193403325, 44.86702885126987],
+                  [-0.5952423959990529, 44.866144189029534],
+                  [-0.5970892200064097, 44.86584628950092],
+                  [-0.597216587179331, 44.86544006038651],
+                  [-0.596874279873727, 44.86531986769776],
+                  [-0.5971799610887378, 44.86479627818407],
+                  [-0.5969507001774796, 44.864660866327895],
+                  [-0.5967596494180979, 44.86439004165994],
+                  [-0.5957789221866049, 44.86406505037658]]
+course5.save!
+puts "course : #{course5.name} done !"
+
+
+course6 = Course.new(distance: 1500, money: 12, water: true, trashs: true, poopbag: true, familyfriendly: true, difficulty: 1, timing: 25, name: "Parc du Wagon", description: "Charmant petit parc urbain, parfait pour une promenade relaxante avec son chien.")
+course6photo2 = URI.open("https://upload.wikimedia.org/wikipedia/commons/5/5b/P1110707_Paris_XIV_parc_de_Montsouris_rwk.JPG")
+course6photo3 = URI.open("https://cdn.paris.fr/paris/2023/05/09/huge-616e38e39036296a963a4afeece7cf96.jpg")
+course6photo1 = URI.open("https://www.douai.fr/sites/default/files/2022-12/parc%20charles%20bertin.jpg")
+course6.photos.attach(io: course6photo1, filename: "photo.jpg", content_type: "image/jpg")
+course6.photos.attach(io: course6photo2, filename: "photo2.jpg", content_type: "image/jpg")
+course6.photos.attach(io: course6photo3, filename: "photo3.jpg", content_type: "image/jpg")
+course6.latitude = "44.86399566698517"
+course6.longitude = "-0.5956244975178163"
+course6.route = [[-0.5956244975178163, 44.86399566698517],
+                  [-0.5956117608005242, 44.86506091062664],
+                  [-0.5950003983705027, 44.86506091062664],
+                  [-0.5948985046321658, 44.86518729415738],
+                  [-0.5952933428682212, 44.86598169856868],
+                  [-0.5939177774006726, 44.86598169856868],
+                  [-0.5940069344217175, 44.86738090695093],
+                  [-0.5933700985571116, 44.86742604213892],
+                  [-0.5931790477977299, 44.86789544599616],
+                  [-0.5941597750292229, 44.86794058078072],
+                  [-0.5950640819569631, 44.86797668858286],
+                  [-0.5950640819569631, 44.867868365108464],
+                  [-0.5954461834757268, 44.86785933814305],
+                  [-0.5954334467584347, 44.86720939291376],
+                  [-0.5960830193403325, 44.86702885126987],
+                  [-0.5952423959990529, 44.866144189029534],
+                  [-0.5970892200064097, 44.86584628950092],
+                  [-0.597216587179331, 44.86544006038651],
+                  [-0.596874279873727, 44.86531986769776],
+                  [-0.5971799610887378, 44.86479627818407],
+                  [-0.5969507001774796, 44.864660866327895],
+                  [-0.5967596494180979, 44.86439004165994],
+                  [-0.5957789221866049, 44.86406505037658]]
+course6.save!
+puts "course : #{course6.name} done !"
+
+course7 = Course.new(distance: 2455, water: true, money: 50, trashs: true, poopbag: true, familyfriendly: true, difficulty: 1, timing: 15, name: "Parc Rivière basse", description: "Parfait pour des petites balades relaxantes, ce parc est un véritable havre de paix pour les amoureux des animaux et de la nature.")
+course7photo2 = URI.open("https://www.vichy-patrimoine-mondial.com/wp-content/uploads/2020/06/DSCF2375.jpg")
+course7photo1 = URI.open("https://cdn.paris.fr/paris/2019/09/12/huge-5c5f642f666ab66fd807e6f416a48281.jpg")
+course7photo3 = URI.open("https://www.chateaubourg.fr/medias/2017/12/Parc-Pasteur-5.jpg")
+course7.photos.attach(io: course7photo1, filename: "photo.jpg", content_type: "image/jpg")
+course7.photos.attach(io: course7photo2, filename: "photo2.jpg", content_type: "image/jpg")
+course7.photos.attach(io: course7photo3, filename: "photo3.jpg", content_type: "image/jpg")
+course7.latitude = "44.855411406310346"
+course7.longitude = "-0.5885728306130503"
+course7.route = [[-0.5885728306130503, 44.855411406310346],
+                  [-0.5885425642727812, 44.854456629734244],
+                  [-0.5867719833670346, 44.85442444597837],
+                  [-0.5867417170267655, 44.85422061510676],
+                  [-0.5861666565616512, 44.85424207102195],
+                  [-0.5855613297562678, 44.8544995413808],
+                  [-0.5855007970757296, 44.85580833123968],
+                  [-0.5850165356314228, 44.85599070123585],
+                  [-0.5852737995237107, 44.85622670860885],
+                  [-0.5866206516656889, 44.85595851833734],
+                  [-0.5865601189851505, 44.85579760357486],
+                  [-0.5879977701479361, 44.85565814375035],
+                  [-0.5879826369778015, 44.8555079558693],
+                  [-0.5885879637831849, 44.85549722814853]]
+course7.save!
+puts "course : #{course7.name} done !"
+
+course8 = Course.new(distance: 1255, water: true, money: 50, trashs: true, poopbag: true, familyfriendly: true, difficulty: 1, timing: 15, name: "Parc Rivière", description: "Parfait pour des petites balades relaxantes, ce parc est un véritable havre de paix pour les amoureux des animaux et de la nature.")
+course8photo3 = URI.open("https://metropole.nantes.fr/files/images/environnement/nature/espaces-verts/parc-roseraie-1920.jpg")
+course8photo2 = URI.open("https://m1.quebecormedia.com/emp/emp/169502593_10158229362191270_8257187418233227667_n651e42df-7242-4725-b700-9e443ea54834_ORIGINAL.jpg?")
+course8photo1 = URI.open("https://www.francebleu.fr/s3/cruiser-production/2020/03/96f53649-4ac1-4c1d-91b4-e289972aafea/1200x680_024_3325401.jpg")
+course8.photos.attach(io: course8photo1, filename: "photo.jpg", content_type: "image/jpg")
+course8.photos.attach(io: course8photo2, filename: "photo2.jpg", content_type: "image/jpg")
+course8.photos.attach(io: course8photo3, filename: "photo3.jpg", content_type: "image/jpg")
+course8.latitude = "44.855411406310346"
+course8.longitude = "-0.5885728306130503"
+course8.route = [[-0.5885728306130503, 44.855411406310346],
+                  [-0.5885425642727812, 44.854456629734244],
+                  [-0.5867719833670346, 44.85442444597837],
+                  [-0.5867417170267655, 44.85422061510676],
+                  [-0.5861666565616512, 44.85424207102195],
+                  [-0.5855613297562678, 44.8544995413808],
+                  [-0.5855007970757296, 44.85580833123968],
+                  [-0.5850165356314228, 44.85599070123585],
+                  [-0.5852737995237107, 44.85622670860885],
+                  [-0.5866206516656889, 44.85595851833734],
+                  [-0.5865601189851505, 44.85579760357486],
+                  [-0.5879977701479361, 44.85565814375035],
+                  [-0.5879826369778015, 44.8555079558693],
+                  [-0.5885879637831849, 44.85549722814853]]
+course8.save!
+puts "course : #{course8.name} done !"
+
+Review.create!(rating: 5, comment: "J’utilise cette application depuis quelques semaines maintenant et je suis absolument ravie ! Mon chien, adore ses balades.", user: user2, course: course1)
+Review.create!(rating: 1, comment: "L’application semblait être une bonne idée, mais elle est très mal conçue. Le système de géolocalisation est souvent imprécis.", user: user2, course: course3)
+Review.create!(rating: 3, comment: "Excellente application pour les propriétaires de chiens ! Mon chien a toujours hâte de sortir pour ses promenades. Quelques points à corriger ...", user: user2, course: course2)
+
+Review.create!(rating: 5, comment: "Je recommande vivement cette application à tous les propriétaires de chiens qui cherchent des balades fiables et agréables pour leurs compagnons à quatre pattes !", user: user3, course: course2)
+Review.create!(rating: 4, comment: "Une application indispensable pour les propriétaires de chiens.", user: user3, course: course1)
+Review.create!(rating: 2, comment: "L’application a un beau design et est facile à utiliser, mais je préfère mon ancienne application.", user: user3, course: course4)
+
+Review.create!(rating: 1, comment: "Point négatif est que l’application peut parfois être un peu lente.", user: user4, course: course5)
+Review.create!(rating: 4, comment: "Excellente application pour les propriétaires de chiens ! Mon chien a toujours hâte de sortir pour ses promenades.", user: user4, course: course2)
+Review.create!(rating: 3, comment: "L’interface de l’application est intuitive et facile à utiliser.", user: user4, course: course7)
+
+Review.create!(rating: 5, comment: "J’utilise cette application depuis un an et je ne pourrais plus m’en passer.", user: user5, course: course1)
+Review.create!(rating: 4, comment: "Bravo pour cette application !", user: user5, course: course2)
+Review.create!(rating: 4, comment: "J’adore avoir un récap des courses que j’ai faites et mes Doogies gagnés", user: user5, course: course8)
+Review.create!(rating: 4, comment: "J’adore avoir un récap des courses que j’ai faites et mes Doogies gagnés", user: user5, course: course3)
+
+Review.create!(rating: 4, comment: "Marcher avec mon chien et gagner de l’argent, il ne m’en fallait pas plus pour adorer cette application.", user: user6, course: course7)
+Review.create!(rating: 4, comment: "Excellente application pour les propriétaires de chiens ! Mon chien a toujours hâte de sortir pour ses promenades.", user: user6, course: course6)
+Review.create!(rating: 3, comment: "L’interface de l’application est intuitive et facile à utiliser.", user: user6, course: course5)
+
+Review.create!(rating: 4, comment: "Marcher avec mon chien et gagner de l’argent, il ne m’en fallait pas plus pour adorer cette application.", user: user7, course: course4)
+Review.create!(rating: 4, comment: "Excellente application pour les propriétaires de chiens ! Mon chien a toujours hâte de sortir pour ses promenades.", user: user7, course: course8)
+Review.create!(rating: 3, comment: "L’interface de l’application est intuitive et facile à utiliser.", user: user7, course: course3)
+Review.create!(rating: 4, comment: "L’interface de l’application est intuitive et facile à utiliser.", user: user7, course: course1)
+
+Review.create!(rating: 3, comment: "Assez satisfait dans l’ensemble.", user: user8, course: course4)
+Review.create!(rating: 2, comment: "L’application a un beau design et est facile à utiliser, mais je préfère mon ancienne application.", user: user8, course: course2)
+Review.create!(rating: 3, comment: "L’interface de l’application est intuitive et facile à utiliser.", user: user8, course: course7)
+Review.create!(rating: 3, comment: "L’interface de l’application est intuitive et facile à utiliser.", user: user8, course: course3)
+
+puts "Reviews done!"
