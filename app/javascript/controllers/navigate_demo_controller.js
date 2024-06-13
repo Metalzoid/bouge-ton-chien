@@ -14,15 +14,15 @@ export default class extends Controller {
     mapboxgl.accessToken = this.apiKeyValue;
     this.map = new mapboxgl.Map({
       container: this.element,
-      style: "mapbox://styles/mapbox/streets-v10",
-      center: this.wagonCoordValue,
-      zoom: 9
+      style: "mapbox://styles/mapbox/streets-v10"
     });
     this.map.on('load', () => {
+      this.#fitMapToLocation();
       this.#addMarkersToMap();
       this.#addLocationToMap(this.wagonCoordValue);
-      this.#fitMapToLocation();
+      setTimeout(() => {
       this.#callApi(this.wagonCoordValue);
+      }, 2500);
     });
   }
 
@@ -31,7 +31,7 @@ export default class extends Controller {
     const bounds = new mapboxgl.LngLatBounds();
     bounds.extend(this.wagonCoordValue);
     bounds.extend([this.markersValue[0].lng, this.markersValue[0].lat]);
-    this.map.fitBounds(bounds, { padding: 70, maxZoom: 18, duration: 0 });
+    this.map.fitBounds(bounds, { padding: 70, maxZoom: 17, duration: 0 });
     setTimeout(() => {
       this.map.flyTo({
         center: this.wagonCoordValue,

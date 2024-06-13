@@ -12,6 +12,7 @@
   font-size: 20px;
   width: 110%;
   font-weight: bold;
+  text-decoration: none;
   text-align: center;
   transition: all 0.3s;
   &:hover {
@@ -21,12 +22,13 @@
 }
 
 .simpleButton {
+  text-decoration: none;
   display: inline-block;
   border: 1px solid white;
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   transition-duration: 0.4s;
   background-color: $light-brown;
-  color: white;
+  color: white !important;
   position: relative;
   border-radius: 10px;
   margin-top: 10px;
@@ -42,19 +44,8 @@
   border: 1px solid white;
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   transition-duration: 0.4s;
-  // background-color: #97c475;
-  // color: black;
-  background-color: $light-beige;
-  color: $brown;
-  position: relative;
-  border-radius: 10px;
-  margin-top: 20px;
-  margin-bottom: 10px;
-  padding: 10px;
-  font-size: 20px;
-  font-weight: bold;
-  text-align: center;
   width: 80%;
+  text-decoration: none;
   font-family: "Teachers", sans-serif !important;
 }
 
@@ -69,6 +60,7 @@
   margin-top: 10px;
   margin-bottom: 10px;
   padding: 10px;
+  text-decoration: none;
   font-size: 20px;
   font-weight: bold;
   text-align: center;
@@ -89,5 +81,24 @@
   padding: 10px;
   font-size: 20px;
   font-weight: bold;
+  text-decoration: none;
+  text-align: center;
+}
+
+.btn:hover {
+  display: inline-block;
+  border: 1px solid white;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  transition-duration: 0.4s;
+  background-color: $light-brown;
+  color: white !important;
+  position: relative;
+  border-radius: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: none;
   text-align: center;
 }

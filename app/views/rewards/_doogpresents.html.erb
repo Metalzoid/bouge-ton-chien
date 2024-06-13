@@ -11,7 +11,8 @@
         <div class="carousel-item gap-1 <%= "active" if index == 0 %>">
           <button class="col-6 border-0" type="button" data-bs-toggle="<%= 'modal' if current_user.money >= filter %>" data-bs-target="#modalDetails<%= two_rewards[0].id %>">
             <%= render "presentdetails", reward: two_rewards[0] %>
-            <div class="card <%= 'cardActive' if current_user.money >= filter %>">
+            <div class="card position-relative <%= 'cardActive' if current_user.money >= two_rewards[0].money %>">
+              <p class="price-present"><%= two_rewards[0].money %> D</p>
               <%= cl_image_tag(two_rewards[0].photo.key) if two_rewards[0].photo.present? %>
               <div class="card-body px-0 py-1">
                 <p class="card-title text-center"><%= two_rewards[0].name %></p>
@@ -25,7 +26,8 @@
           <% if two_rewards.length > 1 %>
             <button class="col-6 border-0" type="button" data-bs-toggle="modal" data-bs-target="#modalDetails<%= two_rewards[1].id %>">
               <%= render "presentdetails", reward: two_rewards[1] %>
-              <div class="card <%= 'cardActive' if current_user.money >= filter %>">
+              <div class="card position-relative <%= 'cardActive' if current_user.money >= two_rewards[1].money %>">
+                <p class="price-present"><%= two_rewards[0].money %> D</p>
                 <%= cl_image_tag(two_rewards[1].photo.key) if two_rewards[1].photo.present? %>
                 <div class="card-body px-0 py-1">
                   <p class="card-title text-center"><%= two_rewards[1].name %></p>

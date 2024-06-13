@@ -1,8 +1,6 @@
 import { Controller } from "@hotwired/stimulus";
 import mapboxgl from 'mapbox-gl';
 
-// [[-0.57556, 44.84936], [-0.57655, 44.84965], [-0.57702, 44.84981], [-0.57788, 44.85006], [-0.57883, 44.85037], [-0.57972, 44.85040], [-0.58081, 44.85018], [-0.58152, 44.84995], [-0.58093, 44.84971], [-0.58021, 44.84907], [-0.57958, 44.84832], [-0.57924, 44.84796], [-0.57866, 44.84778], [-0.57717, 44.84731], [-0.57704, 44.84780], [-0.57724, 44.84836], [-0.57687, 44.84838], [-0.57654, 44.84841], [-0.57628, 44.84848], [-0.57600, 44.84899], [-0.57558, 44.84937]]
-
 export default class extends Controller {
   static values = {
     apiKey: String,
@@ -30,7 +28,6 @@ export default class extends Controller {
         zoom: 17
       });
       }, 1000)
-    this.#startTimer();
   }
 
   intervalId = null;
@@ -49,7 +46,7 @@ export default class extends Controller {
       }
       target.innerText = `${minutes}:${(seconds <= 9 ? `0${seconds}` : seconds)}`
       input.value = `${(minutes * 60) + seconds}`
-    }, 50);
+    }, 20);
   }
 
   #stopTimer() {
@@ -146,6 +143,8 @@ export default class extends Controller {
 
       // Simulate movement along the route
       let currentIndex = 0;
+      this.#startTimer();
+
       const intervalId = setInterval(async () => {
         if (currentIndex <= route.length) {
 
@@ -204,11 +203,11 @@ export default class extends Controller {
           this.#stopTimer();
           clearInterval(intervalId);
         }
-      }, 1500); // Move every 2 seconds
+      }, 500); // Move every 2 seconds
     };
 
     setTimeout(async () => {
-      const last = [[-0.57558, 44.84937]];
+      const last = [[-0.575984, 44.849334]];
       await updateRoute(route.concat(last));
     }, 3000)
   }
