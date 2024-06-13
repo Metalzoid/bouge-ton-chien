@@ -5,7 +5,6 @@ export default class extends Controller {
   static targets = ["button", "code"];
 
   connect() {
-    console.log("PromoCodeController connected");
   }
 
   showCode(event) {
@@ -19,6 +18,7 @@ export default class extends Controller {
       .then(() => {
         // alert("Code promotionnel copié !");
         this.codeTarget.querySelector("#feedback-text").style.display = "block";
+        this.codeTarget.querySelector("#feedback-text").style.position = "absolute";
         setTimeout(() => {
           this.codeTarget.querySelector("#feedback-text").style.display = "none";
         }, 2000);

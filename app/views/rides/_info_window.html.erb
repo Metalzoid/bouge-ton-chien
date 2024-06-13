@@ -1,0 +1,35 @@
+<%= link_to course_path(course), class: "pop-up" do %>
+    <h2><%= course.name %></h2>
+    <div class="d-flex mb-3 align-items-center" style="color: #895f33;">
+      <div class="me-auto p-2">
+        <% course.average.to_i.times do %>
+          <i class="fa-solid fa-star"></i>
+        <% end %>
+        <% (5 - course.average.to_i).times do %>
+          <i class="fa-regular fa-star"></i>
+        <% end %>
+      </div>
+      <div >
+        <% if course.trashs %>
+          <i class="fa fa-trash"></i>
+        <% end %>
+        <% if course.water %>
+          <i class="fa-solid fa-droplet"></i>
+        <% end %>
+        <% if course.poopbag %>
+          <i class="fa-solid fa-poo"></i>
+        <% end %>
+        <% if course.familyfriendly %>
+          <i class="fa-solid fa-people-group"></i>
+        <% end %>
+      </div>
+    </div>
+    <div class="container m-0 descriptions ">
+      <div class="row row-cols-2 mb-3">
+        <p class="col-4">Distance <%= course.distance %>km</p>
+        <p class="col-4">Difficulté <%= course.difficulty %>/5</p>
+        <p class="col-4">Timing  <%= course.timing %>min</p>
+      </div>
+      <p class="col-12">Description : <%= course.description %></p>
+    </div>
+<% end %>

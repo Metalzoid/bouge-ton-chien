@@ -11,10 +11,10 @@ export default class extends Controller {
     mapboxgl.accessToken = this.apiKeyValue;
     this.map = new mapboxgl.Map({
       container: this.element,
-      style: "mapbox://styles/mapbox/streets-v12",
+      style: "mapbox://styles/metalzoid/clvxouh5502av01qpetk7a9eu"
     });
-    this.#addLocationToMap();
     this.#addMarkersToMap()
+    this.#addLocationToMap();
     this.#fitMapToLocation();
   }
 
@@ -22,49 +22,51 @@ export default class extends Controller {
     const bounds = new mapboxgl.LngLatBounds();
     const geojson = await this.#getLocation();
     bounds.extend(geojson.features[0].geometry.coordinates);
-    this.map.fitBounds(bounds, { padding: 70, maxZoom: 12, duration: 0});
+    this.map.fitBounds(bounds, { padding: 70, maxZoom: 11, duration: 0});
   }
 
   #addMarkersToMap() {
     this.markersValue.forEach((marker) => {
+      const popup = new mapboxgl.Popup().setHTML(marker.info_window_html) // Add this
       new mapboxgl.Marker()
-        .setLngLat([ marker.lng, marker.lat ])
-        .addTo(this.map)
-    })
-  }
+      .setLngLat([ marker.lng, marker.lat ])
+      .setPopup(popup) // Add this
+      .addTo(this.map)
+      })
+      }
 
   #addLocationToMap() {
     this.map.on('load', async () => {
       // Get the initial location of the user.
       const geojson = await this.#getLocation();
 
-      // Add the user's location as a source.
-      this.map.addSource('user', {
-        type: 'geojson',
-        data: geojson
-      });
+    // Add the user's location as a source.
+    this.map.addSource('user', {
+      type: 'geojson',
+      data: geojson
+    });
 
-      // Add the user symbol layer to the map.
-      this.map.loadImage(
-        'https://docs.mapbox.com/mapbox-gl-js/assets/custom_marker.png',
-        (error, image) => {
-            if (error) throw error;
-            this.map.addImage('custom-marker', image);
-        })
-      this.map.addLayer({
-        id: 'user',
-        type: 'symbol',
-        source: 'user',
-        layout: {
-          'icon-image': 'custom-marker'
-        }
-      });
+    // Add the user symbol layer to the map.
+    this.map.loadImage(
+      'https://i.postimg.cc/k5BGkSPy/marker.png',
+      (error, image) => {
+          if (error) throw error;
+          this.map.addImage('custom-marker', image);
+      })
+    this.map.addLayer({
+      id: 'user',
+      type: 'symbol',
+      source: 'user',
+      layout: {
+        'icon-image': 'custom-marker'
+      }
+    });
 
-      // Update the source from the API every 10 seconds.
-      const updateSource = setInterval(async () => {
-        const geojson = await this.#getLocation(updateSource);
-        this.map.getSource('user').setData(geojson);
-      }, 100000);
+    // Update the source from the API every 10 seconds.
+    const updateSource = setInterval(async () => {
+      const geojson = await this.#getLocation(updateSource);
+      this.map.getSource('user').setData(geojson);
+    }, 100000);
 
     });
   }
@@ -95,5 +97,9 @@ export default class extends Controller {
         reject(new Error(err.message));
       });
     });
+  }
+
+  disconnect() {
+    this.map.remove();
   }
 }

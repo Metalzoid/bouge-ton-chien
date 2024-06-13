@@ -7,10 +7,17 @@
             <% @reviews.each do |review| %>
               <div class="carousel-item bg-body <%= 'active' if review == @reviews.first %>">
                 <div class="card shadow p-3 m-3 bg-body-tertiary rounded" style="width: 91%;">
-                  <p class="card-text">Utilisateur: <%= review.user.firstname %></p>
+                  <h4 class="card-text"><%= cl_image_tag review.user.photo.key, height: 100, width: 100, gravity: "face", crop: "fill", style: "border-radius: 50%" %> <span class="ms-3"><%= review.user.firstname %></span></h4>
                   <div class="card-body">
-                    <p class="card-text"><%= review.comment %></p>
-                    <p class="card-text">Note: <%= review.rating %>/5</p>
+                    <p class="card-text" style="font-size: 19px;"><%= review.comment %></p>
+                    <div class="me-auto p-2" style="color: #895f33;">
+                      <% @course.average.to_i.times do %>
+                        <i class="fa-solid fa-star"></i>
+                      <% end %>
+                      <% (5 - @course.average.to_i).times do %>
+                        <i class="fa-regular fa-star"></i>
+                      <% end %>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -43,7 +50,7 @@
       <% end %>
     </div>
     <div class="d-flex justify-content-center p-1">
-      <button type="button" id="simpleButton" class="border-0 btn btn-primary simpleButton" data-bs-toggle="modal" data-bs-target="#modalPhoto">Photo de la course</button>
+      <button type="button" class="border-0 btn simpleButton" data-bs-toggle="modal" data-bs-target="#modalPhoto">Photo de la course</button>
     </div>
     <div class="modal fade" id="modalPhoto" tabindex="-1" aria-labelledby="modal photo" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered">
@@ -125,10 +132,10 @@
       <div class="col-12">Description : <%= @course.description %></div>
     </div>
     <div class="d-flex justify-content-center">
-      <button type="button" id="buttonAvis" class="border-0 btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModalAvis">Avis</button>
+      <button type="button" id="buttonAvis" class="border-0 btn dropdown-filters" data-bs-toggle="modal" data-bs-target="#myModalAvis">Avis</button>
     </div>
     <div class="d-flex justify-content-center" data-controller="redirect-ride" data-redirect-ride-course-value="<%= [{ lat: @course.latitude, lng: @course.longitude}].to_json %>">
-      <%= link_to 'En route !', course_rides_path(@course), data: { 'turbo-method' => :post }, class: 'btn btn-primary btn-launch-ride', id: "buttonRide" %>
+      <%= link_to 'En route !', course_rides_path(@course), data: { 'turbo-method' => :post }, class: 'btn btn-launch-ride dropdown-filters', id: "buttonRide" %>
     </div>
   </div>
 </div>

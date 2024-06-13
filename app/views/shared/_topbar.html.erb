@@ -1,5 +1,5 @@
 <div class="navbar navbar-expand-lg bg-white w-100" id="topbar">
-  <div class="container-fluid w-100 justify-content-center align-items-center">
+  <div class="container-fluid w-100 justify-content-center align-items-center h-100">
     <% count = rand(1..4) %>
     <% if user_signed_in? %>
       <%= link_to root_path, class: "logo" do %>
@@ -8,25 +8,25 @@
     <% end %>
     <% if user_signed_in? %>
       <% if params[:controller] == "courses" && params[:action] == "index" %>
-        <h1 style="color: #d19b62; margin-top: 40px !important;">Bienvenue <%= current_user.firstname %></h1>
+        <h1>Bienvenue <%= current_user.firstname %></h1>
       <% elsif params[:controller] == "courses" && params[:action] == "show" %>
-        <h1 style="color: #d19b62;"><%= @course.name %></h1>
+        <h1><%= @course.name %></h1>
       <% elsif params[:controller] == "rides" && params[:action] == "edit" %>
-        <h1 style="color: #d19b62;">En route !</h1>
+        <h1>En route !</h1>
       <% elsif params[:controller] == "rides" && params[:action] == "navigate" %>
-        <h1 style="color: #d19b62; margin-top: 40px !important;">En route vers <%= @course.name %></h1>
+        <h1><%= @course.name %></h1>
       <% elsif params[:controller] == "rides" && params[:action] == "show" %>
-        <h1 style="color: #d19b62;">Ma ride</h1>
+        <h1>Ma ride</h1>
       <% elsif params[:controller] == "users" && params[:action] == "show" %>
-        <h1 style="color: #d19b62;">Mon profil</h1>
+        <h1>Mon profil</h1>
       <% elsif params[:controller] == "dogs" && params[:action] == "index" %>
-        <h1 style="color: #d19b62;">Ma meute</h1>
+        <h1>Ma meute</h1>
       <% elsif params[:controller] == "rewards" && params[:action] == "index" %>
-        <h1 style="color: #d19b62;">Mes récompenses</h1>
+        <h1>Récompenses</h1>
       <% elsif params[:controller] == "user_rewards" && params[:action] == "index" %>
-        <h1 style="color: #d19b62; margin-top: 40px !important;">Vos Récompenses</h1>
+        <h1>Mes récompenses</h1>
       <% elsif params[:controller] == "rides" && params[:action] == "map" %>
-        <h1 style="color: #d19b62; margin-top: 40px !important;">Les courses autour de moi !</h1>
+        <h1>Les courses autour de vous !</h1>
       <% end %>
     <% else %>
       <%= link_to root_path do %>
@@ -34,7 +34,9 @@
       <% end %>
     <% end %>
     <% if user_signed_in? %>
-      <small class="doogs-container" style="color: #895f33; font-weight: 600; font-size: 17px;"><%= current_user.money %><%= link_to "D", rewards_path, class: "doogs nav-link" %></small>
+      <%= link_to rewards_path do %>
+      <small class="doogs-container" style="color: #895f33; font-weight: 600; font-size: 17px;"><%= current_user.money %><span class="doogs nav-link">D</span></small>
+      <% end %>
     <% end %>
   </div>
 </div>

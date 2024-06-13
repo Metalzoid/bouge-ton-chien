@@ -4,9 +4,13 @@
   top: 0;
   z-index: 10000;
   h1 {
-    margin-top: 50px;
+    display: flex;
+    height: 100%;
+    align-items: flex-end;
+    margin-bottom: 10px;
     max-width: 200px;
     text-align: center;
+    color: #d19b62;
   }
 
   .logo {

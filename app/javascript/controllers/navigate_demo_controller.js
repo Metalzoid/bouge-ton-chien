@@ -14,7 +14,7 @@ export default class extends Controller {
     mapboxgl.accessToken = this.apiKeyValue;
     this.map = new mapboxgl.Map({
       container: this.element,
-      style: "mapbox://styles/mapbox/streets-v12",
+      style: "mapbox://styles/metalzoid/clvxouh5502av01qpetk7a9eu",
       center: this.wagonCoordValue,
       zoom: 9
     });
@@ -67,7 +67,7 @@ export default class extends Controller {
       }
     });
 
-    this.map.loadImage('https://docs.mapbox.com/mapbox-gl-js/assets/custom_marker.png', (error, image) => {
+    this.map.loadImage('https://i.postimg.cc/k5BGkSPy/marker.png', (error, image) => {
       if (error) throw error;
       this.map.addImage('custom-marker', image);
     });
@@ -80,24 +80,6 @@ export default class extends Controller {
         'icon-image': 'custom-marker'
       }
     });
-  }
-
-  async #showInstruction(route) {
-    try {
-      const instructions = this.instructionTarget;
-      const steps = route.legs[0].steps;
-
-      let tripInstructions = '';
-      for (const step of steps) {
-        tripInstructions += `<li>${step.maneuver.instruction}</li>`;
-      }
-      instructions.innerHTML = `<p><strong>Durée de l'itinéraire: ${Math.floor(
-        route.duration / 60
-      )} min 🏃 </strong></p><ol>${tripInstructions}</ol>
-      `;
-    } catch (err) {
-      console.error('Error when showing instruction:', err)
-    }
   }
 
   async #callApi(coord) {
@@ -208,13 +190,11 @@ export default class extends Controller {
           document.querySelector("#ready-to-run").classList.remove("opacity-0");
           const link = document.querySelector(".btn-launch-ride").href;
           document.querySelector(".btn-launch-ride").href = `${link}?near=true`;
-          this.instructionTarget.classList.add("opacity-0")
         }
       }, 500); // Move every 2 seconds
     };
-    
+
     const fakeroute = await getRoute(coord);
-    this.#showInstruction(fakeroute)
     const route = [this.wagonCoordValue, [-0.56598, 44.85901], [-0.56664, 44.85857], [-0.56712, 44.85824], [-0.56751, 44.85796], [-0.56800, 44.85763], [-0.56852, 44.85727], [-0.56893, 44.85699], [-0.56927, 44.85675], [-0.56999, 44.85624], [-0.57052, 44.85587], [-0.57111, 44.85543], [-0.57169, 44.85505], [-0.57208, 44.85465], [-0.57226, 44.85440], [-0.57256, 44.85393], [-0.57264, 44.85384], [-0.57307, 44.85312], [-0.57346, 44.85246], [-0.57401, 44.85161], [-0.57474, 44.85045], [-0.57544,44.84933], [this.courseValue[0].lng, this.courseValue[0].lat]];
     await updateRoute(route);
   }

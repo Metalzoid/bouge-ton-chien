@@ -11,12 +11,11 @@
                 </div>
                 <div class="col-7 px-0">
                   <div class="card-body">
-                    <h5 class="card-title"> <%= ride.course.name %></h5>
-                    <p>Date : <%= ride.rided_at %></p>
-                    <p>Temps réalisé : <%= ride.timing %> </p>
-                    <p>Distance réalisée: <%= ride.distance %>km</p>
-                    <p>Money gagnée: <%= ride.money %>D</p>
-                    <p class="card-text"><small class="text-body-secondary"></small></p>
+                    <h5 class="card-title"><%= ride.course.name %></h5>
+                    <p><%= "Date : #{ride.rided_at}" if !ride.rided_at.nil? %></p>
+                    <p><%= "Temps réalisé : #{ride.timing}" if !ride.timing.nil? %> min</p>
+                    <p><%= "Distance réalisée: #{ride.distance}" if !ride.distance.nil? %>km</p>
+                    <p><%= "Money gagnée: #{ride.money}" if !ride.money.nil? %> D</p>
                   </div>
                 </div>
               </div>

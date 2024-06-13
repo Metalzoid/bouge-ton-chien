@@ -18,7 +18,7 @@
               </div>
               <ul class="list-group list-group-flush">
                 <li class="list-group-item1"><%= two_rewards[0].price %></li>
-                <li class="list-group-item"><%= ((two_rewards[0].price * 100 - two_rewards[0].reduction) / 100.0).round(2) %></li>
+                <li class="list-group-item"><%= ((two_rewards[0].price * (100 - two_rewards[0].reduction)) / 100.0).round(2) %></li>
               </ul>
             </div>
           </button>
@@ -32,7 +32,7 @@
                 </div>
                 <ul class="list-group list-group-flush">
                   <li class="list-group-item1"><%= two_rewards[1].price %></li>
-                  <li class="list-group-item"><%= ((two_rewards[1].price * 100 - two_rewards[1].reduction) / 100.0).round(2) %></li>
+                  <li class="list-group-item"><%= ((two_rewards[1].price * (100 - two_rewards[1].reduction)) / 100.0).round(2) %></li>
                 </ul>
               </div>
             </button>
