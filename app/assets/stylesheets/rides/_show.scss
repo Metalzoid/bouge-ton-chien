@@ -30,7 +30,6 @@
   width: 85%;
 }
 
-
 .btn-avis {
   display: inline-block;
   border: 1px solid white;
@@ -71,4 +70,12 @@
   text-align: center;
   width: 80%;
   font-family: "Teachers", sans-serif !important;
+}
+
+.text-lg {
+  font-size: 25px;
+}
+
+.text-area-centered::placeholder {
+  text-align: center;
 }
