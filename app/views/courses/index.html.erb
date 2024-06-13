@@ -42,6 +42,8 @@
         <%= f.input :distance, collection: ["5 Km", "10 Km", "15 Km", "Désactivé"], legend_tag: false, as: :radio_buttons, wrapper_html: { class: 'dropdown-item' } %>
         <%= f.input :user_latitude, :as => :hidden %>
         <%= f.input :user_longitude, :as => :hidden %>
+        <%= f.input :user_favourite, :as => :hidden %>
+        <%= f.input :course_id, :as => :hidden %>
       </div>
     </div>
       <% end %>

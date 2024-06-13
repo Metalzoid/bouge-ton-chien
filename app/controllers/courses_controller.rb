@@ -1,4 +1,4 @@
-class CoursesController < ApplicationController
+class CoursesController < FavouritesController
   skip_before_action :authenticate_user!, only: :index
   def index
     @courses = Course.all.includes(:reviews).sort_by(&:average).reverse
@@ -12,7 +12,7 @@ class CoursesController < ApplicationController
       end
       @courses = @courses.select { |course| current_user.favouritescourses.include?(course) } if params[:filter]['favourites'].to_i == 1
       @courses_filtered = []
-      if params[:filter]['distance']
+      if params[:filter]['distance'] == ("5 Km" || "10 Km" || "15 Km")
         @courses.each do |course|
           params[:filter]['distance'].gsub(" Km", "") == 5 ? lat_plus = (course.latitude + ("0.0#{params[:filter]['distance'].gsub(" Km", "")}".to_f / 2)).round(3) : lat_plus = (course.latitude + ("0.#{params[:filter]['distance'].gsub(" Km", "")}".to_f / 2)).round(3)
           params[:filter]['distance'].gsub(" Km", "") == 5 ? lat_moins = (course.latitude - ("0.0#{params[:filter]['distance'].gsub(" Km", "")}".to_f / 2)).round(3) : lat_moins = (course.latitude - ("0.#{params[:filter]['distance'].gsub(" Km", "")}".to_f / 2)).round(3)
@@ -28,6 +28,11 @@ class CoursesController < ApplicationController
         @courses_filtered = @courses
       end
       @courses_filtered = @courses_filtered.sort_by(&:average).reverse
+      if params[:filter]['user_favourite'].to_i == 1
+        add_favourite(params[:filter]['course_id'].to_i)
+      elsif params[:filter]['user_favourite'].to_i.zero?
+        destroy_favourite(params[:filter]['course_id'].to_i)
+      end
       respond_to do |format|
         format.html
         format.text { render partial: "courses/list", locals: { courses: @courses_filtered }, formats: [:html] }

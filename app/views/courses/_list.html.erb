@@ -1,6 +1,6 @@
   <div class="container w-100" data-filter-target="list">
     <% courses.each do |course| %>
-      <div class="card mb-3 position-relative">
+      <div class="card mb-3">
         <%= link_to course_path(course), class: "text-decoration-none text-white" do %>
           <div class="card-image mb-3">
             <div style="position: relative; border-radius: 12px 12px 0 0;height: 230px; width: 100%; background-repeat: no-repeat; background-size: cover; background-image: url('<%= cl_image_path course.photos.last.key, transformation: { dpr: "auto", responsive: true, width: "auto", crop: "scale", gravity: :face} %>')">
@@ -40,15 +40,17 @@
             </div>
           </div>
         <% end %>
+      </div>
+      <div class="">
         <% if user_signed_in? %>
           <% if course.favourites.exists?(user: current_user) %>
-            <%= link_to course_favourite_path(course_id: course.id, id: course.favourites.find_by(user: current_user)), data: { turbo_method: :delete }, class: "favourite-link" do %>
-              <i class="fa-solid fa-heart position-absolute" style="color: red; top: 35px; left: 35px; font-size: 30px;"></i>
-            <% end %>
+            <%#= link_to course_favourite_path(course_id: course.id, id: course.favourites.find_by(user: current_user)), data: { turbo_method: :delete }, class: "favourite-link" do %>
+              <i class="fa-solid fa-heart" style="color: red; top: 35px; left: 35px; font-size: 30px; z-index: 1500;" data-action="click->filter#filter" id="<%= course.id %>"></i>
+            <%# end %>
           <% else %>
-            <%= link_to course_favourites_path(course_id: course.id), data: { turbo_method: :post }, class: "favourite-link" do %>
-              <i class="fa-regular fa-heart position-absolute" style="color: red; top: 35px; left: 35px; font-size: 30px;"></i>
-            <% end %>
+            <%#= link_to course_favourites_path(course_id: course.id), data: { turbo_method: :post }, class: "favourite-link" do %>
+              <i class="fa-regular fa-heart" style="color: red; top: 35px; left: 35px; font-size: 30px; z-index: 1500;" data-action="click->filter#filter" id="<%= course.id %>"></i>
+            <%# end %>
           <% end %>
         <% end %>
       </div>
