@@ -7,7 +7,7 @@
             <% @reviews.each do |review| %>
               <div class="carousel-item bg-body <%= 'active' if review == @reviews.first %>">
                 <div class="card shadow p-3 m-3 bg-body-tertiary rounded" style="width: 91%;">
-                  <p class="card-text">Utilisateur: <%= review.user.firstname %></p>
+                  <p class="card-text"><%= review.user.firstname %> <%= review.user.lastname %></p>
                   <div class="card-body">
                     <p class="card-text"><%= review.comment %></p>
                     <p class="card-text">Note: <%= review.rating %>/5</p>
