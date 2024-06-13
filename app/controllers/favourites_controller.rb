@@ -1,14 +1,12 @@
 class FavouritesController < ApplicationController
-  def create
+  def add_favourite(course_id)
     @favourite = Favourite.new
     @favourite.user = current_user
-    @favourite.course_id = params[:course_id]
+    @favourite.course_id = course_id
     @favourite.save
-    redirect_to root_path
   end
 
-  def destroy
-    Favourite.find_by(course_id: params[:course_id], user: current_user).destroy
-    redirect_to root_path
+  def destroy_favourite(course_id)
+    Favourite.find_by(course_id: course_id, user: current_user).destroy
   end
 end
