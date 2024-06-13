@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row justify-content-center">
     <% @rides.each do |ride| %>
-      <%= link_to ride_path(ride) do %>
+      <%= link_to ride_path(ride), style: "text-decoration: none;" do %>
         <div class="col-12">
           <div class="mt-4 mx-auto">
             <div class="card mb-3">
