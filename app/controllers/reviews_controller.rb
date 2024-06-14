@@ -2,10 +2,11 @@ class ReviewsController < ApplicationController
   def create
     @review = Review.new(review_params)
     @review.user = current_user
-    @review.course = Ride.find(params[:ride_id]).course
+    @ride = Ride.find(params[:ride_id])
+    @review.course = @ride.course
     @review.rating = 0 if params[:review]['rating'].nil?
     @review.save
-    redirect_to root_path
+    redirect_to ride_path(@ride)
   end
 
   private
