@@ -1,6 +1,6 @@
 class UserRewardsController < ApplicationController
   def index
-    @user_rewards = UserReward.where(user_id: params[:user_id])
+    @user_rewards = UserReward.where(user_id: params[:user_id]).sort_by(&:progress)
   end
 
   def create
