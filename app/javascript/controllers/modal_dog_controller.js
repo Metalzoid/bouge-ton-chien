@@ -16,7 +16,7 @@ export default class extends Controller {
         if (data.success) {
           const modal = bootstrap.Modal.getInstance(document.getElementById("modalForm"))
           modal.hide();
-          this.dogsTarget.insertAdjacentHTML("beforeend", data.partial);
+          this.dogsTarget.insertAdjacentHTML("afterbegin", data.partial);
         } else {
           this.formTarget.outerHTML = data.form;
         }
