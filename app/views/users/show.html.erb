@@ -6,7 +6,7 @@
   <div class="links">
     <%= link_to "Mes achats", user_user_rewards_path(current_user), class: "buttonWhite" %>
     <%= link_to "Ma meute", user_dogs_path(current_user), class: "buttonWhite" %>
-    <%= link_to "Mes rides", user_rides_path(current_user), class: "buttonWhite" %>
+    <%= link_to "Mes balades", user_rides_path(current_user), class: "buttonWhite" %>
     <%= link_to "Editer mon profil", edit_user_registration_path(current_user), class: "simpleButton" %>
     <%= link_to 'Déconnexion', destroy_user_session_path, data: { turbo_method: "delete" }, class: "simpleButton" %>
   </div>

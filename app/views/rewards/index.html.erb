@@ -13,18 +13,18 @@
   </div>
 
   <div class="container">
-    <%= render "doogpresents", rewards: Reward.where('money BETWEEN ? AND ?', 50, 100), filter: 50 %>
+    <%= render "doogpresents", rewards: @rewards.where('money BETWEEN ? AND ?', 50, 100), filter: 50 %>
   </div>
 
   <div class="container">
-    <%= render "doogpresents", rewards: Reward.where('money BETWEEN ? AND ?', 100, 150), filter: 100 %>
+    <%= render "doogpresents", rewards: @rewards.where('money BETWEEN ? AND ?', 100, 150), filter: 100 %>
   </div>
 
   <div class="container">
-    <%= render "doogpresents", rewards: Reward.where('money BETWEEN ? AND ?', 150, 200), filter: 150 %>
+    <%= render "doogpresents", rewards: @rewards.where('money BETWEEN ? AND ?', 150, 200), filter: 150 %>
   </div>
 
   <div class="container">
-    <%= render "doogpresents", rewards: Reward.where('money >= ?', 200), filter: 200 %>
+    <%= render "doogpresents", rewards: @rewards.where('money >= ?', 200), filter: 200 %>
   </div>
 </div>

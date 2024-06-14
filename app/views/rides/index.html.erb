@@ -11,11 +11,11 @@
                 </div>
                 <div class="col-7 px-0">
                   <div class="card-body">
-                    <h5 class="card-title"><%= ride.course.name %></h5>
+                    <h5 class="card-title mb-4"><%= ride.course.name %></h5>
                     <p><%= "Date : #{ride.rided_at}" if !ride.rided_at.nil? %></p>
-                    <p><%="#{ride.duration[:hours]}h" if ride.duration[:hours] > 0 %><%=" #{ride.duration[:minutes]}min" if ride.duration[:minutes] > 0 %><%= " #{ride.duration[:seconds]}secs" %></p>
-                    <p><%= "Distance réalisée: #{ride.distance}" if !ride.distance.nil? %>km</p>
-                    <p><%= "Money gagnée: #{ride.money}" if !ride.money.nil? %> D</p>
+                    <p>Trajet effectué en : <br><%="#{ride.duration[:hours]}h" if ride.duration[:hours] > 0 %><%=" #{ride.duration[:minutes]}min" if ride.duration[:minutes] > 0 %><%= " #{ride.duration[:seconds]}secs" %></p>
+                    <p><%= "Distance réalisée: #{ride.distance.round}" if !ride.distance.nil? %>m</p>
+                    <p><%= "Doogies gagnés: #{ride.money}" if !ride.money.nil? %> D</p>
                   </div>
                 </div>
               </div>

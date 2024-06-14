@@ -213,6 +213,7 @@ export default class extends Controller {
   }
 
   disconnect() {
+    clearInterval(this.intervalId);
     this.map.remove();
   }
 

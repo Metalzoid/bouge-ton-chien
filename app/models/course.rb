@@ -22,7 +22,8 @@ class Course < ApplicationRecord
 
   def average
     result = 0
-    reviews.each { |review| result += review.rating }
+    # reviews.each { |review| result += review.rating }
+    result += reviews.sum(&:rating)
     result = result.fdiv(reviews.count) if reviews.count.positive?
     return result
   end

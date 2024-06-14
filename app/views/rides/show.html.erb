@@ -36,7 +36,7 @@
                             <p class="card-text p-0">
                             <%= form_with(model: [@ride, @review], local: true) do |form| %>
                           <div class="field">
-                            <%= form.label :rating, 'Met une note:', class: 'text-lg' %><br>
+                            <%= form.label :rating, 'Mets une note:', class: 'text-lg' %><br>
                             <div class="rating-stars">
                               <% (1..5).each do |i| %>
                               <input type="radio" id="rating_<%= i %>" name="review[rating]" value="<%= i %>" style="display: none;">

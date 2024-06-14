@@ -118,25 +118,25 @@ user8dog1.save!
 puts "dog : #{user8dog1.name} done !"
 
 #--------------- REWARDS-----------------
-reward1 = Reward.create!(price: 63.99, name: "ROYAL CANIN Maxi Adulte Croquettes Chien 15 kg", reduction: 30, promocode: "MAXIZOO30", link: "https://www.maxizoo.fr/p/royal-canin-maxi-adulte-croquettes-chien-15-kg-1803883/", money: 230, description: "Digestion favorisée, protection osseuse et articulaire, contient des acides gras oméga 3 : EPA et DHA")
+reward1 = Reward.create!(price: 63.99, name: "ROYAL CANIN Maxi Adulte", reduction: 30, promocode: "MAXIZOO30", link: "https://www.maxizoo.fr/p/royal-canin-maxi-adulte-croquettes-chien-15-kg-1803883/", money: 230, description: "Digestion favorisée, protection osseuse et articulaire, contient des acides gras oméga 3 : EPA et DHA")
 reward1photo = URI.open("https://media.os.fressnapf.com/products-v2/a/b/2/3/ab239d62865ca238b683c5e1ac8c2955e5fbd044_1003112004__2_.jpeg")
 reward1.photo.attach(io: reward1photo, filename: "royal.jpg", content_type: "image/jpeg")
 puts "reward : #{reward1.name}"
 
 
-reward2 = Reward.create!(price: 44.99, name: "Dogs Creek Harnais anti-traction Pathfinder", reduction: 25, promocode: "MAXIZOO25", link: "https://www.maxizoo.fr/p/dogs-creek-harnais-anti-traction-pathfinder-vert-s-1404978/", money: 260, description: "Réflecteurs 3M™ Scotchlite™, fermoir Duraflex sûr, solide et réglable, anti-traction grâce au mousqueton ventral")
+reward2 = Reward.create!(price: 44.99, name: "Harnais anti-traction", reduction: 25, promocode: "MAXIZOO25", link: "https://www.maxizoo.fr/p/dogs-creek-harnais-anti-traction-pathfinder-vert-s-1404978/", money: 260, description: "Réflecteurs 3M™ Scotchlite™, fermoir Duraflex sûr, solide et réglable, anti-traction grâce au mousqueton ventral")
 reward2photo = URI.open("https://media.os.fressnapf.com/products-v2/0/a/7/b/0a7b028775a8f8fefde8ca1ea362b9c03a170588_1404978_1404979_1404980_1404981_DC_H.png")
 reward2.photo.attach(io: reward2photo, filename: "creek.jpg", content_type: "image/png")
 puts "reward : #{reward2.name}"
 
 
-reward3 = Reward.create!(price: 74.99, name: "Fressnapf Traceur GPS pour chiens", reduction: 15, promocode: "MAXIZOO15", link: "https://www.maxizoo.fr/p/fressnapf-traceur-gps-pour-chiens-1404387/", money: 215, description: "Suivi GPS avec localisation précise, fixation facile au harnais ou au collier grâce à une bande velcro, sans abonnement, 2 ans sans frais courants")
+reward3 = Reward.create!(price: 74.99, name: "Traceur GPS pour chiens", reduction: 15, promocode: "MAXIZOO15", link: "https://www.maxizoo.fr/p/fressnapf-traceur-gps-pour-chiens-1404387/", money: 215, description: "Suivi GPS avec localisation précise, fixation facile au harnais ou au collier grâce à une bande velcro, sans abonnement, 2 ans sans frais courants")
 reward3photo = URI.open("https://media.os.fressnapf.com/products-v2/7/a/c/8/7ac862fd6dd225fbb610606877bda0d93688c8e4_1404387_0_traceur.jpg")
 reward3.photo.attach(io: reward3photo, filename: "fress.jpg", content_type: "image/jpg")
 puts "reward : #{reward3.name}"
 
 
-reward4 = Reward.create!(price: 59.99, name: "Trixie Cage de transport", reduction: 10, promocode: "MAXIZOO10", link: "https://www.maxizoo.fr/p/trixie-cage-de-transport-home-m-1038197/", money: 235, description: "S’ouvre à l’avant et sur le côté, pliable et peu encombrant à ranger, avec 2 portes et bac en plastique")
+reward4 = Reward.create!(price: 59.99, name: "Cage de transport", reduction: 10, promocode: "MAXIZOO10", link: "https://www.maxizoo.fr/p/trixie-cage-de-transport-home-m-1038197/", money: 235, description: "S’ouvre à l’avant et sur le côté, pliable et peu encombrant à ranger, avec 2 portes et bac en plastique")
 reward4photo = URI.open("https://media.os.fressnapf.com/products-v2/c/3/f/9/c3f9398bd72c9a0b0226fbcaf356834a5226cf43_86780a2cc7e285fa5081268163c35d69db0de25d.jpg")
 reward4.photo.attach(io: reward4photo, filename: "trixie.jpg", content_type: "image/jpg")
 puts "reward : #{reward4.name}"
@@ -149,12 +149,12 @@ puts "reward : #{reward5.name}"
 
 
 reward6 = Reward.create!(price: 15.99, name: "KONG Jumbler Ball", reduction: 15, promocode: "MAXIZOO15", link: "https://www.maxizoo.fr/p/kong-jumbler-ball-m-l-1211502/", money: 55, description: "Deux jouets en un, stimule le divertissement continu, Les poignées facilitent le ramassage et le secouage")
-reward6photo = URI.open("https://media.os.fressnapf.com/products-v2/9/1/1/9/9119350a3fd857772af2927ee0315e2d2ee0ecd9_57dcdc84b89db66e574b54aa2b69ba805339e5b1.jpg")
+reward6photo = URI.open("https://media.os.fressnapf.com/products-v2/3/9/7/0/39709bf5859c9cbe2e8fac4599ed43316dfd42a9_8075c9340b78ed3ffd42d1fdda8d0cc75253a169.jpg")
 reward6.photo.attach(io: reward6photo, filename: "kong2.jpg", content_type: "image/jpg")
 puts "reward : #{reward6.name}"
 
 
-reward7 = Reward.create!(price: 15.99, name: "Bâton à craquements TPR Adventure", reduction: 15, promocode: "MAXIZOO15", link: "https://www.maxizoo.fr/p/dogs-creek-bton--craquements-tpr-adventure-1246734/", money: 75, description: "Extrêmement résistant, aux bruits de craquement, flottante")
+reward7 = Reward.create!(price: 15.99, name: "Bâton à craquements", reduction: 15, promocode: "MAXIZOO15", link: "https://www.maxizoo.fr/p/dogs-creek-bton--craquements-tpr-adventure-1246734/", money: 75, description: "Extrêmement résistant, aux bruits de craquement, flottante")
 reward7photo = URI.open("https://media.os.fressnapf.com/products-v2/9/1/1/9/9119350a3fd857772af2927ee0315e2d2ee0ecd9_57dcdc84b89db66e574b54aa2b69ba805339e5b1.jpg")
 reward7.photo.attach(io: reward7photo, filename: "kong2.jpg", content_type: "image/jpg")
 puts "reward : #{reward7.name}"
@@ -166,13 +166,13 @@ reward8.photo.attach(io: reward8photo, filename: "kong2.jpg", content_type: "ima
 puts "reward : #{reward8.name}"
 
 
-reward9 = Reward.create!(price: 11.99, name: "Disque à lancer EASY FLY", reduction: 15, promocode: "MAXIZOO15", link: "https://www.maxizoo.fr/p/dogs-creek-disque--lancer-easy-fly-1246733/", money: 64, description: "Idéal pour les séances de lancer et rapporter en plein air, matériau bon pour les dents, flottante")
+reward9 = Reward.create!(price: 11.99, name: "Disque à lancer", reduction: 15, promocode: "MAXIZOO15", link: "https://www.maxizoo.fr/p/dogs-creek-disque--lancer-easy-fly-1246733/", money: 64, description: "Idéal pour les séances de lancer et rapporter en plein air, matériau bon pour les dents, flottante")
 reward9photo = URI.open("https://media.os.fressnapf.com/products-v2/8/8/1/e/881e54e0fd97b87f9d2c83541752e90dd9b69129_4c91a05743fd3322b1a0a2fadaf108d07ed5811e.jpg")
 reward9.photo.attach(io: reward9photo, filename: "kong2.jpg", content_type: "image/jpg")
 puts "reward : #{reward9.name}"
 
 
-reward10 = Reward.create!(price: 13.29, name: "Wubba Friends Balistic Assorted", reduction: 15, promocode: "MAXIZOO15", link: "https://www.maxizoo.fr/p/kong-jouet-wubba-friends-balistic-assorted-l-1214892/", money: 76, description: "Tissu et coutures renforcés pour un un plaisir de jouer qui dure, idéal pour les séances de lancer et rapporter, couine pour plus de plaisir")
+reward10 = Reward.create!(price: 13.29, name: "Friends Balistic Assorted", reduction: 15, promocode: "MAXIZOO15", link: "https://www.maxizoo.fr/p/kong-jouet-wubba-friends-balistic-assorted-l-1214892/", money: 76, description: "Tissu et coutures renforcés pour un un plaisir de jouer qui dure, idéal pour les séances de lancer et rapporter, couine pour plus de plaisir")
 reward10photo = URI.open("https://media.os.fressnapf.com/products-v2/b/2/9/4/b2943f487836293d4b55c99bfd633a793f6a40fc_e4788f732c9fc3dece2620f1e49add87a135522d.jpg")
 reward10.photo.attach(io: reward10photo, filename: "kong2.jpg", content_type: "image/jpg")
 puts "reward : #{reward10.name}"
@@ -190,7 +190,7 @@ reward12.photo.attach(io: reward12photo, filename: "kong2.jpg", content_type: "i
 puts "reward : #{reward12.name}"
 
 
-reward13 = Reward.create!(price: 57.29, name: "Fontaine à eau Cascade", reduction: 15, promocode: "MAXIZOO10", link: "https://www.maxizoo.fr/p/savic-fontaine--eau-cascade-1184549/", money: 112, description: "3 zones d’abreuvement, le filtre au charbon actif garantit de l’eau toujours fraîche, facile à entretenir et à nettoyer")
+reward13 = Reward.create!(price: 57.29, name: "Fontaine à eau", reduction: 15, promocode: "MAXIZOO10", link: "https://www.maxizoo.fr/p/savic-fontaine--eau-cascade-1184549/", money: 112, description: "3 zones d’abreuvement, le filtre au charbon actif garantit de l’eau toujours fraîche, facile à entretenir et à nettoyer")
 reward13photo = URI.open("https://media.os.fressnapf.com/products-v2/1/f/b/a/1fba5244cb8168b0c9d504c0efb01f0c80af0e22_a1a3772e2de4b7e622ac121ab508d5c16feebba5.jpg")
 reward13.photo.attach(io: reward13photo, filename: "kong2.jpg", content_type: "image/jpg")
 puts "reward : #{reward13.name}"
@@ -202,25 +202,25 @@ reward14.photo.attach(io: reward14photo, filename: "kong2.jpg", content_type: "i
 puts "reward : #{reward14.name}"
 
 
-reward15 = Reward.create!(price: 32.99, name: "Set de gamelles céramique/bois x2", reduction: 10, promocode: "MAXIZOO10", link: "https://www.maxizoo.fr/p/trixie-set-de-gamelles-cramiquebois-2x400-ml-1232672/", money: 136, description: "Gamelle lourde en bois dur, laqué, robuste, antidérapant grâce aux pieds en caoutchouc, mangeoires lavables au lave-vaisselle")
+reward15 = Reward.create!(price: 32.99, name: "Set de gamelles", reduction: 10, promocode: "MAXIZOO10", link: "https://www.maxizoo.fr/p/trixie-set-de-gamelles-cramiquebois-2x400-ml-1232672/", money: 136, description: "Gamelle lourde en bois dur, laqué, robuste, antidérapant grâce aux pieds en caoutchouc, mangeoires lavables au lave-vaisselle")
 reward15photo = URI.open("https://media.os.fressnapf.com/products-v2/e/f/1/5/ef152e872c9b8550029549a1ccb33ec8a5b1d999_6bcf2eee710bf86351113f0252df8e708fa6c015.jpg")
 reward15.photo.attach(io: reward15photo, filename: "kong2.jpg", content_type: "image/jpg")
 puts "reward : #{reward15.name}"
 
 
-reward16 = Reward.create!(price: 23.99, name: "Filets de poulet 1 kg", reduction: 10, promocode: "MAXIZOO10", link: "https://www.maxizoo.fr/p/multifit-native-filets-de-poulet-1-kg-1211881/", money: 115, description: "Dès le plus jeune  âge, peut contribuer à l’hygiène dentaire, friandise sans additifs artificiels")
+reward16 = Reward.create!(price: 23.99, name: "Filets de poulet", reduction: 10, promocode: "MAXIZOO10", link: "https://www.maxizoo.fr/p/multifit-native-filets-de-poulet-1-kg-1211881/", money: 115, description: "Dès le plus jeune  âge, peut contribuer à l’hygiène dentaire, friandise sans additifs artificiels")
 reward16photo = URI.open("https://media.os.fressnapf.com/products-v2/8/1/d/0/81d0215a59c85aeddde7b87ff724d6464067cb15_a580f557b9e9ac073c8f7ff50d9a6107ae8dae8a.png")
 reward16.photo.attach(io: reward16photo, filename: "kong2.jpg", content_type: "image/jpg")
 puts "reward : #{reward16.name}"
 
 
-reward17 = Reward.create!(price: 19.93, name: "Meat Jerkys 6 x 70 g Bœuf", reduction: 10, promocode: "MAXIZOO10", link: "https://www.maxizoo.fr/p/premiere-meat-jerkys-6-x-70-g-buf-1212565/", money: 140, description: "94 % de viande pure, séchée à l’air, développé par des vétérinaires, sans colorants ni conservateurs")
+reward17 = Reward.create!(price: 19.93, name: "Meat Jerkys Bœuf", reduction: 10, promocode: "MAXIZOO10", link: "https://www.maxizoo.fr/p/premiere-meat-jerkys-6-x-70-g-buf-1212565/", money: 140, description: "94 % de viande pure, séchée à l’air, développé par des vétérinaires, sans colorants ni conservateurs")
 reward17photo = URI.open("https://media.os.fressnapf.com/products-v2/8/1/d/0/81d0215a59c85aeddde7b87ff724d6464067cb15_a580f557b9e9ac073c8f7ff50d9a6107ae8dae8a.png")
 reward17.photo.attach(io: reward17photo, filename: "kong2.jpg", content_type: "image/jpg")
 puts "reward : #{reward17.name}"
 
 
-reward18 = Reward.create!(price: 5.49, name: "Tendons de bœuf env. 15 cm 120 g", reduction: 10, promocode: "MAXIZOO10", link: "https://www.maxizoo.fr/p/mimos-tendons-de-buf-env-15cm-120g-1396854/", money: 113, description: "Plaisir de mastication prolongé, sans céréales, renforce les muscles de la mastication")
+reward18 = Reward.create!(price: 5.49, name: "Tendons de bœuf", reduction: 10, promocode: "MAXIZOO10", link: "https://www.maxizoo.fr/p/mimos-tendons-de-buf-env-15cm-120g-1396854/", money: 113, description: "Plaisir de mastication prolongé, sans céréales, renforce les muscles de la mastication")
 reward18photo = URI.open("https://media.os.fressnapf.com/products-v2/5/e/f/2/5ef2286607b3e043738c4a2e44c5333f9be66cc2_1396854_0.png")
 reward18.photo.attach(io: reward18photo, filename: "kong2.jpg", content_type: "image/jpg")
 puts "reward : #{reward18.name}"
@@ -232,13 +232,13 @@ reward19.photo.attach(io: reward19photo, filename: "kong2.jpg", content_type: "i
 puts "reward : #{reward19.name}"
 
 
-reward20 = Reward.create!(price: 20.99, name: "Laisse New Classic bleu 5 m", reduction: 60, promocode: "MAXIZOO60", link: "https://www.maxizoo.fr/p/flexi-laisse-new-classic-bleu-l-5-m-50-kg-1267779/", money: 160, description: "Touche de freinage confortable, crochet chromé, fabriqué en Allemagne")
+reward20 = Reward.create!(price: 20.99, name: "Laisse Classic 5 m", reduction: 60, promocode: "MAXIZOO60", link: "https://www.maxizoo.fr/p/flexi-laisse-new-classic-bleu-l-5-m-50-kg-1267779/", money: 160, description: "Touche de freinage confortable, crochet chromé, fabriqué en Allemagne")
 reward20photo = URI.open("https://media.os.fressnapf.com/products-v2/f/c/d/e/fcde4ad994a8cd929d172f5dfe44aaf7859807d5_1267779__2_.jpg")
 reward20.photo.attach(io: reward20photo, filename: "kong2.jpg", content_type: "image/jpg")
 puts "reward : #{reward20.name}"
 
 
-reward21 = Reward.create!(price: 48.72, name: "Coussin Ortho Ovale M", reduction: 60, promocode: "MAXIZOO60", link: "https://www.maxizoo.fr/p/more-coussin-ortho-ovale-m-1323498", money: 157, description: "Se coucher, se reposer et dormir en préservant les articulations, lavable à 30 °C, fonction antidérapante")
+reward21 = Reward.create!(price: 48.72, name: "Coussin Ortho", reduction: 60, promocode: "MAXIZOO60", link: "https://www.maxizoo.fr/p/more-coussin-ortho-ovale-m-1323498", money: 157, description: "Se coucher, se reposer et dormir en préservant les articulations, lavable à 30 °C, fonction antidérapante")
 reward21photo = URI.open("https://media.os.fressnapf.com/products-v2/4/5/b/7/45b79fca03b4e5ace32adcbbe1e565f31dcb402b_af133180638e87fe7624b4fa85879bb24a26e049.jpg")
 reward21.photo.attach(io: reward21photo, filename: "kong2.jpg", content_type: "image/jpg")
 puts "reward : #{reward21.name}"
@@ -251,7 +251,7 @@ puts "reward : #{reward22.name}"
 
 puts "REWARDS DONE !"
 
-course1 = Course.new(distance: 1400, money: 25, water: true, trashs: true, poopbag: true, familyfriendly: true, difficulty: 1, timing: 20, name: "Parc Bordelais", description: "Charmant petit parc urbain, parfait pour une promenade relaxante avec son chien.")
+course1 = Course.new(distance: 1400, money: 25, water: false, trashs: true, poopbag: true, familyfriendly: true, difficulty: 1, timing: 20, name: "Parc Bordelais", description: "Charmant petit parc urbain, parfait pour une promenade relaxante avec son chien.")
 course1photo1 = URI.open("https://www.tourisme-gironde.fr/wp-content/uploads/2022/09/800px-XDSC_7599-jardin-public-de-Bordeaux.jpg")
 course1photo2 = URI.open("https://www.visiter-bordeaux.eu/wp-content/uploads/2019/05/Parc_Bordelais_Bordeaux_France_-_panoramio_2.jpg")
 course1photo3 = URI.open("https://www.bordeaux-tourisme.com/sites/bordeaux_tourisme/files/medias/widgets/misc/Parc%20bordelais%C2%A9Bordeaux%20M%C3%A9tropole.jpg")
@@ -288,7 +288,7 @@ course1.route = [[-0.6043516086192207, 44.85130481877134],
 course1.save!
 puts "course : #{course1.name} done !"
 
-course2 = Course.new(distance: 1300, money: 30, water: true, trashs: true, poopbag: true, familyfriendly: true, difficulty: 1, timing: 55, name: "Jardin Public", description: "Créé en 1746, le jardin public est un espace vert de 10,8 hectares situé en plein centre ville et abritant de multiples activités familiales.")
+course2 = Course.new(distance: 1300, money: 30, water: true, trashs: true, poopbag: true, familyfriendly: true, difficulty: 1, timing: 20, name: "Jardin Public", description: "Créé en 1746, le jardin public est un espace vert de 10,8 hectares situé en plein centre ville et abritant de multiples activités familiales.")
 course2photo1 = URI.open("https://a.travel-assets.com/findyours-php/viewfinder/images/res70/132000/132861-Jardin-Public.jpg")
 course2photo2 = URI.open("https://www.bordeaux.fr/images/ebx/fr/lieu/858/format6/TS170367_1.jpg")
 course2photo3 = URI.open("https://www.bordeaux.fr/images/ebx/fr/lieu/858/format6/TS170348_6.jpg")
@@ -680,44 +680,39 @@ course9.route = [[-0.5759682787361504, 44.849314639333315],
 course9.save!
 puts "course : #{course9.name} done !"
 
-Review.create!(rating: 5, comment: "J’utilise cette application depuis quelques semaines maintenant et je suis absolument ravie ! Mon chien, adore ses balades.", user: user2, course: course1)
-Review.create!(rating: 1, comment: "L’application semblait être une bonne idée, mais elle est très mal conçue. Le système de géolocalisation est souvent imprécis.", user: user2, course: course3)
-Review.create!(rating: 3, comment: "Excellente application pour les propriétaires de chiens ! Mon chien a toujours hâte de sortir pour ses promenades. Quelques points à corriger ...", user: user2, course: course2)
-Review.create!(rating: 3, comment: "Excellente application pour les propriétaires de chiens ! Mon chien a toujours hâte de sortir pour ses promenades. Quelques points à corriger ...", user: user2, course: course9)
-Review.create!(rating: 5, comment: "Je recommande vivement cette application à tous les propriétaires de chiens qui cherchent des balades fiables et agréables pour leurs compagnons à quatre pattes !", user: user2, course: course2)
+Review.create!(rating: 5, comment: "Magnifique promenade avec des paysages à couper le souffle !", user: user2, course: course1)
+Review.create!(rating: 1, comment: "La promenade était décevante, le parc était mal entretenu.", user: user2, course: course3)
+Review.create!(rating: 3, comment: "Balade agréable mais rien de spécial à voir.", user: user2, course: course2)
+Review.create!(rating: 3, comment: "Pas mal pour une promenade rapide, mais pas pour une journée entière.", user: user2, course: course9)
+Review.create!(rating: 5, comment: "Parc exceptionnel, parfait pour une promenade longue et agréable.", user: user2, course: course2)
 
-Review.create!(rating: 5, comment: "Je recommande vivement cette application à tous les propriétaires de chiens qui cherchent des balades fiables et agréables pour leurs compagnons à quatre pattes !", user: user3, course: course2)
-Review.create!(rating: 5, comment: "Je recommande vivement cette application à tous les propriétaires de chiens qui cherchent des balades fiables et agréables pour leurs compagnons à quatre pattes !", user: user3, course: course9)
-Review.create!(rating: 4, comment: "Une application indispensable pour les propriétaires de chiens.", user: user3, course: course1)
-Review.create!(rating: 2, comment: "L’application a un beau design et est facile à utiliser, mais je préfère mon ancienne application.", user: user3, course: course4)
+Review.create!(rating: 5, comment: "Je recommande vivement cette application à tous les propriétaires de chiens qui cherchent des balades fiables et agréables pour leurs compagnons à quatre pattes !", user: user3, course: course6)
+Review.create!(rating: 5, comment: "Magnifique promenade avec des paysages à couper le souffle.", user: user3, course: course9)
+Review.create!(rating: 4, comment: "Très belle promenade, bien entretenue et paisible.", user: user3, course: course1)
+Review.create!(rating: 2, comment: "Balade correcte mais manque de points d'intérêt.", user: user3, course: course4)
 
-Review.create!(rating: 1, comment: "Point négatif est que l’application peut parfois être un peu lente.", user: user4, course: course5)
-Review.create!(rating: 4, comment: "Excellente application pour les propriétaires de chiens ! Mon chien a toujours hâte de sortir pour ses promenades.", user: user4, course: course2)
-Review.create!(rating: 4, comment: "Excellente application pour les propriétaires de chiens ! Mon chien a toujours hâte de sortir pour ses promenades.", user: user4, course: course9)
-Review.create!(rating: 3, comment: "L’interface de l’application est intuitive et facile à utiliser.", user: user4, course: course7)
+Review.create!(rating: 5, comment: "Le parc est impeccable, idéal pour une journée en famille.", user: user5, course: course1)
+Review.create!(rating: 4, comment: "Des chemins bien entretenus et des vues splendides, une balade parfaite.", user: user5, course: course2)
+Review.create!(rating: 4, comment: "Ambiance calme et relaxante, parfait pour se détendre !", user: user5, course: course9)
+Review.create!(rating: 4, comment: "Beaucoup de bancs et de points d'eau, très pratique avec mon chien !", user: user5, course: course6)
+Review.create!(rating: 4, comment: "Superbe pour une marche tranquille, beaucoup de verdure.", user: user5, course: course8)
+Review.create!(rating: 4, comment: "Parc très beau mais un peu trop fréquenté à mon goût. Sinon, très propre et bien aménagé.", user: user5, course: course3)
 
-Review.create!(rating: 5, comment: "J’utilise cette application depuis un an et je ne pourrais plus m’en passer.", user: user5, course: course1)
-Review.create!(rating: 4, comment: "Bravo pour cette application !", user: user5, course: course2)
-Review.create!(rating: 4, comment: "Bravo pour cette application !", user: user5, course: course9)
-Review.create!(rating: 4, comment: "Bravo pour cette application !", user: user5, course: course6)
-Review.create!(rating: 4, comment: "J’adore avoir un récap des courses que j’ai faites et mes Doogies gagnés", user: user5, course: course8)
-Review.create!(rating: 4, comment: "J’adore avoir un récap des courses que j’ai faites et mes Doogies gagnés", user: user5, course: course3)
+Review.create!(rating: 4, comment: "Belle promenade avec des chemins ombragés. Un peu de bruit à cause de la proximité de la route.", user: user6, course: course7)
+Review.create!(rating: 4, comment: "Endroit paisible avec de jolis sentiers. Quelques zones pourraient être mieux entretenues.", user: user6, course: course6)
+Review.create!(rating: 3, comment: "Balade correcte, mais manque de diversité dans les paysages. Peu de bancs disponibles.", user: user6, course: course5)
 
-Review.create!(rating: 4, comment: "Marcher avec mon chien et gagner de l’argent, il ne m’en fallait pas plus pour adorer cette application.", user: user6, course: course7)
-Review.create!(rating: 4, comment: "Excellente application pour les propriétaires de chiens ! Mon chien a toujours hâte de sortir pour ses promenades.", user: user6, course: course6)
-Review.create!(rating: 3, comment: "L’interface de l’application est intuitive et facile à utiliser.", user: user6, course: course5)
+Review.create!(rating: 4, comment: "Belle promenade avec de beaux panoramas. Quelques portions des sentiers étaient un peu boueuses.", user: user7, course: course4)
+Review.create!(rating: 4, comment: "Très agréable avec de beaux points de vue. Certains sentiers pourraient être mieux balisés.", user: user7, course: course8)
+Review.create!(rating: 3, comment: "Parc convenable pour une courte balade, mais pas grand-chose d'extraordinaire à voir.", user: user7, course: course3)
+Review.create!(rating: 3, comment: "Beau parc mais manque d'entretien par endroits. Les sentiers pourraient être mieux indiqués.", user: user7, course: course6)
+Review.create!(rating: 4, comment: "Parc spacieux avec de belles zones ombragées, parfait pour une balade relaxante.", user: user7, course: course1)
 
-Review.create!(rating: 4, comment: "Marcher avec mon chien et gagner de l’argent, il ne m’en fallait pas plus pour adorer cette application.", user: user7, course: course4)
-Review.create!(rating: 4, comment: "Excellente application pour les propriétaires de chiens ! Mon chien a toujours hâte de sortir pour ses promenades.", user: user7, course: course8)
-Review.create!(rating: 3, comment: "L’interface de l’application est intuitive et facile à utiliser.", user: user7, course: course3)
-Review.create!(rating: 3, comment: "L’interface de l’application est intuitive et facile à utiliser.", user: user7, course: course6)
-Review.create!(rating: 4, comment: "L’interface de l’application est intuitive et facile à utiliser.", user: user7, course: course1)
-
-Review.create!(rating: 3, comment: "Assez satisfait dans l’ensemble.", user: user8, course: course4)
-Review.create!(rating: 2, comment: "L’application a un beau design et est facile à utiliser, mais je préfère mon ancienne application.", user: user8, course: course2)
-Review.create!(rating: 2, comment: "L’application a un beau design et est facile à utiliser, mais je préfère mon ancienne application.", user: user8, course: course9)
-Review.create!(rating: 3, comment: "L’interface de l’application est intuitive et facile à utiliser.", user: user8, course: course7)
-Review.create!(rating: 3, comment: "L’interface de l’application est intuitive et facile à utiliser.", user: user8, course: course3)
-Review.create!(rating: 3, comment: "L’interface de l’application est intuitive et facile à utiliser.", user: user8, course: course6)
+Review.create!(rating: 3, comment: "Balade agréable mais sans plus, pas de vue spectaculaire.", user: user8, course: course4)
+Review.create!(rating: 2, comment: "Beaucoup de potentiel, mais les infrastructures pour chien sont insuffisantes.", user: user8, course: course2)
+Review.create!(rating: 2, comment: "Parc assez bruyant, difficile de se détendre.", user: user8, course: course9)
+Review.create!(rating: 3, comment: "Les chemins sont bien entretenus, mais le parc est assez petit.", user: user8, course: course7)
+Review.create!(rating: 3, comment: "Sympathique mais peut devenir ennuyeux après un certain temps.", user: user8, course: course3)
+Review.create!(rating: 5, comment: "Balade extraordinaire, paysages magnifiques et parc très bien entretenu.", user: user8, course: course6)
 
 puts "Reviews done!"
