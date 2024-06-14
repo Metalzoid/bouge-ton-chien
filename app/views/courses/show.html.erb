@@ -9,7 +9,6 @@
                 <div class="card shadow p-3 m-3 bg-body-tertiary rounded" style="width: 91%;">
                   <h4 class="card-text"><%= cl_image_tag review.user.photo.key, height: 100, width: 100, gravity: "face", crop: "fill", style: "border-radius: 50%" %> <span class="ms-3"><%= review.user.firstname %></span></h4>
                   <div class="card-body">
-                    <p class="card-text" style="font-size: 19px;"><%= review.comment %></p>
                     <div class="me-auto p-2" style="color: #895f33;">
                       <% @course.average.to_i.times do %>
                         <i class="fa-solid fa-star"></i>
@@ -18,6 +17,7 @@
                         <i class="fa-regular fa-star"></i>
                       <% end %>
                     </div>
+                    <p class="card-text" style="font-size: 19px;"><%= review.comment %></p>
                   </div>
                 </div>
               </div>
