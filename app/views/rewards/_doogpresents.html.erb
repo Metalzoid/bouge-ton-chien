@@ -27,7 +27,7 @@
             <button class="col-6 border-0" type="button" data-bs-toggle="modal" data-bs-target="#modalDetails<%= two_rewards[1].id %>">
               <%= render "presentdetails", reward: two_rewards[1] %>
               <div class="card position-relative <%= 'cardActive' if current_user.money >= two_rewards[1].money %>">
-                <p class="price-present"><%= two_rewards[0].money %> D</p>
+                <p class="price-present"><%= two_rewards[1].money %> D</p>
                 <%= cl_image_tag(two_rewards[1].photo.key) if two_rewards[1].photo.present? %>
                 <div class="card-body px-0 py-1">
                   <p class="card-title text-center"><%= two_rewards[1].name %></p>
